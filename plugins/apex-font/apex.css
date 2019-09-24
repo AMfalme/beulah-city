@@ -1,0 +1,16 @@
+@font-face {
+  font-family: "apex";
+  src: url("fonts/Apex\ New\ Book.otf");
+}
+
+@font-face {
+  font-family: "apex";
+  src: url("fonts/Apex\ New\ Medium\ Italic.otf");
+  font-style: italic;
+}
+
+@font-face {
+  font-family: "apex";
+  src: url("fonts/Apex\ New\ Bold.otf");
+  font-weight: bold;
+}
