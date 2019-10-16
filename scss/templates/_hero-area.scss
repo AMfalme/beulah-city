@@ -1,5 +1,7 @@
+@import "../responsive";
+
 .hero-area {
-  background-image: url("../images/coming-soon-page-light.jpg");
+  background-image: url("../images/coming-soon-page-light.jpeg");
   background-size: cover;
   height: 100vh;
   position: relative;
@@ -7,6 +9,10 @@
   justify-content: center;
   align-items: center;
   overflow: scroll;
+
+  @include for-phone-only {
+    background-image: url("../images/coming-soon-page-mobile.jpeg");
+  }
 
   .container {
     height: inherit;
@@ -16,7 +22,7 @@
 
   &:before {
     content: "";
-    background: rgba(0, 0, 0, 0.63);
+    // background: rgba(0, 0, 0, 0.63);
     position: absolute;
     top: 0;
     right: 0;
