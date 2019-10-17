@@ -36,13 +36,13 @@ a:hover {
 
 a:focus,
 a:hover {
-  color: $primary-color;
+  color: $primary-color-light;
 }
 
 .btn-main {
-  background: $primary-color;
-  border: 1px solid $primary-color;
-  color: $light;
+  background: $primary-color-light;
+  border: 1px solid $primary-color-light;
+  color: $white;
   display: inline-block;
   font-size: 14px;
   letter-spacing: 1px;
@@ -50,12 +50,12 @@ a:hover {
   text-transform: uppercase;
   border-radius: 40px;
   &:hover {
-    color: $light;
+    color: $white;
   }
 }
 .btn-transparent {
-  color: $light;
-  border: 1px solid $light;
+  color: $white;
+  border: 1px solid $white;
   display: inline-block;
   font-size: 13px;
   letter-spacing: 1px;
@@ -63,7 +63,7 @@ a:hover {
   text-transform: uppercase;
   border-radius: 40px;
   &:hover {
-    color: $light;
+    color: $white;
   }
 }
 
@@ -188,7 +188,7 @@ a:hover {
     height: 30px;
     -webkit-transform: translateY(15px);
     transform: translateY(15px);
-    background: $secondary-color;
+    background: $secondary-color-dark;
   }
   50%,
   100% {
@@ -210,7 +210,7 @@ a:hover {
     height: 30px;
     -webkit-transform: translateY(15px);
     transform: translateY(15px);
-    background: $secondary-color;
+    background: $secondary-color-dark;
   }
   50%,
   100% {
@@ -237,7 +237,7 @@ a:hover {
   }
   &.title-white {
     h2 {
-      color: $light;
+      color: $white;
     }
   }
 }
@@ -246,7 +246,7 @@ a:hover {
   margin: 20px auto 20px;
   position: relative;
   width: 80px;
-  background: $primary-color;
+  background: $primary-color-light;
 }
 
 .bg-gray {
@@ -262,7 +262,7 @@ a:hover {
     font-family: $primary-font;
   }
   a:hover {
-    color: $primary-color;
+    color: $primary-color-light;
   }
 }
 
@@ -363,6 +363,6 @@ a:hover {
   left: 0px;
 }
 
-.secondary-color {
-  color: $secondary-color;
+.secondary-color-dark {
+  color: $secondary-color-dark;
 }

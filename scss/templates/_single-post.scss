@@ -2,7 +2,6 @@
   Single Blog Page
 ==================================================================*/
 
-
 #blog-banner {
   padding-bottom: 100px;
   padding-top: 150px;
@@ -17,7 +16,7 @@
   margin: 20px 0 0;
   padding: 0 20px 10px;
   a {
-    color: $primary-color;
+    color: $primary-color-light;
   }
   > span {
     color: #666;
@@ -35,7 +34,6 @@
   }
 }
 
-
 .post-excerpt {
   padding: 0 20px;
   margin-bottom: 60px;
@@ -51,11 +49,10 @@
   }
 }
 
-
 .single-blog {
-    background-color: #fff;
-    margin-bottom: 50px;
-    padding: 20px;
+  background-color: #fff;
+  margin-bottom: 50px;
+  padding: 20px;
 }
 
 .blog-subtitle {
@@ -74,7 +71,7 @@
   a {
     color: #000;
     &:hover {
-      color: $primary-color;
+      color: $primary-color-light;
     }
   }
   .prev-post i {
@@ -88,7 +85,7 @@
 
 .social-profile {
   ul {
-   li {
+    li {
       margin: 0 10px 0 0;
       display: inline-block;
       a {
@@ -97,7 +94,7 @@
         font-size: 16px;
         i {
           &:hover {
-            color: $primary-color;
+            color: $primary-color-light;
           }
         }
       }
@@ -108,7 +105,6 @@
 .comments-section {
   margin-top: 35px;
 }
-
 
 .author-about {
   margin-top: 40px;
@@ -124,8 +120,6 @@
   width: 100%;
 }
 
-
-
 .comment-list {
   ul {
     margin-top: 20px;
@@ -134,7 +128,6 @@
     }
   }
 }
-
 
 .comment-wrap {
   border: 1px solid #dedede;
@@ -150,7 +143,7 @@
       font-size: 14px;
       margin-bottom: 8px;
       a {
-        color: $primary-color;
+        color: $primary-color-light;
         font-size: 13px;
       }
     }
@@ -162,27 +155,22 @@
       margin-top: 15px;
     }
   }
-
 }
-
 
 .comment-reply-form {
   margin-top: 80px;
-  input,textarea {
+  input,
+  textarea {
     height: 35px;
     border-radius: 0;
     box-shadow: none;
     &:focus {
-      box-shadow:none;
-      border:1px solid $primary-color;
+      box-shadow: none;
+      border: 1px solid $primary-color-light;
     }
   }
-  textarea,.btn-main {
+  textarea,
+  .btn-main {
     height: auto;
   }
 }
-
-                            
-
-
-

@@ -9,6 +9,8 @@
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
     <meta name="description" content="Beulah City Website" />
 
+    <meta name="author" content="mizizi.io" />
+
     <title>Beulah City</title>
 
     <!-- Mobile Specific Meta
@@ -20,7 +22,8 @@
 
     <!-- CSS
   ================================================== -->
-    <link rel="stylesheet" href="plugins/apex-font/apex.css" />
+    <!-- Themefisher Icon font -->
+    <link rel="stylesheet" href="plugins/themefisher-font/style.css" />
     <!-- bootstrap.min css -->
     <link rel="stylesheet" href="plugins/bootstrap/css/bootstrap.min.css" />
     <!-- Lightbox.min css -->
@@ -33,7 +36,7 @@
     <link rel="stylesheet" href="css/style.css" />
   </head>
 
-  <body id="body" class="no-scroll">
+  <body id="body">
     <!--
   Start Preloader
   ==================================== -->
@@ -52,62 +55,137 @@
   ==================================== -->
 
     <!--
-Welcome Slider
+Fixed Navigation
 ==================================== -->
-    <section class="hero-area">
-      <div class="container">
-        <div class="row">
-          <div class="col-md-12">
-            <img
-              class="img-fluid left-align"
-              src="images/company/beulah_logo_02.png"
-              alt="Beulah City Logo"
-              id="logo"
-            />
-            <div class="block left-align">
-              <span
-                class="wow fadeInUp"
-                data-wow-duration=".5s"
-                data-wow-delay=".3s"
-                style="font-style: italic; font-size: 20px;"
-              >
-                Conceptualizing investment-grade <br />
-                real estate & urban residential developments <br />
-                for the Kenyan Market
-              </span>
-            </div>
-            <div>
-              <hr
-                style="border: 0.5px solid white; width: 20%; left:0px; margin-left: 0px"
-              />
-            </div>
+    <header class="navigation fixed-top">
+      <div class="navigaton__item navigation__spacer-item "></div>
+        <!-- main nav -->
+        <nav class="navbar navbar-expand-lg navbar-light navigation__item navigation__navbar-item">
+          <button
+            class="navbar-toggler"
+            type="button"
+            data-toggle="collapse"
+            data-target="#navigation"
+            aria-controls="navigation"
+            aria-expanded="false"
+            aria-label="Toggle navigation"
+          >
+            <span class="navbar-toggler-icon"></span>
+          </button>
 
-            <p
-              class="wow fadeInUp"
-              data-wow-duration=".5s"
-              data-wow-delay=".5s"
-              style="font-size: 20px"
-            >
-              Our website is currently <br />
-              undergoing maintenance. <br />
-              We will be back shortly.
-            </p>
-            <br />
-            <p class="secondary-color">
-              For inquiries please contact us:<br />
-              talktous@beulahcity.com <br />
-              +254 722 738 988<br />
-            </p>
+          <div class="collapse navbar-collapse" id="navigation">
+            <ul class="navbar-nav ml-auto text-center">
+              <li class="nav-item dropdown active">
+                <a
+                  class="nav-link dropdown-toggle"
+                  href="#"
+                  id="navbarDropdown"
+                  role="button"
+                  data-toggle="dropdown"
+                  aria-haspopup="true"
+                  aria-expanded="false"
+                >
+                  Home
+                </a>
+              </li>
+              <li class="nav-item">
+                <span class="nav-link separator">|</span>
+              </li>
+              <li class="nav-item ">
+                <a class="nav-link" href="#">Who we are</a>
+              </li>
+              <li class="nav-item">
+                <span class="nav-link separator">|</span>
+              </li>
+              <li class="nav-item ">
+                <a class="nav-link" href="#">What we do</a>
+              </li>
+              <li class="nav-item">
+                <span class="nav-link separator">|</span>
+              </li>
+              <li class="nav-item ">
+                <a class="nav-link separator" href="#">Why us?</a>
+              </li>
+              <li class="nav-item">
+                <span class="nav-link separator">|</span>
+              </li>
+              <li class="nav-item ">
+                <a class="nav-link" href="#">Contact us</a>
+              </li>
+            </ul>
           </div>
-        </div>
+        </nav>
+        <!-- /main nav -->
+    </header>
+    <!--
+End Fixed Navigation
+==================================== -->
+    <section class="home-page">
+      <div class="home-page__background">
+        <img class="home-page__background home-page__background-image home-page__first-background-image home-page__background-image--active" src="images/slider/slide1.jpg"/>
       </div>
-    </section>
+      <div class="home-page__background">
+        <img class="home-page__background home-page__background-image" src="images/slider/slide2.jpg">
+      </div>
+      <div class="home-page__background">
+          <img class="home-page__background home-page__background-image" src="images/slider/slide3.jpg">
+      </div>
+      <div class="home-page__background">
+          <img class="home-page__background home-page__background-image" src="images/slider/slide4.jpg">
+      </div>
+
+      <!-- Project selection slider -->
+      <nav class="project-nav">
+        <ul class="project-nav__list">
+          <li class="project-nav__list-item project-nav__list-item-bg"></li>
+          <li class="project-nav__list-item">
+            <div class="project-nav__item-info">
+              <h3>Beulah Genesis</h3>
+              <p class="project-nav__item-desc">
+                Live + Connect + Interact
+              </p>
+              <a class="project-nav__link" href="#">Explore</a>
+            </div>
+          </li>
+          <li class="project-nav__list-item">
+            <div class="project-nav__item-info">
+              <h3>Beulah Garden City</h3>
+              <p class="project-nav__item-desc">Urban + Convenience</p>
+              <a class="project-nav__link" href="#">Explore</a>
+            </div>
+          </li>
+          <li class="project-nav__list-item">
+            <div class="project-nav__item-info">
+              <h3>Beulah Cerry</h3>
+              <p class="project-nav__item-desc">
+                The Essence of Modern Living
+              </p>
+              <a class="project-nav__link" href="#">Explore</a>
+            </div>
+          </li>
+          <li class="project-nav__list-item">
+            <div class="project-nav__item-info">
+              <h3>Future Projects</h3>
+              <p class="project-nav__item-desc">
+                Communities + Neighbours
+              </p>
+              <a class="project-nav__link" href="#">Explore</a>
+            </div>
+          </li>
+        </ul>
+      </nav>
+    </div>
+
+    <!-- End of project selection slider-->
 
     <!-- 
     Essential Scripts
     =====================================-->
     <!-- Main jQuery -->
     <script src="plugins/jquery/jquery.min.js"></script>
+    <!-- Google Map -->
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBu5nZKbeK-WHQ70oqOWo-_4VmwOwKP9YQ"></script>
+    <script src="plugins/google-map/gmap.js"></script>
 
     <!-- Form Validation -->
     <script src="plugins/form-validation/jquery.form.js"></script>
@@ -119,10 +197,14 @@ Welcome Slider
     <script src="plugins/parallax/jquery.parallax-1.1.3.js"></script>
     <!-- lightbox -->
     <script src="plugins/lightbox2/dist/js/lightbox.min.js"></script>
+    <!-- Owl Carousel -->
+    <script src="plugins/slick/slick.min.js"></script>
     <!-- filter -->
     <script src="plugins/filterizr/jquery.filterizr.min.js"></script>
     <!-- Smooth Scroll js -->
     <script src="plugins/smooth-scroll/smooth-scroll.min.js"></script>
+    <!-- TweenMax -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/2.1.3/TweenMax.min.js"></script>
 
     <!-- Custom js -->
     <script src="js/script.js"></script>

@@ -1,11 +1,10 @@
-
 /*=================================================================
   Testimonial section
 ==================================================================*/
 
 .testimonial {
   padding-top: 100px;
-  background: $primary-color;
+  background: $primary-color-light;
   position: relative;
   padding-bottom: 0px;
   margin-bottom: 80px;
@@ -23,7 +22,7 @@
   .item {
     i {
       font-size: 60px;
-      color: $light;
+      color: $white;
       margin-bottom: 50px;
       display: inline-block;
     }
@@ -31,7 +30,7 @@
       padding-bottom: 30px;
       p {
         font-size: 17px;
-        color: $light;
+        color: $white;
         font-weight: 200;
         padding: 0 10%;
       }
@@ -40,7 +39,7 @@
       display: inline-block;
       border-radius: 100%;
       width: 150px;
-      height:auto;
+      height: auto;
     }
   }
 }

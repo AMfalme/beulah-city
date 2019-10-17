@@ -6,10 +6,12 @@
   padding: 100px 0 130px;
   .service-block {
     &.color-bg {
-      background:$primary-color;
-      color:$light;
-      i,h3,p {
-        color:$light;
+      background: $primary-color-light;
+      color: $white;
+      i,
+      h3,
+      p {
+        color: $white;
       }
     }
     .service-icon {
@@ -17,10 +19,10 @@
     }
     i {
       font-size: 75px;
-      color: $primary-color;
+      color: $primary-color-light;
     }
     h3 {
-      color:#333;
+      color: #333;
       font-size: 18px;
       text-transform: uppercase;
       font-weight: bold;
@@ -31,7 +33,6 @@
     }
   }
 }
-
 
 /*=================================================================
   Services section 2
@@ -49,13 +50,13 @@
       -webkit-box-shadow: 0 5px 65px 0 rgba(0, 0, 0, 0.15);
     }
     &:hover i {
-      background: $light;
-      color:$primary-color;
+      background: $white;
+      color: $primary-color-light;
     }
     i {
       font-size: 30px;
       display: inline-block;
-      background: $primary-color none repeat scroll 0 0;
+      background: $primary-color-light none repeat scroll 0 0;
       border-radius: 30px;
       box-shadow: 0 5px 6px 0 rgba(0, 0, 0, 0.1);
       color: #fff;

@@ -1,11 +1,10 @@
-
 /*=================================================================
   Item counter section
 ==================================================================*/
 
 .counters-item {
   padding-bottom: 30px;
-  color:#444;
+  color: #444;
   position: relative;
   &.kill-border:before {
     background: none;
@@ -30,14 +29,13 @@
     line-height: 50px;
   }
   i {
-    font-size:40px;
+    font-size: 40px;
     display: inline-block;
-    color:$primary-color;
+    color: $primary-color-light;
   }
   h3 {
     font-size: 18px;
     margin: 0;
-    color:#666;
+    color: #666;
   }
 }
-

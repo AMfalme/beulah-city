@@ -1,4 +1,3 @@
-
 /*=================================================================
   Portfolio section
 ==================================================================*/
@@ -9,17 +8,17 @@
     cursor: pointer;
     display: inline-block;
     font-size: 14px;
-    padding:8px 20px;
+    padding: 8px 20px;
     text-transform: uppercase;
-    background:$primary-color;
-    border:none;
-    color:$light;
+    background: $primary-color-light;
+    border: none;
+    color: $white;
     outline: none;
     &.active {
-        background: $primary-color;
-        color:$light;
-        border-radius: 50px;
-      }
+      background: $primary-color-light;
+      color: $white;
+      border-radius: 50px;
+    }
   }
 }
 
@@ -30,18 +29,18 @@
     transition: all 0.3s ease-in-out;
     background: rgba(0, 0, 0, 0.55);
     opacity: 0;
-    top:0;
-    right:0;
-    bottom:0;
-    left:0;
-    position:absolute;
-    content: '';
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    position: absolute;
+    content: "";
   }
   &:hover:before {
     opacity: 1;
   }
   &:hover .caption h4 {
-    top:45%;
+    top: 45%;
   }
   &:hover .caption {
     opacity: 1;
@@ -49,22 +48,22 @@
   }
   .caption {
     position: absolute;
-    top:50%;
-    left:50%;
+    top: 50%;
+    left: 50%;
     opacity: 0;
     transform: translate(-50%, -50%);
     z-index: 9;
     transition: all 0.3s ease-in-out;
     text-align: center;
     h4 {
-      font-size: 16px;  
+      font-size: 16px;
       a {
-        color: $light;
+        color: $white;
       }
     }
     .search-icon {
-      background: $primary-color;
-      color:$light;
+      background: $primary-color-light;
+      color: $white;
       display: inline-block;
       padding: 4px 13px;
       font-size: 25px;
@@ -72,5 +71,3 @@
     }
   }
 }
-
-

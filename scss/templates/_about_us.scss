@@ -3,11 +3,11 @@
 ==================================================================*/
 
 .about {
-  padding:100px 0;
-  background: $light;
-  
+  padding: 100px 0;
+  background: $white;
+
   .btn-about {
-    background: $primary-color;
+    background: $primary-color-light;
   }
   h4 {
     margin-top: 30px;
@@ -23,19 +23,18 @@
       margin-bottom: 5px;
       font-weight: 600;
       i {
-        color: $primary-color;
+        color: $primary-color-light;
         margin-right: 8px;
       }
     }
   }
 }
 
-
 /*=================================================================
   About us 2 section
 ==================================================================*/
 .about-2 {
-  background: #F7F7F7;
+  background: #f7f7f7;
   .checklist {
     padding-left: 30px;
     li {

@@ -5,11 +5,11 @@
 .blog {
   padding-bottom: 110px;
   padding-top: 70px;
-  background: #F6F6F6;
+  background: #f6f6f6;
 }
 
 .post-item {
-  background: $light;
+  background: $white;
   margin-bottom: 20px;
   .content {
     padding: 20px;
@@ -44,20 +44,20 @@
 
 .post {
   &-content {
-    ul{
+    ul {
       margin-bottom: 20px;
-      li{
+      li {
         color: #aaa;
-        a{
+        a {
           color: #aaa;
         }
       }
     }
-    p{
+    p {
       margin-bottom: 30px;
     }
     blockquote {
-      border-left: 2px solid $primary-color;
+      border-left: 2px solid $primary-color-light;
       padding: 40px 35px;
       margin-bottom: 30px;
       background: rgb(238, 238, 238);
@@ -69,21 +69,21 @@
         width: 45px;
         border: 1px solid #ddd;
         text-align: center;
-        background: $light;
-        transition: .3s ease;
+        background: $white;
+        transition: 0.3s ease;
         margin-right: 10px;
         a {
-          i{
+          i {
             line-height: 45px;
             color: $black;
-            transition: .3s ease;
+            transition: 0.3s ease;
           }
         }
         &:hover {
-          background: $primary-color;
-          border-color: $primary-color;
-          i{
-            color: $light;
+          background: $primary-color-light;
+          border-color: $primary-color-light;
+          i {
+            color: $white;
           }
         }
       }
@@ -124,18 +124,18 @@
       position: absolute;
       top: 25px;
       right: 0;
-      background: $light;
+      background: $white;
       padding: 10px 30px;
       border: 1px solid #ddd;
       text-transform: capitalize;
       color: #000;
       font-size: 15px;
-      @media(max-width: 575px) {
+      @media (max-width: 575px) {
         position: unset;
       }
       &:hover {
-        background: $primary-color;
-        color: $light;
+        background: $primary-color-light;
+        color: $white;
       }
     }
   }
@@ -160,7 +160,7 @@
     height: 200px !important;
   }
   .btn-primary {
-    background: $primary-color;
+    background: $primary-color-light;
     border-radius: 0;
     padding: 10px 20px;
     border: 0;
@@ -178,9 +178,9 @@
   &-search {
     position: relative;
     .form-control {
-        border: 1px solid #dedede;
-        border-radius: 0;
-        height: 50px;
+      border: 1px solid #dedede;
+      border-radius: 0;
+      height: 50px;
     }
     &-btn {
       position: absolute;
@@ -188,10 +188,10 @@
       right: 0;
       height: 100%;
       width: 50px;
-      background: $primary-color;
+      background: $primary-color-light;
       border: 0;
       i {
-        color: $light;
+        color: $white;
       }
     }
   }
@@ -208,14 +208,14 @@
           padding: 15px 0;
           color: #000;
           font-size: 15px;
-          transition: .3s ease;
+          transition: 0.3s ease;
           i {
             font-size: 10px;
             margin-right: 10px;
           }
           &:hover {
-            background: $primary-color;
-            color: $light;
+            background: $primary-color-light;
+            color: $white;
             padding-left: 20px;
           }
         }
@@ -244,10 +244,10 @@
       h5 {
         font-size: 18px;
         margin-bottom: 10px;
-        transition: .3s ease;
+        transition: 0.3s ease;
         color: $black;
         &:hover {
-          color: $primary-color;
+          color: $primary-color-light;
         }
       }
     }

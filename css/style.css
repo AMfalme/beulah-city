@@ -1,5 +1,400 @@
 @charset "UTF-8";
 @import url("https://fonts.googleapis.com/css?family=Catamaran:400,500,600,700,700|Source+Sans+Pro:400,600");
+/*============================================================
+	For Small Desktop
+==============================================================*/
+@media (min-width: 700px) and (max-width: 1090px) {
+  .counters-item:before {
+    display: none;
+  }
+}
+@media (min-width: 980px) and (max-width: 1150px) {
+  /* parallax section */
+  .parallax-section {
+    background-position: center top !important;
+  }
+
+  /* home slider */
+  #slitSlider .carousel-caption h2 {
+    font-size: 60px;
+  }
+
+  /* about us */
+  .feature-desc h3 {
+    margin-top: 0;
+  }
+
+  /* our team */
+  .team-mate {
+    margin-bottom: 30px;
+  }
+
+  .mask ul {
+    top: 85px;
+  }
+
+  .mask ul li {
+    margin: 0 5px;
+  }
+
+  .team-mate > h4 {
+    margin-bottom: 10px;
+  }
+
+  .team-mate img {
+    margin: 0 auto;
+  }
+
+  .member-info ul li {
+    margin-right: 10px;
+  }
+
+  /* testimonial */
+  .client-info {
+    width: 55%;
+  }
+
+  /* blog page */
+  .tab-post-nav li a {
+    padding: 15px 8px;
+  }
+
+  /* single blog page */
+  .author-bio h5 {
+    margin-left: 70px;
+  }
+}
+/*============================================================
+	Tablet (Portrait) Design for a width of 768px
+==============================================================*/
+@media (min-width: 768px) and (max-width: 979px) {
+  .counters-item:before {
+    display: none;
+  }
+
+  /* parallax section */
+  .parallax-section {
+    background-position: center top !important;
+  }
+
+  /* navigation */
+  .navbar-inverse .navbar-nav li a {
+    padding: 20px 10px;
+  }
+
+  /* about us */
+  .wrap-about {
+    margin: 0 0 75px;
+  }
+
+  .about-content {
+    margin: 0 auto;
+    width: 60%;
+  }
+
+  /* fun facts */
+  #counter {
+    padding-bottom: 50px;
+  }
+
+  .counters-item {
+    margin-bottom: 30px;
+  }
+
+  /* our team */
+  .team-mate {
+    margin: 0 auto 30px;
+    width: 280px;
+  }
+
+  /* our skills */
+  .skill-chart {
+    margin: 0 auto 40px;
+    width: 300px;
+  }
+
+  .skill-chart {
+    margin: 0 auto 40px;
+    width: 90%;
+  }
+
+  .skill-chart > h3 {
+    margin: 15px 0;
+  }
+
+  /* pricing table */
+  .pricing {
+    margin: 0 auto 30px;
+    width: 300px;
+  }
+
+  /* testimonial */
+  .client-info {
+    width: 75%;
+  }
+
+  /* latest posts */
+  .note {
+    margin-bottom: 30px;
+  }
+
+  /* blog page */
+  .tab-post-nav li a {
+    padding: 10px;
+  }
+
+  /* singla blog page */
+  .author-social {
+    margin-left: 0;
+  }
+}
+/*============================================================
+	Mobile (Portrait) Design for a width of 320px
+==============================================================*/
+@media only screen and (max-width: 767px) {
+  .counters-item:before {
+    display: none;
+  }
+
+  .clients-logo-slider {
+    text-align: center;
+  }
+
+  /* parallax section */
+  .parallax-section {
+    background-position: center top !important;
+  }
+
+  /* h1 font size home slider */
+  h1 {
+    font-size: 30px;
+  }
+
+  .carousel-caption img {
+    width: 70%;
+  }
+
+  #slitSlider .carousel-caption h2 {
+    font-size: 24px;
+    letter-spacing: 0.5px;
+    line-height: 35px;
+    margin-bottom: 25px;
+  }
+
+  #slitSlider .carousel-caption h3 {
+    font-size: 20px;
+    letter-spacing: 0.5px;
+    line-height: 28px;
+    margin-bottom: 25px;
+  }
+
+  #slitSlider .carousel-caption a {
+    font-size: 14px;
+  }
+
+  .wrap-about {
+    margin: 0 auto 80px;
+    width: 85%;
+  }
+
+  .feature-desc a {
+    margin: 5px 5px 5px 0;
+  }
+
+  /* fun facts */
+  /* services */
+  #services .title {
+    padding-bottom: 60px;
+  }
+
+  /* our skills */
+  .skill-chart {
+    margin: 0 auto 40px;
+    width: 280px;
+  }
+
+  /* our team */
+  .team-mate {
+    margin: 0 auto 31px;
+    width: 280px;
+  }
+
+  .team-mate img {
+    margin: 0 auto;
+  }
+
+  .member-info ul {
+    text-align: center;
+    margin-bottom: 10px;
+  }
+
+  /* pricing table */
+  .pricing {
+    margin: 0 auto 20px;
+    width: 280px;
+  }
+
+  /* portfolio */
+  .portfolio-filter ul li a {
+    margin: 0 10px 10px 0;
+    padding: 5px 10px;
+  }
+
+  /* testimonials */
+  .sub-title h3 {
+    font-size: 18px;
+  }
+
+  .client-info {
+    width: 100%;
+  }
+
+  /* latest posts */
+  #blog {
+    padding-bottom: 0;
+  }
+
+  .note {
+    margin-bottom: 30px;
+  }
+
+  .note .excerpt {
+    padding: 0 20px 20px;
+  }
+
+  .all-post {
+    margin: 20px 0 30px;
+  }
+
+  /* contact */
+  .contact-info {
+    margin: 0 0 30px;
+  }
+
+  #map-canvas {
+    height: 250px;
+  }
+
+  /* footer */
+  .social-icon ul li,
+  .social-icon ul li:first-child {
+    margin: 15px;
+  }
+
+  .social-icon ul li a {
+    width: 50px;
+    height: 50px;
+  }
+
+  .social-icon ul li a i {
+    font-size: 24px;
+    line-height: 50px;
+  }
+
+  .blog-title h1 {
+    font-size: 28px;
+  }
+
+  /* blog page */
+  #blog-page {
+    margin: 0;
+  }
+
+  #blog-posts {
+    margin: 0 0 40px;
+  }
+
+  .post-excerpt h3 {
+    font-size: 20px;
+  }
+
+  .post-pagination ul li {
+    margin: 0 10px 10px 0;
+  }
+
+  .tab-post-nav li a {
+    padding: 8px 5px;
+  }
+
+  /* single blog page */
+  .author-social {
+    margin-left: 0;
+  }
+
+  .author-avatar {
+    margin-right: 10px;
+  }
+}
+/*============================================================
+	Mobile (Landscape) Design for a width of 480px
+==============================================================*/
+@media only screen and (min-width: 480px) and (max-width: 767px) {
+  .title h2 {
+    font-size: 32px;
+  }
+
+  .counter .counter-title h2 {
+    font-size: 35px;
+  }
+
+  /* about us */
+  .wrap-about {
+    margin: 0 auto 75px;
+    width: 70%;
+  }
+
+  /* our team */
+  .team-mate {
+    margin: 0 auto 30px;
+    width: 280px;
+  }
+
+  .team-mate img {
+    margin: 0 auto;
+  }
+
+  /* portfolio */
+  .og-grid li {
+    width: 245px;
+  }
+
+  /* skills */
+  .skill-chart {
+    margin: 0 auto 40px;
+    width: 300px;
+  }
+
+  /* pricing table */
+  .pricing {
+    margin: 0 auto 30px;
+    width: 350px;
+  }
+
+  /* testimonials */
+  .client-info {
+    width: 74%;
+  }
+
+  /* latest posts */
+  #blog {
+    padding-bottom: 0;
+  }
+
+  .note {
+    margin: 0 auto 30px;
+    width: 75%;
+  }
+
+  /* contact */
+  .contact-info {
+    width: 100%;
+  }
+
+  /* blog page */
+  .tab-post-nav li a {
+    padding: 10px 15px;
+  }
+}
 body {
   line-height: 1.4;
   font-family: "apex";
@@ -9,7 +404,11 @@ body {
 p {
   font-family: "apex";
   color: white;
-  font-size: 16px;
+}
+@media (min-width: 992px) {
+  p {
+    font-size: 16px;
+  }
 }
 
 h1,
@@ -61,12 +460,12 @@ a:hover {
 
 a:focus,
 a:hover {
-  color: #402c1b;
+  color: #f2bb40;
 }
 
 .btn-main {
-  background: #402c1b;
-  border: 1px solid #402c1b;
+  background: #f2bb40;
+  border: 1px solid #f2bb40;
   color: #fff;
   display: inline-block;
   font-size: 14px;
@@ -227,9 +626,10 @@ a:hover {
     height: 30px;
     -webkit-transform: translateY(15px);
     transform: translateY(15px);
-    background: #f2bb40;
+    background: #402c1b;
   }
-  50%, 100% {
+  50%,
+  100% {
     height: 5px;
     -webkit-transform: translateY(0);
     transform: translateY(0);
@@ -247,9 +647,10 @@ a:hover {
     height: 30px;
     -webkit-transform: translateY(15px);
     transform: translateY(15px);
-    background: #f2bb40;
+    background: #402c1b;
   }
-  50%, 100% {
+  50%,
+  100% {
     height: 5px;
     -webkit-transform: translateY(0);
     transform: translateY(0);
@@ -279,7 +680,7 @@ a:hover {
   margin: 20px auto 20px;
   position: relative;
   width: 80px;
-  background: #402c1b;
+  background: #f2bb40;
 }
 
 .bg-gray {
@@ -296,7 +697,7 @@ a:hover {
   font-family: "apex";
 }
 .header-bradcrumb a:hover {
-  color: #402c1b;
+  color: #f2bb40;
 }
 
 .colors-switcher {
@@ -402,152 +803,8 @@ a:hover {
   left: 0px;
 }
 
-.secondary-color {
-  color: #f2bb40;
-}
-
-.logo {
-  margin-top: 10px;
-  display: inline-block;
-}
-
-.single-page-header {
-  background-image: url("../images/about/about-header.jpg");
-  background-size: cover;
-  padding: 140px 0 70px;
-  text-align: center;
-  color: #fff;
-  position: relative;
-}
-.single-page-header:before {
-  background: rgba(0, 0, 0, 0.5);
-  position: absolute;
-  content: "";
-  top: 0;
-  right: 0;
-  left: 0;
-  bottom: 0;
-}
-
-/*=================================================================
-  Navigation
-==================================================================*/
-.navigation {
-  transition: 0.3s all;
-}
-.navigation .logo-default {
-  display: none;
-}
-.navigation .navbar-light .navbar-nav .nav-item .nav-link {
-  color: #fff;
-  font-size: 14px;
-  line-height: 26px;
-  padding: 20px 15px;
-  text-transform: uppercase;
-  letter-spacing: 1px;
-  transition: 0.2s ease-in-out 0s;
-}
-.navigation .navbar-light .navbar-nav .nav-item .nav-link:hover, .navigation .navbar-light .navbar-nav .nav-item .nav-link:active, .navigation .navbar-light .navbar-nav .nav-item .nav-link:focus {
-  background: none;
-  color: #f2bb40;
-}
-.navigation .navbar-light .navbar-nav .nav-item.active .nav-link {
-  color: #f2bb40;
-}
-@media (max-width: 991px) {
-  .navigation .nav-link {
-    padding: 10px !important;
-  }
-}
-.navigation .dropdown:hover .dropdown-menu {
-  visibility: visible;
-  opacity: 1;
-  transform: scaleY(1);
-}
-.navigation .dropdown-menu {
-  border: 0;
-  border-radius: 0;
-  top: 80%;
-  left: 5px;
-  display: block;
-  visibility: hidden;
-  transition: 0.3s ease;
-  opacity: 0;
-  transform: scaleY(0);
-  transform-origin: top;
-  background: #000;
-}
-@media (max-width: 991px) {
-  .navigation .dropdown-menu {
-    display: none;
-    opacity: 1;
-    visibility: visible;
-    transform: scaleY(1);
-    transform-origin: unset;
-    text-align: center;
-  }
-}
-.navigation .dropdown-menu.show {
-  visibility: visible;
-  opacity: 1;
-  transform: scaleY(1);
-}
-@media (max-width: 991px) {
-  .navigation .dropdown-menu.show {
-    display: block;
-  }
-}
-.navigation .dropdown-item {
-  color: rgba(255, 255, 255, 0.8);
-  transition: 0.2s ease;
-  padding: 10px;
-}
-.navigation .dropdown-item:hover {
-  color: #fff;
-  background: transparent;
-  padding-left: 12px;
-}
-
-@media (max-width: 991px) {
-  .navigation {
-    box-shadow: 0 4px 10px 0 rgba(0, 0, 0, 0.06);
-    background: #fff;
-  }
-  .navigation .navbar-light .navbar-nav .nav-item .nav-link {
-    color: #000;
-  }
-  .navigation .logo-white {
-    display: none;
-  }
-  .navigation .logo-default {
-    display: block;
-  }
-  .navigation .navbar-light .navbar-toggler {
-    color: rgba(0, 0, 0, 0.5);
-    border-color: rgba(0, 0, 0, 0.1);
-  }
-}
-.sticky-header {
-  box-shadow: 0 4px 10px 0 rgba(0, 0, 0, 0.06);
-  background: #fff;
-}
-.sticky-header .navbar-light .navbar-nav .nav-item .nav-link {
-  color: #000;
-}
-.sticky-header .logo-white {
-  display: none;
-}
-.sticky-header .logo-default {
-  display: block;
-}
-
-.navbar-brand {
-  height: auto;
-  padding: 8px 0;
-}
-
-.navbar-brand h1 {
-  margin: 0;
+.secondary-color-dark {
+  color: #402c1b;
 }
 
 /*============================================================
@@ -827,7 +1084,7 @@ a:hover {
 
   /* footer */
   .social-icon ul li,
-.social-icon ul li:first-child {
+  .social-icon ul li:first-child {
     margin: 15px;
   }
 
@@ -945,29 +1202,1045 @@ a:hover {
     padding: 10px 15px;
   }
 }
-/* break point guidelines */
+.logo {
+  margin-top: 10px;
+  display: inline-block;
+}
+.logo img {
+  width: 200px;
+  height: auto;
+}
+
+.single-page-header {
+  background-image: url("../images/about/about-header.jpg");
+  background-size: cover;
+  padding: 140px 0 70px;
+  text-align: center;
+  color: #fff;
+  position: relative;
+}
+.single-page-header:before {
+  background: rgba(0, 0, 0, 0.5);
+  position: absolute;
+  content: "";
+  top: 0;
+  right: 0;
+  left: 0;
+  bottom: 0;
+}
+
+/*============================================================
+	For Small Desktop
+==============================================================*/
+@media (min-width: 700px) and (max-width: 1090px) {
+  .counters-item:before {
+    display: none;
+  }
+}
+@media (min-width: 980px) and (max-width: 1150px) {
+  /* parallax section */
+  .parallax-section {
+    background-position: center top !important;
+  }
+
+  /* home slider */
+  #slitSlider .carousel-caption h2 {
+    font-size: 60px;
+  }
+
+  /* about us */
+  .feature-desc h3 {
+    margin-top: 0;
+  }
+
+  /* our team */
+  .team-mate {
+    margin-bottom: 30px;
+  }
+
+  .mask ul {
+    top: 85px;
+  }
+
+  .mask ul li {
+    margin: 0 5px;
+  }
+
+  .team-mate > h4 {
+    margin-bottom: 10px;
+  }
+
+  .team-mate img {
+    margin: 0 auto;
+  }
+
+  .member-info ul li {
+    margin-right: 10px;
+  }
+
+  /* testimonial */
+  .client-info {
+    width: 55%;
+  }
+
+  /* blog page */
+  .tab-post-nav li a {
+    padding: 15px 8px;
+  }
+
+  /* single blog page */
+  .author-bio h5 {
+    margin-left: 70px;
+  }
+}
+/*============================================================
+	Tablet (Portrait) Design for a width of 768px
+==============================================================*/
+@media (min-width: 768px) and (max-width: 979px) {
+  .counters-item:before {
+    display: none;
+  }
+
+  /* parallax section */
+  .parallax-section {
+    background-position: center top !important;
+  }
+
+  /* navigation */
+  .navbar-inverse .navbar-nav li a {
+    padding: 20px 10px;
+  }
+
+  /* about us */
+  .wrap-about {
+    margin: 0 0 75px;
+  }
+
+  .about-content {
+    margin: 0 auto;
+    width: 60%;
+  }
+
+  /* fun facts */
+  #counter {
+    padding-bottom: 50px;
+  }
+
+  .counters-item {
+    margin-bottom: 30px;
+  }
+
+  /* our team */
+  .team-mate {
+    margin: 0 auto 30px;
+    width: 280px;
+  }
+
+  /* our skills */
+  .skill-chart {
+    margin: 0 auto 40px;
+    width: 300px;
+  }
+
+  .skill-chart {
+    margin: 0 auto 40px;
+    width: 90%;
+  }
+
+  .skill-chart > h3 {
+    margin: 15px 0;
+  }
+
+  /* pricing table */
+  .pricing {
+    margin: 0 auto 30px;
+    width: 300px;
+  }
+
+  /* testimonial */
+  .client-info {
+    width: 75%;
+  }
+
+  /* latest posts */
+  .note {
+    margin-bottom: 30px;
+  }
+
+  /* blog page */
+  .tab-post-nav li a {
+    padding: 10px;
+  }
+
+  /* singla blog page */
+  .author-social {
+    margin-left: 0;
+  }
+}
+/*============================================================
+	Mobile (Portrait) Design for a width of 320px
+==============================================================*/
+@media only screen and (max-width: 767px) {
+  .counters-item:before {
+    display: none;
+  }
+
+  .clients-logo-slider {
+    text-align: center;
+  }
+
+  /* parallax section */
+  .parallax-section {
+    background-position: center top !important;
+  }
+
+  /* h1 font size home slider */
+  h1 {
+    font-size: 30px;
+  }
+
+  .carousel-caption img {
+    width: 70%;
+  }
+
+  #slitSlider .carousel-caption h2 {
+    font-size: 24px;
+    letter-spacing: 0.5px;
+    line-height: 35px;
+    margin-bottom: 25px;
+  }
+
+  #slitSlider .carousel-caption h3 {
+    font-size: 20px;
+    letter-spacing: 0.5px;
+    line-height: 28px;
+    margin-bottom: 25px;
+  }
+
+  #slitSlider .carousel-caption a {
+    font-size: 14px;
+  }
+
+  .wrap-about {
+    margin: 0 auto 80px;
+    width: 85%;
+  }
+
+  .feature-desc a {
+    margin: 5px 5px 5px 0;
+  }
+
+  /* fun facts */
+  /* services */
+  #services .title {
+    padding-bottom: 60px;
+  }
+
+  /* our skills */
+  .skill-chart {
+    margin: 0 auto 40px;
+    width: 280px;
+  }
+
+  /* our team */
+  .team-mate {
+    margin: 0 auto 31px;
+    width: 280px;
+  }
+
+  .team-mate img {
+    margin: 0 auto;
+  }
+
+  .member-info ul {
+    text-align: center;
+    margin-bottom: 10px;
+  }
+
+  /* pricing table */
+  .pricing {
+    margin: 0 auto 20px;
+    width: 280px;
+  }
+
+  /* portfolio */
+  .portfolio-filter ul li a {
+    margin: 0 10px 10px 0;
+    padding: 5px 10px;
+  }
+
+  /* testimonials */
+  .sub-title h3 {
+    font-size: 18px;
+  }
+
+  .client-info {
+    width: 100%;
+  }
+
+  /* latest posts */
+  #blog {
+    padding-bottom: 0;
+  }
+
+  .note {
+    margin-bottom: 30px;
+  }
+
+  .note .excerpt {
+    padding: 0 20px 20px;
+  }
+
+  .all-post {
+    margin: 20px 0 30px;
+  }
+
+  /* contact */
+  .contact-info {
+    margin: 0 0 30px;
+  }
+
+  #map-canvas {
+    height: 250px;
+  }
+
+  /* footer */
+  .social-icon ul li,
+  .social-icon ul li:first-child {
+    margin: 15px;
+  }
+
+  .social-icon ul li a {
+    width: 50px;
+    height: 50px;
+  }
+
+  .social-icon ul li a i {
+    font-size: 24px;
+    line-height: 50px;
+  }
+
+  .blog-title h1 {
+    font-size: 28px;
+  }
+
+  /* blog page */
+  #blog-page {
+    margin: 0;
+  }
+
+  #blog-posts {
+    margin: 0 0 40px;
+  }
+
+  .post-excerpt h3 {
+    font-size: 20px;
+  }
+
+  .post-pagination ul li {
+    margin: 0 10px 10px 0;
+  }
+
+  .tab-post-nav li a {
+    padding: 8px 5px;
+  }
+
+  /* single blog page */
+  .author-social {
+    margin-left: 0;
+  }
+
+  .author-avatar {
+    margin-right: 10px;
+  }
+}
+/*============================================================
+	Mobile (Landscape) Design for a width of 480px
+==============================================================*/
+@media only screen and (min-width: 480px) and (max-width: 767px) {
+  .title h2 {
+    font-size: 32px;
+  }
+
+  .counter .counter-title h2 {
+    font-size: 35px;
+  }
+
+  /* about us */
+  .wrap-about {
+    margin: 0 auto 75px;
+    width: 70%;
+  }
+
+  /* our team */
+  .team-mate {
+    margin: 0 auto 30px;
+    width: 280px;
+  }
+
+  .team-mate img {
+    margin: 0 auto;
+  }
+
+  /* portfolio */
+  .og-grid li {
+    width: 245px;
+  }
+
+  /* skills */
+  .skill-chart {
+    margin: 0 auto 40px;
+    width: 300px;
+  }
+
+  /* pricing table */
+  .pricing {
+    margin: 0 auto 30px;
+    width: 350px;
+  }
+
+  /* testimonials */
+  .client-info {
+    width: 74%;
+  }
+
+  /* latest posts */
+  #blog {
+    padding-bottom: 0;
+  }
+
+  .note {
+    margin: 0 auto 30px;
+    width: 75%;
+  }
+
+  /* contact */
+  .contact-info {
+    width: 100%;
+  }
+
+  /* blog page */
+  .tab-post-nav li a {
+    padding: 10px 15px;
+  }
+}
+/*=================================================================
+  Navigation
+==================================================================*/
+.navigation {
+  transition: 0.3s all;
+  display: flex;
+  flex-direction: row;
+}
+.navigation .logo-default {
+  display: none;
+}
+.navigation .navbar-light .navbar-nav .nav-item .nav-link {
+  color: #fff;
+  font-size: 14px;
+  line-height: 26px;
+  padding: 20px 15px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  transition: 0.2s ease-in-out 0s;
+}
+.navigation .navbar-light .navbar-nav .nav-item .nav-link:hover,
+.navigation .navbar-light .navbar-nav .nav-item .nav-link:active,
+.navigation .navbar-light .navbar-nav .nav-item .nav-link:focus {
+  background: none;
+  color: #f2bb40;
+}
+.navigation .navbar-light .navbar-nav .nav-item.active .nav-link {
+  color: #f2bb40;
+}
+@media (max-width: 991px) {
+  .navigation .nav-link {
+    padding: 10px !important;
+  }
+}
+.navigation .dropdown:hover .dropdown-menu {
+  visibility: visible;
+  opacity: 1;
+  transform: scaleY(1);
+}
+.navigation .dropdown-menu {
+  border: 0;
+  border-radius: 0;
+  top: 80%;
+  left: 5px;
+  display: block;
+  visibility: hidden;
+  transition: 0.3s ease;
+  opacity: 0;
+  transform: scaleY(0);
+  transform-origin: top;
+  background: #000;
+}
+@media (max-width: 991px) {
+  .navigation .dropdown-menu {
+    display: none;
+    opacity: 1;
+    visibility: visible;
+    transform: scaleY(1);
+    transform-origin: unset;
+    text-align: center;
+  }
+}
+.navigation .dropdown-menu.show {
+  visibility: visible;
+  opacity: 1;
+  transform: scaleY(1);
+}
+@media (max-width: 991px) {
+  .navigation .dropdown-menu.show {
+    display: block;
+  }
+}
+.navigation .dropdown-item {
+  color: rgba(255, 255, 255, 0.8);
+  transition: 0.2s ease;
+  padding: 10px;
+}
+.navigation .dropdown-item:hover {
+  color: #fff;
+  background: transparent;
+  padding-left: 12px;
+}
+
+@media (max-width: 991px) {
+  .navigation {
+    box-shadow: 0 4px 10px 0 rgba(0, 0, 0, 0.06);
+    background: #fff;
+  }
+  .navigation .navbar-light .navbar-nav .nav-item .nav-link {
+    color: #000;
+  }
+  .navigation .logo-white {
+    display: none;
+  }
+  .navigation .logo-default {
+    display: block;
+  }
+  .navigation .navbar-light .navbar-toggler {
+    color: rgba(0, 0, 0, 0.5);
+    border-color: rgba(0, 0, 0, 0.1);
+  }
+}
+.sticky-header {
+  box-shadow: 0 4px 10px 0 rgba(0, 0, 0, 0.06);
+  background: #fff;
+}
+.sticky-header .navbar-light .navbar-nav .nav-item .nav-link {
+  color: #000;
+}
+.sticky-header .logo-white {
+  display: none;
+}
+.sticky-header .logo-default {
+  display: block;
+}
+
+.navbar-brand {
+  height: auto;
+  padding: 8px 0;
+}
+
+.navbar-brand h1 {
+  margin: 0;
+}
+
+.nav-item .separator {
+  display: none;
+}
+
+@media (min-width: 991px) {
+  .nav-item .separator {
+    display: block;
+  }
+}
+.project-nav {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 50;
+  width: 100vw;
+  color: white;
+  overflow-x: scroll;
+}
+
+.project-nav__list {
+  display: flex;
+  flex-direction: row;
+}
+
+.project-nav__list-item {
+  min-width: 300px;
+  height: 180px;
+  z-index: 20;
+}
+@media (min-width: 992px) {
+  .project-nav__list-item {
+    width: 20vw;
+    height: 240px;
+  }
+}
+
+.project-nav__first-list-item {
+  opacity: 1;
+}
+
+.project-nav__list-item-bg {
+  z-index: 10;
+  background-color: #402c1b;
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  opacity: 0.75;
+}
+
+.project-nav__item-info {
+  height: inherit;
+  padding: 5%;
+}
+
+.project-nav__item-desc {
+  padding: 10% 0%;
+}
+
+.project-nav__link {
+  display: block;
+}
+
+a.project-nav__link:link {
+  color: grey;
+}
+
+a.project-nav__link:active,
+a.project-nav__link:hover {
+  color: #f2bb40;
+}
+
+.navigation__item {
+  flex-basis: 0;
+}
+
+.navigation__spacer-item {
+  flex-grow: 3;
+  border-top: 8px solid #f2bb40;
+}
+
+.navigation__navbar-item {
+  flex-grow: 4;
+}
+
+/*============================================================
+	For Small Desktop
+==============================================================*/
+@media (min-width: 700px) and (max-width: 1090px) {
+  .counters-item:before {
+    display: none;
+  }
+}
+@media (min-width: 980px) and (max-width: 1150px) {
+  /* parallax section */
+  .parallax-section {
+    background-position: center top !important;
+  }
+
+  /* home slider */
+  #slitSlider .carousel-caption h2 {
+    font-size: 60px;
+  }
+
+  /* about us */
+  .feature-desc h3 {
+    margin-top: 0;
+  }
+
+  /* our team */
+  .team-mate {
+    margin-bottom: 30px;
+  }
+
+  .mask ul {
+    top: 85px;
+  }
+
+  .mask ul li {
+    margin: 0 5px;
+  }
+
+  .team-mate > h4 {
+    margin-bottom: 10px;
+  }
+
+  .team-mate img {
+    margin: 0 auto;
+  }
+
+  .member-info ul li {
+    margin-right: 10px;
+  }
+
+  /* testimonial */
+  .client-info {
+    width: 55%;
+  }
+
+  /* blog page */
+  .tab-post-nav li a {
+    padding: 15px 8px;
+  }
+
+  /* single blog page */
+  .author-bio h5 {
+    margin-left: 70px;
+  }
+}
+/*============================================================
+	Tablet (Portrait) Design for a width of 768px
+==============================================================*/
+@media (min-width: 768px) and (max-width: 979px) {
+  .counters-item:before {
+    display: none;
+  }
+
+  /* parallax section */
+  .parallax-section {
+    background-position: center top !important;
+  }
+
+  /* navigation */
+  .navbar-inverse .navbar-nav li a {
+    padding: 20px 10px;
+  }
+
+  /* about us */
+  .wrap-about {
+    margin: 0 0 75px;
+  }
+
+  .about-content {
+    margin: 0 auto;
+    width: 60%;
+  }
+
+  /* fun facts */
+  #counter {
+    padding-bottom: 50px;
+  }
+
+  .counters-item {
+    margin-bottom: 30px;
+  }
+
+  /* our team */
+  .team-mate {
+    margin: 0 auto 30px;
+    width: 280px;
+  }
+
+  /* our skills */
+  .skill-chart {
+    margin: 0 auto 40px;
+    width: 300px;
+  }
+
+  .skill-chart {
+    margin: 0 auto 40px;
+    width: 90%;
+  }
+
+  .skill-chart > h3 {
+    margin: 15px 0;
+  }
+
+  /* pricing table */
+  .pricing {
+    margin: 0 auto 30px;
+    width: 300px;
+  }
+
+  /* testimonial */
+  .client-info {
+    width: 75%;
+  }
+
+  /* latest posts */
+  .note {
+    margin-bottom: 30px;
+  }
+
+  /* blog page */
+  .tab-post-nav li a {
+    padding: 10px;
+  }
+
+  /* singla blog page */
+  .author-social {
+    margin-left: 0;
+  }
+}
+/*============================================================
+	Mobile (Portrait) Design for a width of 320px
+==============================================================*/
+@media only screen and (max-width: 767px) {
+  .counters-item:before {
+    display: none;
+  }
+
+  .clients-logo-slider {
+    text-align: center;
+  }
+
+  /* parallax section */
+  .parallax-section {
+    background-position: center top !important;
+  }
+
+  /* h1 font size home slider */
+  h1 {
+    font-size: 30px;
+  }
+
+  .carousel-caption img {
+    width: 70%;
+  }
+
+  #slitSlider .carousel-caption h2 {
+    font-size: 24px;
+    letter-spacing: 0.5px;
+    line-height: 35px;
+    margin-bottom: 25px;
+  }
+
+  #slitSlider .carousel-caption h3 {
+    font-size: 20px;
+    letter-spacing: 0.5px;
+    line-height: 28px;
+    margin-bottom: 25px;
+  }
+
+  #slitSlider .carousel-caption a {
+    font-size: 14px;
+  }
+
+  .wrap-about {
+    margin: 0 auto 80px;
+    width: 85%;
+  }
+
+  .feature-desc a {
+    margin: 5px 5px 5px 0;
+  }
+
+  /* fun facts */
+  /* services */
+  #services .title {
+    padding-bottom: 60px;
+  }
+
+  /* our skills */
+  .skill-chart {
+    margin: 0 auto 40px;
+    width: 280px;
+  }
+
+  /* our team */
+  .team-mate {
+    margin: 0 auto 31px;
+    width: 280px;
+  }
+
+  .team-mate img {
+    margin: 0 auto;
+  }
+
+  .member-info ul {
+    text-align: center;
+    margin-bottom: 10px;
+  }
+
+  /* pricing table */
+  .pricing {
+    margin: 0 auto 20px;
+    width: 280px;
+  }
+
+  /* portfolio */
+  .portfolio-filter ul li a {
+    margin: 0 10px 10px 0;
+    padding: 5px 10px;
+  }
+
+  /* testimonials */
+  .sub-title h3 {
+    font-size: 18px;
+  }
+
+  .client-info {
+    width: 100%;
+  }
+
+  /* latest posts */
+  #blog {
+    padding-bottom: 0;
+  }
+
+  .note {
+    margin-bottom: 30px;
+  }
+
+  .note .excerpt {
+    padding: 0 20px 20px;
+  }
+
+  .all-post {
+    margin: 20px 0 30px;
+  }
+
+  /* contact */
+  .contact-info {
+    margin: 0 0 30px;
+  }
+
+  #map-canvas {
+    height: 250px;
+  }
+
+  /* footer */
+  .social-icon ul li,
+  .social-icon ul li:first-child {
+    margin: 15px;
+  }
+
+  .social-icon ul li a {
+    width: 50px;
+    height: 50px;
+  }
+
+  .social-icon ul li a i {
+    font-size: 24px;
+    line-height: 50px;
+  }
+
+  .blog-title h1 {
+    font-size: 28px;
+  }
+
+  /* blog page */
+  #blog-page {
+    margin: 0;
+  }
+
+  #blog-posts {
+    margin: 0 0 40px;
+  }
+
+  .post-excerpt h3 {
+    font-size: 20px;
+  }
+
+  .post-pagination ul li {
+    margin: 0 10px 10px 0;
+  }
+
+  .tab-post-nav li a {
+    padding: 8px 5px;
+  }
+
+  /* single blog page */
+  .author-social {
+    margin-left: 0;
+  }
+
+  .author-avatar {
+    margin-right: 10px;
+  }
+}
+/*============================================================
+	Mobile (Landscape) Design for a width of 480px
+==============================================================*/
+@media only screen and (min-width: 480px) and (max-width: 767px) {
+  .title h2 {
+    font-size: 32px;
+  }
+
+  .counter .counter-title h2 {
+    font-size: 35px;
+  }
+
+  /* about us */
+  .wrap-about {
+    margin: 0 auto 75px;
+    width: 70%;
+  }
+
+  /* our team */
+  .team-mate {
+    margin: 0 auto 30px;
+    width: 280px;
+  }
+
+  .team-mate img {
+    margin: 0 auto;
+  }
+
+  /* portfolio */
+  .og-grid li {
+    width: 245px;
+  }
+
+  /* skills */
+  .skill-chart {
+    margin: 0 auto 40px;
+    width: 300px;
+  }
+
+  /* pricing table */
+  .pricing {
+    margin: 0 auto 30px;
+    width: 350px;
+  }
+
+  /* testimonials */
+  .client-info {
+    width: 74%;
+  }
+
+  /* latest posts */
+  #blog {
+    padding-bottom: 0;
+  }
+
+  .note {
+    margin: 0 auto 30px;
+    width: 75%;
+  }
+
+  /* contact */
+  .contact-info {
+    width: 100%;
+  }
+
+  /* blog page */
+  .tab-post-nav li a {
+    padding: 10px 15px;
+  }
+}
 .hero-area {
-  background-image: url("../images/coming-soon-page-light.jpeg");
+  background-image: url("../images/slider/slider-bg-1.jpg");
   background-size: cover;
   height: 100vh;
   position: relative;
   display: flex;
   justify-content: center;
   align-items: center;
-  overflow: scroll;
-}
-@media (max-width: 599px) {
-  .hero-area {
-    background-image: url("../images/coming-soon-page-mobile.jpeg");
-  }
-}
-.hero-area .container {
-  height: inherit;
-  margin: 0px 10px;
-  padding: 0px;
 }
 .hero-area:before {
   content: "";
+  background: rgba(0, 0, 0, 0.63);
   position: absolute;
   top: 0;
   right: 0;
@@ -978,10 +2251,14 @@ a:hover {
   color: #fff;
 }
 .hero-area .block h1 {
-  font-size: 60px;
   font-weight: 700;
   margin-bottom: 20px;
   text-transform: uppercase;
+}
+@media (min-width: 992px) {
+  .hero-area .block h1 {
+    font-size: 60px;
+  }
 }
 .hero-area .block p {
   color: #fff;
@@ -993,33 +2270,6 @@ a:hover {
 }
 .hero-area .block .btn-main:hover {
   opacity: 0.8;
-}
-
-.hero-area-video {
-  height: 100vh;
-  position: inherit !important;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-.hero-area-video .block {
-  color: #fff;
-  text-align: center;
-}
-.hero-area-video .block h1 {
-  font-size: 60px;
-  font-weight: 700;
-  margin-bottom: 20px;
-}
-.hero-area-video .block p {
-  color: #fff;
-  text-transform: uppercase;
-  font-size: 12px;
-  letter-spacing: 3px;
-  margin-bottom: 20px;
-}
-.hero-area-video .block .btn-main {
-  margin-top: 20px;
 }
 
 .dark-bg {
@@ -1054,11 +2304,15 @@ a:hover {
 }
 .slider-item h1 {
   color: #fff;
-  font-size: 60px;
-  line-height: 70px;
   letter-spacing: 2px;
   font-weight: 700;
   margin-bottom: 20px;
+}
+@media (min-width: 992px) {
+  .slider-item h1 {
+    font-size: 50px;
+    line-height: 60px;
+  }
 }
 .slider-item p {
   color: #fff;
@@ -1098,7 +2352,7 @@ a:hover {
   z-index: 9;
   height: 70px;
   width: 70px;
-  background: rgba(64, 44, 27, 0.5);
+  background: rgba(242, 187, 64, 0.5);
   color: #fff;
   border: 0;
   line-height: 70px;
@@ -1130,7 +2384,7 @@ a:hover {
   outline: 0;
 }
 .slick-arrow:hover {
-  background: #402c1b;
+  background: #f2bb40;
 }
 
 .prevArrow {
@@ -1157,13 +2411,37 @@ a:hover {
   left: 20px;
 }
 
-#logo {
-  width: 200px;
-  margin: 20px 0px;
-  height: auto;
+/* /slick arrows */
+.home-page {
+  position: absolute;
+  width: 100vw;
+  height: 100vh;
+  background-color: #3d3332;
 }
 
-/* /slick arrows */
+.home-page__background {
+  height: inherit;
+  width: inherit;
+  position: absolute;
+  z-index: 10;
+  top: 0;
+  left: 0;
+}
+
+.home-page__background-image {
+  object-fit: cover;
+  opacity: 0;
+}
+
+.home-page__first-background-image {
+  opacity: 1;
+}
+
+.home-page__background-image--active {
+  color: #f2bb40;
+  background-color: grey;
+}
+
 /*=================================================================
   About us section
 ==================================================================*/
@@ -1172,7 +2450,7 @@ a:hover {
   background: #fff;
 }
 .about .btn-about {
-  background: #402c1b;
+  background: #f2bb40;
 }
 .about h4 {
   margin-top: 30px;
@@ -1190,7 +2468,7 @@ a:hover {
   font-weight: 600;
 }
 .about .feature-list li i {
-  color: #402c1b;
+  color: #f2bb40;
   margin-right: 8px;
 }
 
@@ -1198,7 +2476,7 @@ a:hover {
   About us 2 section
 ==================================================================*/
 .about-2 {
-  background: #F7F7F7;
+  background: #f7f7f7;
 }
 .about-2 .checklist {
   padding-left: 30px;
@@ -1284,14 +2562,14 @@ a:hover {
 .contact-form input:hover,
 .contact-form textarea:hover,
 .contact-form #contact-submit:hover {
-  border-color: #402c1b;
+  border-color: #f2bb40;
 }
 .contact-form #contact-submit {
   border: none;
   padding: 15px 0;
   width: 100%;
   margin: 0;
-  background: #402c1b;
+  background: #f2bb40;
   color: #fff;
   border-radius: 0;
 }
@@ -1324,9 +2602,9 @@ a:hover {
   text-align: center;
 }
 .social-icon ul li a:hover {
-  background: #402c1b;
+  background: #f2bb40;
   color: #fff;
-  border: 1px solid #402c1b;
+  border: 1px solid #f2bb40;
 }
 .social-icon ul li a:hover i {
   color: #fff;
@@ -1341,10 +2619,10 @@ a:hover {
 
 .error {
   padding: 10px;
-  color: #D8000C;
+  color: #d8000c;
   border-radius: 2px;
   font-size: 14px;
-  background-color: #FFBABA;
+  background-color: #ffbaba;
 }
 
 .success {
@@ -1355,7 +2633,8 @@ a:hover {
   padding: 10px;
 }
 
-#error, #success {
+#error,
+#success {
   display: none;
   margin-bottom: 10px;
 }
@@ -1401,7 +2680,7 @@ a:hover {
 .counters-item i {
   font-size: 40px;
   display: inline-block;
-  color: #402c1b;
+  color: #f2bb40;
 }
 .counters-item h3 {
   font-size: 18px;
@@ -1467,7 +2746,7 @@ a:hover {
   margin-top: 5px;
 }
 .pricing-table .price-title .value {
-  color: #402c1b;
+  color: #f2bb40;
   font-size: 50px;
   padding: 10px 0;
 }
@@ -1485,13 +2764,13 @@ a:hover {
   font-size: 14px;
   padding: 8px 20px;
   text-transform: uppercase;
-  background: #402c1b;
+  background: #f2bb40;
   border: none;
   color: #fff;
   outline: none;
 }
 .portfolio-filter button.active {
-  background: #402c1b;
+  background: #f2bb40;
   color: #fff;
   border-radius: 50px;
 }
@@ -1538,7 +2817,7 @@ a:hover {
   color: #fff;
 }
 .portfolio-block .caption .search-icon {
-  background: #402c1b;
+  background: #f2bb40;
   color: #fff;
   display: inline-block;
   padding: 4px 13px;
@@ -1553,10 +2832,12 @@ a:hover {
   padding: 100px 0 130px;
 }
 .services .service-block.color-bg {
-  background: #402c1b;
+  background: #f2bb40;
   color: #fff;
 }
-.services .service-block.color-bg i, .services .service-block.color-bg h3, .services .service-block.color-bg p {
+.services .service-block.color-bg i,
+.services .service-block.color-bg h3,
+.services .service-block.color-bg p {
   color: #fff;
 }
 .services .service-block .service-icon {
@@ -1564,7 +2845,7 @@ a:hover {
 }
 .services .service-block i {
   font-size: 75px;
-  color: #402c1b;
+  color: #f2bb40;
 }
 .services .service-block h3 {
   color: #333;
@@ -1593,12 +2874,12 @@ a:hover {
 }
 .service-2 .service-item:hover i {
   background: #fff;
-  color: #402c1b;
+  color: #f2bb40;
 }
 .service-2 .service-item i {
   font-size: 30px;
   display: inline-block;
-  background: #402c1b none repeat scroll 0 0;
+  background: #f2bb40 none repeat scroll 0 0;
   border-radius: 30px;
   box-shadow: 0 5px 6px 0 rgba(0, 0, 0, 0.1);
   color: #fff;
@@ -1627,7 +2908,7 @@ a:hover {
   height: 10px;
 }
 .team-skills .progress-block .progress .progress-bar {
-  background: #402c1b;
+  background: #f2bb40;
   box-shadow: none;
 }
 
@@ -1665,21 +2946,24 @@ a:hover {
   color: #838383;
 }
 .development-steps .step-2 {
-  background-color: #402c1b;
+  background-color: #f2bb40;
 }
-.development-steps .step-2 h4, .development-steps .step-2 p {
+.development-steps .step-2 h4,
+.development-steps .step-2 p {
   color: #fff;
 }
 .development-steps .step-3 {
-  background: #1c130c;
+  background: #efaa10;
 }
-.development-steps .step-3 h4, .development-steps .step-3 p {
+.development-steps .step-3 h4,
+.development-steps .step-3 p {
   color: #fff;
 }
 .development-steps .step-4 {
-  background: #0a0704;
+  background: #d7990f;
 }
-.development-steps .step-4 h4, .development-steps .step-4 p {
+.development-steps .step-4 h4,
+.development-steps .step-4 p {
   color: #fff;
 }
 
@@ -1688,7 +2972,7 @@ a:hover {
   ==================================================================*/
 .team {
   padding: 100px 0;
-  background: #F6F6F6;
+  background: #f6f6f6;
 }
 .team .team-member {
   background: #fff;
@@ -1728,7 +3012,7 @@ a:hover {
   transition: all 0.6s ease 0s;
 }
 .team .member-photo .mask {
-  background: rgba(64, 44, 27, 0.7);
+  background: rgba(242, 187, 64, 0.7);
   position: absolute;
   width: 100%;
   bottom: 0;
@@ -1788,7 +3072,7 @@ a:hover {
 ==================================================================*/
 .testimonial {
   padding-top: 100px;
-  background: #402c1b;
+  background: #f2bb40;
   position: relative;
   padding-bottom: 0px;
   margin-bottom: 80px;
@@ -1831,7 +3115,7 @@ a:hover {
 .blog {
   padding-bottom: 110px;
   padding-top: 70px;
-  background: #F6F6F6;
+  background: #f6f6f6;
 }
 
 .post-item {
@@ -1875,7 +3159,7 @@ a:hover {
   margin-bottom: 30px;
 }
 .post-content blockquote {
-  border-left: 2px solid #402c1b;
+  border-left: 2px solid #f2bb40;
   padding: 40px 35px;
   margin-bottom: 30px;
   background: #eeeeee;
@@ -1898,8 +3182,8 @@ a:hover {
   transition: 0.3s ease;
 }
 .post-content-share li:hover {
-  background: #402c1b;
-  border-color: #402c1b;
+  background: #f2bb40;
+  border-color: #f2bb40;
 }
 .post-content-share li:hover i {
   color: #fff;
@@ -1950,7 +3234,7 @@ a:hover {
   }
 }
 .comment-list-item .comment-btn:hover {
-  background: #402c1b;
+  background: #f2bb40;
   color: #fff;
 }
 
@@ -1973,7 +3257,7 @@ a:hover {
   height: 200px !important;
 }
 .comment-form .btn-primary {
-  background: #402c1b;
+  background: #f2bb40;
   border-radius: 0;
   padding: 10px 20px;
   border: 0;
@@ -2001,7 +3285,7 @@ a:hover {
   right: 0;
   height: 100%;
   width: 50px;
-  background: #402c1b;
+  background: #f2bb40;
   border: 0;
 }
 .widget-search-btn i {
@@ -2028,7 +3312,7 @@ a:hover {
   margin-right: 10px;
 }
 .widget-categories-list li a:hover {
-  background: #402c1b;
+  background: #f2bb40;
   color: #fff;
   padding-left: 20px;
 }
@@ -2056,7 +3340,7 @@ a:hover {
   color: #000;
 }
 .widget-post-content h5:hover {
-  color: #402c1b;
+  color: #f2bb40;
 }
 
 /*=================================================================
@@ -2077,7 +3361,7 @@ a:hover {
   padding: 0 20px 10px;
 }
 .post-meta a {
-  color: #402c1b;
+  color: #f2bb40;
 }
 .post-meta > span {
   color: #666;
@@ -2131,7 +3415,7 @@ a:hover {
   color: #000;
 }
 .next-prev a:hover {
-  color: #402c1b;
+  color: #f2bb40;
 }
 .next-prev .prev-post i {
   margin-right: 10px;
@@ -2150,7 +3434,7 @@ a:hover {
   font-size: 16px;
 }
 .social-profile ul li a i:hover {
-  color: #402c1b;
+  color: #f2bb40;
 }
 
 .comments-section {
@@ -2194,7 +3478,7 @@ a:hover {
   margin-bottom: 8px;
 }
 .comment-wrap .media .media-heading a {
-  color: #402c1b;
+  color: #f2bb40;
   font-size: 13px;
 }
 .comment-wrap .media .comment-meta {
@@ -2208,16 +3492,19 @@ a:hover {
 .comment-reply-form {
   margin-top: 80px;
 }
-.comment-reply-form input, .comment-reply-form textarea {
+.comment-reply-form input,
+.comment-reply-form textarea {
   height: 35px;
   border-radius: 0;
   box-shadow: none;
 }
-.comment-reply-form input:focus, .comment-reply-form textarea:focus {
+.comment-reply-form input:focus,
+.comment-reply-form textarea:focus {
   box-shadow: none;
-  border: 1px solid #402c1b;
+  border: 1px solid #f2bb40;
 }
-.comment-reply-form textarea, .comment-reply-form .btn-main {
+.comment-reply-form textarea,
+.comment-reply-form .btn-main {
   height: auto;
 }
 
@@ -2261,7 +3548,7 @@ a:hover {
   display: block;
 }
 .top-footer li a:hover {
-  color: #402c1b;
+  color: #f2bb40;
 }
 
 .footer-bottom {
@@ -2290,7 +3577,7 @@ a:hover {
   margin-bottom: 0;
 }
 .footer-bottom a {
-  color: #402c1b;
+  color: #f2bb40;
 }
 
 .page-404 {
@@ -2579,7 +3866,7 @@ a:hover {
 
   /* footer */
   .social-icon ul li,
-.social-icon ul li:first-child {
+  .social-icon ul li:first-child {
     margin: 15px;
   }
 
@@ -2697,6 +3984,5 @@ a:hover {
     padding: 10px 15px;
   }
 }
-/* break point guidelines */
 
 /*# sourceMappingURL=style.css.map */

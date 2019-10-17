@@ -1,28 +1,17 @@
 @import "../responsive";
 
 .hero-area {
-  background-image: url("../images/coming-soon-page-light.jpeg");
+  background-image: url("../images/slider/slider-bg-1.jpg");
   background-size: cover;
   height: 100vh;
   position: relative;
   display: flex;
   justify-content: center;
   align-items: center;
-  overflow: scroll;
-
-  @include for-phone-only {
-    background-image: url("../images/coming-soon-page-mobile.jpeg");
-  }
-
-  .container {
-    height: inherit;
-    margin: 0px 10px;
-    padding: 0px;
-  }
 
   &:before {
     content: "";
-    // background: rgba(0, 0, 0, 0.63);
+    background: rgba(0, 0, 0, 0.63);
     position: absolute;
     top: 0;
     right: 0;
@@ -31,17 +20,20 @@
   }
 
   .block {
-    color: $light;
+    color: $white;
 
     h1 {
-      font-size: 60px;
       font-weight: 700;
       margin-bottom: 20px;
       text-transform: uppercase;
+
+      @include for-tablet-landscape-up {
+        font-size: 60px;
+      }
     }
 
     p {
-      color: $light;
+      color: $white;
       width: 50%;
       margin-bottom: 20px;
     }
@@ -52,37 +44,6 @@
       &:hover {
         opacity: 0.8;
       }
-    }
-  }
-}
-
-.hero-area-video {
-  height: 100vh;
-  position: inherit !important;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-
-  .block {
-    color: $light;
-    text-align: center;
-
-    h1 {
-      font-size: 60px;
-      font-weight: 700;
-      margin-bottom: 20px;
-    }
-
-    p {
-      color: $light;
-      text-transform: uppercase;
-      font-size: 12px;
-      letter-spacing: 3px;
-      margin-bottom: 20px;
-    }
-
-    .btn-main {
-      margin-top: 20px;
     }
   }
 }
@@ -121,11 +82,14 @@
 
   h1 {
     color: #fff;
-    font-size: 60px;
-    line-height: 70px;
     letter-spacing: 2px;
     font-weight: 700;
     margin-bottom: 20px;
+
+    @include for-tablet-landscape-up {
+      font-size: 50px;
+      line-height: 60px;
+    }
   }
 
   p {
@@ -173,7 +137,7 @@
   z-index: 9;
   height: 70px;
   width: 70px;
-  background: rgba($color: $primary-color, $alpha: 0.5);
+  background: rgba($color: $primary-color-light, $alpha: 0.5);
   color: #fff;
   border: 0;
   line-height: 70px;
@@ -208,7 +172,7 @@
   }
 
   &:hover {
-    background: $primary-color;
+    background: $primary-color-light;
   }
 }
 
@@ -240,10 +204,34 @@
   }
 }
 
-#logo {
-  width: 200px;
-  margin: 20px 0px;
-  height: auto;
+/* /slick arrows */
+
+.home-page {
+  position: absolute;
+  width: 100vw;
+  height: 100vh;
+  background-color: #3d3332;
 }
 
-/* /slick arrows */
+.home-page__background {
+  height: inherit;
+  width: inherit;
+  position: absolute;
+  z-index: 10;
+  top: 0;
+  left: 0;
+}
+
+.home-page__background-image {
+  object-fit: cover;
+  opacity: 0;
+}
+
+.home-page__first-background-image {
+  opacity: 1;
+}
+
+.home-page__background-image--active {
+  color: $primary-color-light;
+  background-color: grey;
+}

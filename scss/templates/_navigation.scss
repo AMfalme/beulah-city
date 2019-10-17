@@ -1,8 +1,11 @@
+@import "../responsive";
 /*=================================================================
   Navigation
 ==================================================================*/
 .navigation {
   transition: 0.3s all;
+  display: flex;
+  flex-direction: row;
 
   .logo-default {
     display: none;
@@ -11,7 +14,7 @@
   .navbar-light .navbar-nav {
     .nav-item {
       .nav-link {
-        color: $light;
+        color: $white;
         font-size: 14px;
         line-height: 26px;
         padding: 20px 15px;
@@ -23,13 +26,13 @@
         &:active,
         &:focus {
           background: none;
-          color: $secondary-color;
+          color: $primary-color-light;
         }
       }
 
       &.active {
         .nav-link {
-          color: $secondary-color;
+          color: $primary-color-light;
         }
       }
     }
@@ -85,12 +88,12 @@
   }
 
   .dropdown-item {
-    color: rgba($color: $light, $alpha: 0.8);
+    color: rgba($color: $white, $alpha: 0.8);
     transition: 0.2s ease;
     padding: 10px;
 
     &:hover {
-      color: $light;
+      color: $white;
       background: transparent;
       padding-left: 12px;
     }
@@ -100,7 +103,7 @@
 @media (max-width: 991px) {
   .navigation {
     box-shadow: 0 4px 10px 0 rgba(0, 0, 0, 0.06);
-    background: $light;
+    background: $white;
 
     .navbar-light .navbar-nav {
       .nav-item {
@@ -127,7 +130,7 @@
 
 .sticky-header {
   box-shadow: 0 4px 10px 0 rgba(0, 0, 0, 0.06);
-  background: $light;
+  background: $white;
 
   .navbar-light .navbar-nav {
     .nav-item {
@@ -153,4 +156,88 @@
 
 .navbar-brand h1 {
   margin: 0;
+}
+
+.nav-item .separator {
+  display: none;
+}
+
+@media (min-width: 991px) {
+  .nav-item .separator {
+    display: block;
+  }
+}
+
+.project-nav {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 50;
+  width: 100vw;
+  color: white;
+  overflow-x: scroll;
+}
+
+.project-nav__list {
+  display: flex;
+  flex-direction: row;
+}
+
+.project-nav__list-item {
+  min-width: 300px;
+  height: 180px;
+  z-index: 20;
+
+  @include for-tablet-landscape-up {
+    width: 20vw;
+    height: 240px;
+  }
+}
+.project-nav__first-list-item {
+  opacity: 1;
+}
+
+.project-nav__list-item-bg {
+  z-index: 10;
+  background-color: $secondary-color-dark;
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  opacity: 0.75;
+}
+
+.project-nav__item-info {
+  height: inherit;
+  padding: 5%;
+}
+
+.project-nav__item-desc {
+  padding: 10% 0%;
+}
+
+.project-nav__link {
+  display: block;
+}
+
+a.project-nav__link:link {
+  color: grey;
+}
+
+a.project-nav__link:active,
+a.project-nav__link:hover {
+  color: $primary-color-light;
+}
+
+.navigation__item {
+  flex-basis: 0;
+}
+
+.navigation__spacer-item {
+  flex-grow: 3;
+  border-top: 8px solid $primary-color-light;
+}
+
+.navigation__navbar-item {
+  flex-grow: 4;
 }

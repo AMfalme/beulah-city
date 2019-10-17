@@ -400,21 +400,20 @@
   }
 }
 
-/* break point guidelines */
-@mixin for-phone-only {
-  @media (max-width: 599px) {
+@mixin for-mobile-phones {
+  @media (min-width: 576px) {
     @content;
   }
 }
 
 @mixin for-tablet-portrait-up {
-  @media (min-width: 600px) {
+  @media (min-width: 768px) {
     @content;
   }
 }
 
 @mixin for-tablet-landscape-up {
-  @media (min-width: 900px) {
+  @media (min-width: 992px) {
     @content;
   }
 }
