@@ -52,12 +52,10 @@
 
   var activeContent = {
     className: "+=home-page__content-item--active"
-    // opacity: 1
   };
 
   var inactiveContent = {
     className: "-=home-page__content-item--active"
-    // opacity: 0
   };
 
   var secondProjectAnimate = new TimelineMax();
@@ -88,7 +86,7 @@
       0
     )
     .to(thirdBackground, 1.5, { opacity: 0 }, 0)
-    .to(thirdContentItem, 1.5, activeContent, 0)
+    .to(thirdContentItem, 1.5, inactiveContent, 0)
     .to(thirdBackground, 0, inactiveBackgroundProps, 0)
     .to(fourthBackground, 3, { opacity: 1 }, 0)
     .to(fourthContentItem, 1.5, activeContent, 1.5)
