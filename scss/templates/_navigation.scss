@@ -200,11 +200,16 @@
 
 .project-nav__list-item-bg {
   z-index: 10;
-  background-color: $secondary-color-dark;
+  background-color: #000;
   position: absolute;
   left: 0;
   bottom: 0;
   opacity: 0.75;
+}
+
+.project-nav__item-header {
+  font-family: "apex-new";
+  font-weight: bold;
 }
 
 .project-nav__item-info {
@@ -214,19 +219,25 @@
 
 .project-nav__item-desc {
   padding: 10% 0%;
+  font-family: "apex-new";
+  padding-top: 0px;
 }
 
 .project-nav__link {
   display: block;
 }
 
+.project-nav__link--inactive {
+  display: none;
+}
+
 a.project-nav__link:link {
-  color: grey;
+  color: #f93;
 }
 
 a.project-nav__link:active,
 a.project-nav__link:hover {
-  color: $primary-color-light;
+  font-weight: bolder;
 }
 
 .navigation__item {

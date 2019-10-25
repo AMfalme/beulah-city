@@ -277,7 +277,7 @@
 
   /* footer */
   .social-icon ul li,
-  .social-icon ul li:first-child {
+.social-icon ul li:first-child {
     margin: 15px;
   }
 
@@ -397,12 +397,12 @@
 }
 body {
   line-height: 1.4;
-  font-family: "apex";
+  font-family: "apex-new";
   -webkit-font-smoothing: antialiased;
 }
 
 p {
-  font-family: "apex";
+  font-family: "apex-new";
   color: white;
 }
 @media (min-width: 992px) {
@@ -628,8 +628,7 @@ a:hover {
     transform: translateY(15px);
     background: #402c1b;
   }
-  50%,
-  100% {
+  50%, 100% {
     height: 5px;
     -webkit-transform: translateY(0);
     transform: translateY(0);
@@ -649,8 +648,7 @@ a:hover {
     transform: translateY(15px);
     background: #402c1b;
   }
-  50%,
-  100% {
+  50%, 100% {
     height: 5px;
     -webkit-transform: translateY(0);
     transform: translateY(0);
@@ -694,7 +692,7 @@ a:hover {
 .header-bradcrumb .active {
   color: #cfcfcf;
   font-weight: 200;
-  font-family: "apex";
+  font-family: "apex-new";
 }
 .header-bradcrumb a:hover {
   color: #f2bb40;
@@ -1084,7 +1082,7 @@ a:hover {
 
   /* footer */
   .social-icon ul li,
-  .social-icon ul li:first-child {
+.social-icon ul li:first-child {
     margin: 15px;
   }
 
@@ -1506,7 +1504,7 @@ a:hover {
 
   /* footer */
   .social-icon ul li,
-  .social-icon ul li:first-child {
+.social-icon ul li:first-child {
     margin: 15px;
   }
 
@@ -1644,9 +1642,7 @@ a:hover {
   letter-spacing: 1px;
   transition: 0.2s ease-in-out 0s;
 }
-.navigation .navbar-light .navbar-nav .nav-item .nav-link:hover,
-.navigation .navbar-light .navbar-nav .nav-item .nav-link:active,
-.navigation .navbar-light .navbar-nav .nav-item .nav-link:focus {
+.navigation .navbar-light .navbar-nav .nav-item .nav-link:hover, .navigation .navbar-light .navbar-nav .nav-item .nav-link:active, .navigation .navbar-light .navbar-nav .nav-item .nav-link:focus {
   background: none;
   color: #f2bb40;
 }
@@ -1792,11 +1788,16 @@ a:hover {
 
 .project-nav__list-item-bg {
   z-index: 10;
-  background-color: #402c1b;
+  background-color: #000;
   position: absolute;
   left: 0;
   bottom: 0;
   opacity: 0.75;
+}
+
+.project-nav__item-header {
+  font-family: "apex-new";
+  font-weight: bold;
 }
 
 .project-nav__item-info {
@@ -1806,19 +1807,25 @@ a:hover {
 
 .project-nav__item-desc {
   padding: 10% 0%;
+  font-family: "apex-new";
+  padding-top: 0px;
 }
 
 .project-nav__link {
   display: block;
 }
 
+.project-nav__link--inactive {
+  display: none;
+}
+
 a.project-nav__link:link {
-  color: grey;
+  color: #f93;
 }
 
 a.project-nav__link:active,
 a.project-nav__link:hover {
-  color: #f2bb40;
+  font-weight: bolder;
 }
 
 .navigation__item {
@@ -2111,7 +2118,7 @@ a.project-nav__link:hover {
 
   /* footer */
   .social-icon ul li,
-  .social-icon ul li:first-child {
+.social-icon ul li:first-child {
     margin: 15px;
   }
 
@@ -2428,6 +2435,46 @@ a.project-nav__link:hover {
   left: 0;
 }
 
+.home-page__content-item {
+  z-index: 30;
+  position: absolute;
+  color: #fff;
+  top: calc(30% + 5 * (100vw - 320px) / 1120);
+  right: 0;
+  width: 800px;
+  max-width: 80vw;
+  font-size: calc(30px + 10 * (100vw - 320px) / 1120);
+  opacity: 0;
+}
+
+.home-page__content-item--active {
+  opacity: 1;
+}
+
+.home-page__project-welcome {
+  font-family: "apex-new-thin";
+  font-size: calc(40px + 10 * (100vw - 320px) / 1120);
+  font-weight: 300;
+}
+
+.home-page__project-title {
+  font-family: "apex-new-ultra";
+  font-size: calc(40px + 10 * (100vw - 320px) / 1120);
+}
+
+.home-page__project-description {
+  font-family: "apex-new";
+  font-weight: bold;
+  text-transform: lowercase;
+}
+
+.home-page__project-link {
+  font-family: "apex-new-thin";
+  color: #f93;
+  text-transform: uppercase;
+  font-weight: bolder;
+}
+
 .home-page__background-image {
   object-fit: cover;
   opacity: 0;
@@ -2486,7 +2533,7 @@ a.project-nav__link:hover {
   margin-bottom: 15px;
   font-size: 16px;
   color: #777;
-  font-family: "apex";
+  font-family: "apex-new";
 }
 .about-2 .checklist li:before {
   position: absolute;
@@ -3544,7 +3591,7 @@ a.project-nav__link:hover {
   -moz-transition: color 0.3s;
   -ms-transition: color 0.3s;
   transition: color 0.3s;
-  font-family: "apex";
+  font-family: "apex-new";
   display: block;
 }
 .top-footer li a:hover {
@@ -3866,7 +3913,7 @@ a.project-nav__link:hover {
 
   /* footer */
   .social-icon ul li,
-  .social-icon ul li:first-child {
+.social-icon ul li:first-child {
     margin: 15px;
   }
 

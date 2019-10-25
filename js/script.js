@@ -37,6 +37,12 @@
   var thirdBackground = bgImageClassObjs.eq(2);
   var fourthBackground = bgImageClassObjs.eq(3);
 
+  var homePageContentItems = $(".home-page__content-item");
+  var firstContentItem = homePageContentItems.eq(0);
+  var secondContentItem = homePageContentItems.eq(1);
+  var thirdContentItem = homePageContentItems.eq(2);
+  var fourthContentItem = homePageContentItems.eq(3);
+
   var inactiveBackgroundProps = {
     className: "-=home-page__background-image--active"
   };
@@ -44,19 +50,33 @@
     className: "+=home-page__background-image--active"
   };
 
+  var activeContent = {
+    className: "+=home-page__content-item--active"
+    // opacity: 1
+  };
+
+  var inactiveContent = {
+    className: "-=home-page__content-item--active"
+    // opacity: 0
+  };
+
   var secondProjectAnimate = new TimelineMax();
   secondProjectAnimate
     .to(".project-nav__list-item-bg", 3, { xPercent: 100 })
     .to(firstBackground, 1.5, { opacity: 0 }, 0)
     .to(firstBackground, 0, inactiveBackgroundProps, 0)
+    .to(firstContentItem, 1.5, inactiveContent, 0)
     .to(secondBackground, 3, { opacity: 1 }, 0)
+    .to(secondContentItem, 1.5, activeContent, 1.5)
     .to(secondBackground, 0, activeBackgroundProps, 0);
 
   var thirdProjectAnimate = new TimelineMax()
     .to(".project-nav__list-item-bg", 3, { xPercent: 200 })
     .to(secondBackground, 1.5, { opacity: 0 }, 0)
     .to(secondBackground, 0, inactiveBackgroundProps, 0)
+    .to(secondContentItem, 1.5, inactiveContent, 0)
     .to(thirdBackground, 3, { opacity: 1 }, 0)
+    .to(thirdContentItem, 1.5, activeContent, 1.5)
     .to(thirdBackground, 0, activeBackgroundProps, 0);
 
   var fourthProjectAnimate = new TimelineMax()
@@ -68,8 +88,10 @@
       0
     )
     .to(thirdBackground, 1.5, { opacity: 0 }, 0)
+    .to(thirdContentItem, 1.5, activeContent, 0)
     .to(thirdBackground, 0, inactiveBackgroundProps, 0)
     .to(fourthBackground, 3, { opacity: 1 }, 0)
+    .to(fourthContentItem, 1.5, activeContent, 1.5)
     .to(fourthBackground, 0, activeBackgroundProps, 0);
 
   //combined timeline for all slide changes
@@ -90,6 +112,7 @@
     //find current active background
     var backgrounds = $(".home-page__background-image");
     var currentActive = $(".home-page__background-image--active");
+    var contentItems = $(".home-page__content-item");
     var activeBackgroundIndex = backgrounds.index(currentActive);
     var clickedNavIndex = projectNavListItem.index($(this)) - 1; //account for overlay
 
@@ -109,11 +132,15 @@
       //animate to project
       var backgroundToActivate = backgrounds.eq(clickedNavIndex);
       var backgroundToHide = backgrounds.eq(activeBackgroundIndex);
+      var contentToActivate = contentItems.eq(clickedNavIndex);
+      var contentToHide = contentItems.eq(activeBackgroundIndex);
 
       var animateTransition = new TimelineMax();
       animateTransition
         .to(backgroundToHide, 0, inactiveBackgroundProps, 0)
+        .to(contentToHide, 1.5, inactiveContent, 0)
         .to(backgroundToActivate, 0, activeBackgroundProps, 0)
+        .to(contentToActivate, 1.5, activeContent, 1.5)
         .to(backgroundToActivate, 1.5, { opacity: 1 }, 0)
         .to(backgroundToHide, 3, { opacity: 0 }, 0)
         .to(".project-nav__list-item-bg", 3, animateProps, 0);
