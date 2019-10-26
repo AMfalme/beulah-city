@@ -5,6 +5,11 @@
   display: inline-block;
 }
 
+body {
+  height: 100%;
+  overflow: hidden;
+}
+
 ol,
 ul {
   margin: 0;
