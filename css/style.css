@@ -2482,6 +2482,7 @@ a.project-nav__link:hover {
   text-transform: uppercase;
   font-weight: bolder;
   font-size: calc(10px + 10 * (100vw - 320px) / 1120);
+  line-height: 1.5;
 }
 
 .home-page__background-image {
