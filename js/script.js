@@ -51,11 +51,13 @@
   };
 
   var activeContent = {
-    className: "+=home-page__content-item--active"
+    className: "+=home-page__content-item--active",
+    zIndex: 40
   };
 
   var inactiveContent = {
-    className: "-=home-page__content-item--active"
+    className: "-=home-page__content-item--active",
+    zIndex: 30
   };
 
   var secondProjectAnimate = new TimelineMax();
@@ -166,13 +168,13 @@
   /* =========================================================================  */
 
   // filter
-  setTimeout(function() {
-    var containerEl = document.querySelector(".filtr-container");
-    var filterizd;
-    if (containerEl) {
-      filterizd = $(".filtr-container").filterizr({});
-    }
-  }, 500);
+  // setTimeout(function() {
+  //   var containerEl = document.querySelector(".filtr-container");
+  //   var filterizd;
+  //   if (containerEl) {
+  //     filterizd = $(".filtr-container").filterizr({});
+  //   }
+  // }, 500);
 
   /* ========================================================================= */
   /*	Testimonial Carousel

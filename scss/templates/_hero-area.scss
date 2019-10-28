@@ -237,6 +237,7 @@
 
 .home-page__content-item--active {
   opacity: 1;
+  z-index: 40;
 }
 
 .home-page__project-welcome {
@@ -268,6 +269,7 @@
 
 .home-page__background-image {
   object-fit: cover;
+  background-size: cover;
   opacity: 0;
 }
 
@@ -278,4 +280,29 @@
 .home-page__background-image--active {
   color: $primary-color-light;
   background-color: grey;
+}
+
+.home-page__background-image1 {
+  background-image: url(../images/slider/android-1080p-1.jpg);
+  @include for-tablet-landscape-up {
+    background-image: url(../images/slider/slide1.jpg);
+  }
+}
+.home-page__background-image2 {
+  background-image: url(../images/slider/android-1080p-2.jpg);
+  @include for-tablet-landscape-up {
+    background-image: url(../images/slider/slide2.jpg);
+  }
+}
+.home-page__background-image3 {
+  background-image: url(../images/slider/android-1080p-3.jpg);
+  @include for-tablet-landscape-up {
+    background-image: url(../images/slider/slide3.jpg);
+  }
+}
+.home-page__background-image4 {
+  background-image: url(../images/slider/android-1080p-4.jpg);
+  @include for-tablet-landscape-up {
+    background-image: url(../images/slider/slide4.jpg);
+  }
 }

@@ -1,0 +1,126 @@
+/*=================================================================
+  About us section
+==================================================================*/
+
+.about {
+  padding: 100px 0;
+  background: $white;
+
+  .btn-about {
+    background: $primary-color-light;
+  }
+  h4 {
+    margin-top: 30px;
+  }
+  .feature-list {
+    margin-top: 10px;
+    li {
+      width: 48%;
+      display: inline-block;
+      color: #666;
+      font-size: 13px;
+      font-family: $secondary-font;
+      margin-bottom: 5px;
+      font-weight: 600;
+      i {
+        color: $primary-color-light;
+        margin-right: 8px;
+      }
+    }
+  }
+}
+
+/*=================================================================
+  About us 2 section
+==================================================================*/
+.about-2 {
+  background: #f7f7f7;
+  .checklist {
+    padding-left: 30px;
+    li {
+      position: relative;
+      margin-bottom: 15px;
+      font-size: 16px;
+      color: #777;
+      font-family: $primary-font;
+      &:before {
+        position: absolute;
+        margin-right: 12px;
+        margin-left: -45px;
+        content: "\f375";
+        font-family: $icon-font;
+        opacity: 1;
+        border-radius: 50%;
+        padding: 2px 8px;
+        font-size: 20px;
+      }
+    }
+  }
+}
+
+.project-info__nav-item + .project-info__nav-item::before {
+  content: "|";
+  color: #666;
+  padding: 1rem;
+}
+
+.project-info__nav-title::after {
+  content: ">";
+  color: #666;
+  padding: 1rem;
+}
+
+.project-info {
+  color: black;
+}
+.project-info__image {
+  max-height: 60vh;
+  width: 100vw;
+}
+.project-info__title {
+  font-family: "apex-new-ultra";
+}
+.project-info__title--center {
+  text-align: center;
+}
+.project-info__description {
+  text-align: left;
+  color: black;
+  line-height: 1.9;
+  font-size: 17px;
+}
+
+.project-info__image {
+  object-fit: cover;
+}
+
+.project-info__section {
+  width: 100%;
+}
+
+.project-floorplan__img {
+  object-fit: contain;
+  height: 200px;
+}
+
+.project-info__item--gray {
+  background: #f9f9f9;
+}
+
+.project-item__brochure-link {
+  color: #f93;
+}
+
+.project-info__nav-item {
+  color: #f93;
+  text-align: center;
+}
+
+.project-info__nav-title {
+  color: #f93;
+}
+
+.project-info__nav-container {
+  opacity: 0.8;
+  min-height: 80px;
+}

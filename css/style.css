@@ -429,11 +429,6 @@ h6 {
   display: inline-block;
 }
 
-body {
-  height: 100%;
-  overflow: hidden;
-}
-
 ol,
 ul {
   margin: 0;
@@ -808,6 +803,21 @@ a:hover {
 
 .secondary-color-dark {
   color: #402c1b;
+}
+
+.single-page {
+  height: 100%;
+  overflow: hidden;
+}
+
+.project-page {
+  height: 100%;
+  width: 100%;
+  overflow-x: hidden;
+}
+
+.breadcrumb-item + .breadcrumb-item::before {
+  color: #f2bb40;
 }
 
 /*============================================================
@@ -1214,15 +1224,15 @@ a:hover {
   height: auto;
 }
 
-.single-page-header {
-  background-image: url("../images/about/about-header.jpg");
+.project-page-header {
+  background-image: url("../images/company/projects/genesis/genesis-overview.jpg");
   background-size: cover;
   padding: 140px 0 70px;
   text-align: center;
   color: #fff;
   position: relative;
 }
-.single-page-header:before {
+.project-page-header:before {
   background: rgba(0, 0, 0, 0.5);
   position: absolute;
   content: "";
@@ -1825,7 +1835,7 @@ a:hover {
   display: none;
 }
 
-a.project-nav__link:link {
+a.project-nav__link {
   color: #f93;
 }
 
@@ -2456,6 +2466,7 @@ a.project-nav__link:hover {
 
 .home-page__content-item--active {
   opacity: 1;
+  z-index: 40;
 }
 
 .home-page__project-welcome {
@@ -2487,6 +2498,7 @@ a.project-nav__link:hover {
 
 .home-page__background-image {
   object-fit: cover;
+  background-size: cover;
   opacity: 0;
 }
 
@@ -2497,6 +2509,42 @@ a.project-nav__link:hover {
 .home-page__background-image--active {
   color: #f2bb40;
   background-color: grey;
+}
+
+.home-page__background-image1 {
+  background-image: url(../images/slider/android-1080p-1.jpg);
+}
+@media (min-width: 992px) {
+  .home-page__background-image1 {
+    background-image: url(../images/slider/slide1.jpg);
+  }
+}
+
+.home-page__background-image2 {
+  background-image: url(../images/slider/android-1080p-2.jpg);
+}
+@media (min-width: 992px) {
+  .home-page__background-image2 {
+    background-image: url(../images/slider/slide2.jpg);
+  }
+}
+
+.home-page__background-image3 {
+  background-image: url(../images/slider/android-1080p-3.jpg);
+}
+@media (min-width: 992px) {
+  .home-page__background-image3 {
+    background-image: url(../images/slider/slide3.jpg);
+  }
+}
+
+.home-page__background-image4 {
+  background-image: url(../images/slider/android-1080p-4.jpg);
+}
+@media (min-width: 992px) {
+  .home-page__background-image4 {
+    background-image: url(../images/slider/slide4.jpg);
+  }
 }
 
 /*=================================================================
@@ -2555,6 +2603,77 @@ a.project-nav__link:hover {
   border-radius: 50%;
   padding: 2px 8px;
   font-size: 20px;
+}
+
+.project-info__nav-item + .project-info__nav-item::before {
+  content: "|";
+  color: #666;
+  padding: 1rem;
+}
+
+.project-info__nav-title::after {
+  content: ">";
+  color: #666;
+  padding: 1rem;
+}
+
+.project-info {
+  color: black;
+}
+
+.project-info__image {
+  max-height: 60vh;
+  width: 100vw;
+}
+
+.project-info__title {
+  font-family: "apex-new-ultra";
+}
+
+.project-info__title--center {
+  text-align: center;
+}
+
+.project-info__description {
+  text-align: left;
+  color: black;
+  line-height: 1.9;
+  font-size: 17px;
+}
+
+.project-info__image {
+  object-fit: cover;
+}
+
+.project-info__section {
+  width: 100%;
+}
+
+.project-floorplan__img {
+  object-fit: contain;
+  height: 200px;
+}
+
+.project-info__item--gray {
+  background: #f9f9f9;
+}
+
+.project-item__brochure-link {
+  color: #f93;
+}
+
+.project-info__nav-item {
+  color: #f93;
+  text-align: center;
+}
+
+.project-info__nav-title {
+  color: #f93;
+}
+
+.project-info__nav-container {
+  opacity: 0.8;
+  min-height: 80px;
 }
 
 /*=================================================================
