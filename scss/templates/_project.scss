@@ -76,6 +76,8 @@
 .project-info__image {
   max-height: 60vh;
   width: 100vw;
+  object-fit: cover;
+  padding: 0;
 }
 .project-info__title {
   font-family: "apex-new-ultra";
@@ -90,11 +92,7 @@
   font-size: 17px;
 }
 
-.project-info__image {
-  object-fit: cover;
-}
-
-.project-info__section {
+.project-details__section {
   width: 100%;
 }
 
@@ -103,7 +101,7 @@
   height: 200px;
 }
 
-.project-info__item--gray {
+.project-details__section--secondary-bg {
   background: #f9f9f9;
 }
 
@@ -123,4 +121,9 @@
 .project-info__nav-container {
   opacity: 0.8;
   min-height: 80px;
+}
+
+// placeholder for floor-plan
+.filtr-item {
+  padding: 0;
 }

@@ -1225,7 +1225,7 @@ a:hover {
 }
 
 .project-page-header {
-  background-image: url("../images/company/projects/genesis/genesis-overview.jpg");
+  background-image: url("../images/company/projects/genesis/cover.jpeg");
   background-size: cover;
   padding: 140px 0 70px;
   text-align: center;
@@ -2624,6 +2624,8 @@ a.project-nav__link:hover {
 .project-info__image {
   max-height: 60vh;
   width: 100vw;
+  object-fit: cover;
+  padding: 0;
 }
 
 .project-info__title {
@@ -2641,11 +2643,7 @@ a.project-nav__link:hover {
   font-size: 17px;
 }
 
-.project-info__image {
-  object-fit: cover;
-}
-
-.project-info__section {
+.project-details__section {
   width: 100%;
 }
 
@@ -2654,7 +2652,7 @@ a.project-nav__link:hover {
   height: 200px;
 }
 
-.project-info__item--gray {
+.project-details__section--secondary-bg {
   background: #f9f9f9;
 }
 
@@ -2674,6 +2672,10 @@ a.project-nav__link:hover {
 .project-info__nav-container {
   opacity: 0.8;
   min-height: 80px;
+}
+
+.filtr-item {
+  padding: 0;
 }
 
 /*=================================================================

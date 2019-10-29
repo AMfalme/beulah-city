@@ -128,20 +128,20 @@ End Fixed Navigation
       <div class="container">
         <div class="row">
           <div class="col-md-12">
-            <h2>About Us</h2>
+            <h2>Beulah Genesis</h2>
             <ol
               class="breadcrumb header-bradcrumb breadcrumb-item-separator--orange"
             >
               <li class="breadcrumb-item"><a href="index.html">Home</a></li>
-              <li class="breadcrumb-item  active">About Us</li>
+              <li class="breadcrumb-item  active">Beulah Genesis</li>
             </ol>
           </div>
         </div>
       </div>
     </section>
     <section class="project-info">
-      <div class="project-info__nav-container d-flex mb-5">
-        <span class=" project-info__nav-title pl-1 pt-2 ">Beulah Genesis </span>
+      <div class="d-flex mb-5 project-info__nav-container">
+        <span class="project-info__nav-title pl-1 pt-2 ">Beulah Genesis </span>
         <nav class="nav nav-pills flex-grow-1 project-info-nav">
           <a class="nav-link project-info__nav-item" href="#unit-configuration"
             >Unit Configuration</a
@@ -154,12 +154,13 @@ End Fixed Navigation
           >
         </nav>
       </div>
-      <div class="project-info-details">
-        <div class="d-flex mb-5 project-info__section justify-content-center">
-          <div
-            class="project-info__item d-flex flex-column col-md-6 col-lg-4 ml-5"
-          >
-            <h4 class="project-info__title mb-3">
+      <div class="d-flex flex-column mb-5 project-info__details-container">
+        <!-- start of overview section -->
+        <div
+          class="d-flex justify-content-center mb-5 project-details__section"
+        >
+          <div class="d-flex flex-column col-md-6 col-lg-4 align-self-center">
+            <h4 class="project-info__title mb-4">
               Beulah Genesis At Dagoretti
             </h4>
             <p class="project-info__description">
@@ -171,25 +172,27 @@ End Fixed Navigation
               restaurants, sports facilities and a university campus.
             </p>
           </div>
-          <div class="col-md-2 col-lg-1"></div>
-          <div class="d-flex flex-column col-md-6 col-lg-4">
+          <div class="d-flex flex-column col-md-6 col-lg-5">
             <img
               class="project-info__image col-12"
               src="images/company/projects/genesis/genesis-overview.jpg"
             />
           </div>
         </div>
-        <div class="d-flex mb-5 project-info__section justify-content-center">
+        <!-- end of overview section -->
+        <div
+          class="d-flex justify-content-center mb-5 project-details__section"
+        >
           <div class="d-flex flex-column col-md-6 col-lg-5">
             <img
               class="project-info__image col-lg-12"
-              src="images/company/projects/genesis/genesis-renders-preview.jpg"
+              src="images/company/projects/genesis/genesis-overview.jpg"
             />
           </div>
           <div
-            class="project-info__item d-flex flex-column col-md-6 col-lg-4 ml-5"
+            class="d-flex flex-column col-md-6 col-lg-4 align-self-center ml-4"
           >
-            <h4 class="project-info__title mb-3">Inclusionary Space Design</h4>
+            <h4 class="project-info__title mb-4">Inclusionary Space Design</h4>
             <p class="project-info__description">
               Comprising of 1024 apartments set within a green space, Beulah
               Genesis offers a variety of unit configurations combining comfort
@@ -201,136 +204,140 @@ End Fixed Navigation
         </div>
         <!-- start of floor plans -->
         <div
-          class="project-info__item d-flex flex-column mb-3 mt-5 project-info__item--gray"
           id="floor-plan"
+          class="d-flex justify-content-center mb-5 project-details__section project-details__section--secondary-bg"
         >
-          <h4 class="project-info__title mb-3 mt-5 align-self-center">
-            <span class="align-self-end">Floor Plans</span>
-          </h4>
-          <div class="row filtr-container">
-            <div
-              class="col-md-4 col-sm-6 col-xs-6 filtr-item "
-              data-category="mix, design"
-            >
-              <div class="portfolio-block">
-                <img
-                  class="img-fluid project-floorplan__img"
-                  src="images/company/projects/genesis/genesis-floorplans.jpg"
-                  alt=""
-                />
-                <div class="caption">
-                  <a
-                    class="search-icon"
-                    href="images/company/projects/genesis/genesis-floorplans.jpg"
-                    data-lightbox="image-1"
-                  >
-                    <i class="tf-ion-ios-search-strong"></i>
-                  </a>
+          <div class="d-flex flex-column col-md-6 col-lg-5">
+            <h4 class="project-info__title mb-4 mt-4">
+              Floor Plans
+            </h4>
+            <div class="d-flex flex-wrap filtr-container">
+              <div
+                class="col-md-6 col-sm-6 col-xs-6 filtr-item "
+                data-category="mix, design"
+              >
+                <div class="portfolio-block">
+                  <img
+                    class="img-fluid project-floorplan__img"
+                    src="images/company/projects/genesis/genesis-floorplans.jpg"
+                    alt=""
+                  />
+                  <div class="caption">
+                    <a
+                      class="search-icon"
+                      href="images/company/projects/genesis/genesis-floorplans.jpg"
+                      data-lightbox="image-1"
+                    >
+                      <i class="tf-ion-ios-search-strong"></i>
+                    </a>
+                  </div>
+                </div>
+              </div>
+              <div
+                class="col-md-6 col-sm-6 col-xs-6 filtr-item"
+                data-category="mix, design, ios"
+              >
+                <div class="portfolio-block">
+                  <img
+                    class="img-responsive project-floorplan__img"
+                    src="images/company/projects/genesis/genesis-floorplan-studio.jpg"
+                    alt=""
+                  />
+                  <div class="caption">
+                    <a
+                      class="search-icon"
+                      href="images/company/projects/genesis/genesis-floorplan-studio.jpg"
+                      data-lightbox="image-1"
+                    >
+                      <i class="tf-ion-ios-search-strong"></i>
+                    </a>
+                  </div>
+                </div>
+              </div>
+              <div
+                class="col-md-6 col-sm-6 col-xs-6 filtr-item project-floorplan "
+                data-category="mix, photography, development"
+              >
+                <div class="portfolio-block">
+                  <img
+                    class="img-fluid project-floorplan__img"
+                    src="images/company/projects/genesis/genesis-floorplan1bed-a.jpg"
+                    alt=""
+                  />
+                  <div class="caption">
+                    <a
+                      class="search-icon"
+                      href="images/company/projects/genesis/genesis-floorplan1bed-a.jpg"
+                      data-lightbox="image-1"
+                    >
+                      <i class="tf-ion-ios-search-strong"></i>
+                    </a>
+                  </div>
+                </div>
+              </div>
+              <div
+                class="col-md-6 col-sm-6 col-xs-6 filtr-item "
+                data-category="mix, photography, ios"
+              >
+                <div class="portfolio-block">
+                  <img
+                    class="img-fluid project-floorplan__img"
+                    src="images/company/projects/genesis/genesis-floorplan1bed-b.jpg"
+                    alt=""
+                  />
+                  <div class="caption">
+                    <a
+                      class="search-icon"
+                      href="images/company/projects/genesis/genesis-floorplan1bed-b.jpg"
+                      data-lightbox="image-1"
+                    >
+                      <i class="tf-ion-ios-search-strong"></i>
+                    </a>
+                  </div>
                 </div>
               </div>
             </div>
-            <div
-              class="col-md-4 col-sm-6 col-xs-6 filtr-item"
-              data-category="mix, design, ios"
-            >
-              <div class="portfolio-block">
-                <img
-                  class="img-responsive project-floorplan__img"
-                  src="images/company/projects/genesis/genesis-floorplan-studio.jpg"
-                  alt=""
-                />
-                <div class="caption">
-                  <a
-                    class="search-icon"
-                    href="images/company/projects/genesis/genesis-floorplan-studio.jpg"
-                    data-lightbox="image-1"
-                  >
-                    <i class="tf-ion-ios-search-strong"></i>
-                  </a>
+          </div>
+          <div class="d-flex flex-column col-md-6 col-lg-4 ml-4">
+            <h4 class="d-flex mt-4 mb-4 invisible">Invisible</h4>
+            <div class="d-flex flex-wrap filtr-container">
+              <div class="col-12 filtr-item " data-category="mix, design">
+                <div class="portfolio-block">
+                  <img
+                    class="img-fluid project-floorplan__img"
+                    src="images/company/projects/genesis/genesis-floorplan-2bed-a.jpg"
+                    alt=""
+                  />
+                  <div class="caption">
+                    <a
+                      class="search-icon"
+                      href="images/company/projects/genesis/genesis-floorplan-2bed-a.jpg"
+                      data-lightbox="image-1"
+                    >
+                      <i class="tf-ion-ios-search-strong"></i>
+                    </a>
+                  </div>
                 </div>
               </div>
-            </div>
-            <div
-              class="col-md-4 col-sm-6 col-xs-6 filtr-item project-floorplan "
-              data-category="mix, photography, development"
-            >
-              <div class="portfolio-block">
-                <img
-                  class="img-fluid project-floorplan__img"
-                  src="images/company/projects/genesis/genesis-floorplan1bed-a.jpg"
-                  alt=""
-                />
-                <div class="caption">
-                  <a
-                    class="search-icon"
-                    href="images/company/projects/genesis/genesis-floorplan1bed-a.jpg"
-                    data-lightbox="image-1"
-                  >
-                    <i class="tf-ion-ios-search-strong"></i>
-                  </a>
-                </div>
-              </div>
-            </div>
-            <div
-              class="col-md-4 col-sm-6 col-xs-6 filtr-item "
-              data-category="mix, photography, ios"
-            >
-              <div class="portfolio-block">
-                <img
-                  class="img-fluid project-floorplan__img"
-                  src="images/company/projects/genesis/genesis-floorplan1bed-b.jpg"
-                  alt=""
-                />
-                <div class="caption">
-                  <a
-                    class="search-icon"
-                    href="images/company/projects/genesis/genesis-floorplan1bed-b.jpg"
-                    data-lightbox="image-1"
-                  >
-                    <i class="tf-ion-ios-search-strong"></i>
-                  </a>
-                </div>
-              </div>
-            </div>
-            <div
-              class="col-md-4 col-sm-6 col-xs-6 filtr-item "
-              data-category="mix, design"
-            >
-              <div class="portfolio-block">
-                <img
-                  class="img-fluid project-floorplan__img"
-                  src="images/company/projects/genesis/genesis-floorplan-2bed-a.jpg"
-                  alt=""
-                />
-                <div class="caption">
-                  <a
-                    class="search-icon"
-                    href="images/company/projects/genesis/genesis-floorplan-2bed-a.jpg"
-                    data-lightbox="image-1"
-                  >
-                    <i class="tf-ion-ios-search-strong"></i>
-                  </a>
-                </div>
-              </div>
-            </div>
-            <div
-              class="col-md-4 col-sm-6 col-xs-6 filtr-item "
-              data-category="mix, design, development"
-            >
-              <div class="portfolio-block">
-                <img
-                  class="img-fluid project-floorplan__img"
-                  src="images/company/projects/genesis/genesis-floorplan-2bed-b.jpg"
-                  alt=""
-                />
-                <div class="caption">
-                  <a
-                    class="search-icon"
-                    href="images/company/projects/genesis/genesis-floorplan-2bed-b.jpg"
-                    data-lightbox="image-1"
-                  >
-                    <i class="tf-ion-ios-search-strong"></i>
-                  </a>
+              <div
+                class="col-12 filtr-item "
+                data-category="mix, design, development"
+              >
+                <div class="portfolio-block">
+                  <img
+                    class="img-fluid project-floorplan__img"
+                    src="images/company/projects/genesis/genesis-floorplan-2bed-b.jpg"
+                    alt=""
+                  />
+                  <div class="caption">
+                    <a
+                      class="search-icon"
+                      href="images/company/projects/genesis/genesis-floorplan-2bed-b.jpg"
+                      data-lightbox="image-1"
+                    >
+                      <i class="tf-ion-ios-search-strong"></i>
+                    </a>
+                  </div>
                 </div>
               </div>
             </div>
@@ -338,7 +345,10 @@ End Fixed Navigation
         </div>
         <!-- end of floor plans -->
 
-        <div class="project-info__item" id="unit-configuration">
+        <div
+          id="unit-configuration"
+          class="d-flex justify-content-center mb-5 project-details__section"
+        >
           <h4 class="project-info__title project-info__title--center">
             Unit Configuration
           </h4>
