@@ -380,3 +380,8 @@ a:hover {
 .breadcrumb-item + .breadcrumb-item::before {
   color: $primary-color-light;
 }
+
+i.fab {
+  color: #f93;
+  font-size: 1.5rem;
+}

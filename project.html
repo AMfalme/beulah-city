@@ -34,6 +34,8 @@
     <link rel="stylesheet" href="plugins/animate/animate.css" />
     <!-- Slick Carousel -->
     <link rel="stylesheet" href="plugins/slick/slick.css" />
+    <!-- font awesome -->
+    <link rel="stylesheet" href="plugins/fontawesome/css/all.css" />
     <!-- Main Stylesheet -->
     <link rel="stylesheet" href="css/style.css" />
   </head>
@@ -309,7 +311,7 @@ End Fixed Navigation
             </div>
           </div>
           <div class="d-flex flex-column col-md-6 col-lg-4 ml-4">
-            <h4 class="d-flex mt-4 mb-4 invisible">Invisible</h4>
+            <h4 class="mt-4 mb-4 invisible">Invisible</h4>
             <div class="d-flex flex-wrap filtr-container">
               <div class="col-12 filtr-item " data-category="mix, design">
                 <div class="portfolio-block">
@@ -359,43 +361,58 @@ End Fixed Navigation
           id="unit-configuration"
           class="d-flex justify-content-center mb-5 project-details__section"
         >
-          <h4 class="project-info__title project-info__title--center">
-            Unit Configuration
-          </h4>
-          <div class="d-flex align-items-center">
-            <div class="col-md-6 col-lg-8 flex-grow-1"></div>
-            <div class="col-md-6 col-lg-4 align-self-end">
-              <table class="table table-borderless">
-                <thead>
-                  <tr>
-                    <th>Configuration</th>
-                    <th># Units</th>
-                    <th>Cost(KES)</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  <tr>
-                    <td>Studio</td>
-                    <td>308</td>
-                    <td>3 Million</td>
-                  </tr>
-                  <tr>
-                    <td>1 Bedroom</td>
-                    <td>308</td>
-                    <td>4.5 Million</td>
-                  </tr>
-                  <tr>
-                    <td>2 Bedroom</td>
-                    <td>408</td>
-                    <td>6.5 Million</td>
-                  </tr>
-                  <tr>
-                    <td>Total</td>
-                    <td>1024</td>
-                  </tr>
-                </tbody>
-              </table>
-            </div>
+          <div class="d-flex flex-column col-md-6 col-lg-5">
+            <h4 class="project-info__title mt-4 mb-4">
+              Unit Configuration
+            </h4>
+            <iframe
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3988.792635001318!2d36.754844215291875!3d-1.299204299052395!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x182f1a416d55fb21%3A0x6f7de4c9b545dcb5!2sDagoretti%20Corner!5e0!3m2!1ssw!2ske!4v1572355924759!5m2!1ssw!2ske"
+              width="600"
+              height="450"
+              frameborder="0"
+              style="border:0;"
+              allowfullscreen=""
+            ></iframe>
+          </div>
+          <div class="d-flex flex-column col-md-6 col-lg-4 ml-4">
+            <h4 class="mt-4 mb-4 invisible">Invisible</h4>
+            <table class="table ">
+              <thead>
+                <tr>
+                  <th>Configuration</th>
+                  <th># Units</th>
+                  <th>Cost(KES)</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>Studio</td>
+                  <td>308</td>
+                  <td>3 Million</td>
+                </tr>
+                <tr>
+                  <td>1 Bedroom</td>
+                  <td>308</td>
+                  <td>4.5 Million</td>
+                </tr>
+                <tr>
+                  <td>2 Bedroom</td>
+                  <td>408</td>
+                  <td>6.5 Million</td>
+                </tr>
+                <tr>
+                  <td>Total</td>
+                  <td>1024</td>
+                </tr>
+              </tbody>
+            </table>
+            <a
+              href="docs/beulah_genesis.pdf"
+              class="btn btn-main align-self-center"
+              download
+            >
+              Download Brochure
+            </a>
           </div>
         </div>
       </div>
@@ -403,41 +420,30 @@ End Fixed Navigation
 
     <footer id="footer" class="bg-one">
       <div class="top-footer">
-        <div class="container">
-          <div class="row">
-            <div class="col-sm-3 col-md-3 col-lg-3">
-              <h3>about</h3>
-              <p></p>
-            </div>
-            <!-- End of .col-sm-3 -->
-
-            <div class="col-sm-3 col-md-3 col-lg-3">
-              <ul>
-                <li><h3>Our Services</h3></li>
-                <li><a href="#">Modern Housing</a></li>
-              </ul>
-            </div>
-            <!-- End of .col-sm-3 -->
-
-            <div class="col-sm-3 col-md-3 col-lg-3">
-              <ul>
-                <li><h3>Quick Links</h3></li>
-                <li><a href="#">About</a></li>
-              </ul>
-            </div>
-            <!-- End of .col-sm-3 -->
-
-            <div class="col-sm-3 col-md-3 col-lg-3">
-              <ul>
-                <li><h3>Connect with us Socially</h3></li>
-                <li><a href="#">Facebook</a></li>
-                <li><a href="#">Twitter</a></li>
-                <li><a href="#">Youtube</a></li>
-                <li><a href="#">Pinterest</a></li>
-              </ul>
-            </div>
-            <!-- End of .col-sm-3 -->
+        <div class="d-flex justify-content-center">
+          <div class="col-sm-3 col-md-3 col-lg-3">
+            <ul>
+              <li><h3>About</h3></li>
+              <li><a href="#">Who We Are</a></li>
+              <li><a href="#">What We Do</a></li>
+              <li><a href="#">Why Us</a></li>
+            </ul>
           </div>
+          <!-- End of .col-sm-3 -->
+          <div class="col-sm-3 col-md-3 col-lg-3">
+            <h3>Social</h3>
+            <i class="fab fa-facebook-f ml-2"></i>
+            <i class="fab fa-instagram ml-2"></i>
+          </div>
+          <div class="col-sm-3 col-md-3 col-lg-3">
+            <ul>
+              <li><h3>Contact Us</h3></li>
+              <li class="top-footer__list-item"><a>101 Genesis Road</a></li>
+              <li class="top-footer__list-item"><a>Beulah Genesis</a></li>
+              <li class="top-footer__list-item"><a>Nairobi</a></li>
+            </ul>
+          </div>
+          <!-- End of .col-sm-3 -->
         </div>
         <!-- end container -->
       </div>

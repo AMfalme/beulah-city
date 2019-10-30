@@ -820,6 +820,11 @@ a:hover {
   color: #f2bb40;
 }
 
+i.fab {
+  color: #f93;
+  font-size: 1.5rem;
+}
+
 /*============================================================
 	For Small Desktop
 ==============================================================*/
@@ -3757,6 +3762,15 @@ a.project-nav__link:hover {
 }
 .footer-bottom a {
   color: #f2bb40;
+}
+
+.top-footer__list-item {
+  color: #bdbdbd;
+}
+
+.top-footer i:hover {
+  font-weight: bolder;
+  font-size: 1.75rem;
 }
 
 .page-404 {
