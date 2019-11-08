@@ -36,6 +36,40 @@
         }
       }
     }
+
+    .nav-item--secondary {
+      background-color: #000;
+      opacity: 0.6;
+      border-right: 1px solid #fff;
+      border-left: 1px solid #fff;
+
+      &:hover,
+      &:active,
+      &:focus,
+      &.active {
+        opacity: 1;
+        background-color: #ff8300;
+      }
+
+      .nav-link {
+        color: $white;
+        font-size: 14px;
+        line-height: 26px;
+        padding: 20px 15px;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+        transition: 0.2s ease-in-out 0s;
+
+        &:hover,
+        &:active,
+        &:focus,
+        &.active {
+          opacity: 1;
+          background-color: #ff8300;
+          color: $white;
+        }
+      }
+    }
   }
 
   @media (max-width: 991px) {
@@ -108,7 +142,12 @@
     .navbar-light .navbar-nav {
       .nav-item {
         .nav-link {
-          color: $black;
+          &:hover,
+          &:active,
+          &:focus {
+            background: none;
+            color: $primary-color-light;
+          }
         }
       }
     }
@@ -129,13 +168,28 @@
 }
 
 .sticky-header {
-  box-shadow: 0 4px 10px 0 rgba(0, 0, 0, 0.06);
-  background: $white;
+  background: transparent;
 
-  .navbar-light .navbar-nav {
-    .nav-item {
-      .nav-link {
-        color: $black;
+  .navbar-light {
+    padding-bottom: 0px;
+
+    .navbar-nav {
+      margin-bottom: 0px;
+
+      .nav-item {
+        .nav-link {
+          color: $black;
+        }
+      }
+      .nav-item--secondary {
+        background-color: $black;
+        opacity: 1;
+        margin-bottom: 0px;
+        color: $white;
+
+        .nav-link {
+          color: white;
+        }
       }
     }
   }
@@ -190,7 +244,7 @@
   height: 180px;
   z-index: 20;
 
-  @include for-tablet-landscape-up {
+  @include for-large-screen-up {
     width: 20vw;
     height: 240px;
   }
@@ -252,4 +306,8 @@ a.project-nav__link:hover {
 
 .navigation__navbar-item {
   flex-grow: 4;
+}
+
+.navbar-nav--secondary {
+  border-bottom: 3px solid #fff;
 }

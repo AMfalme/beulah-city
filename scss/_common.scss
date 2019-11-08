@@ -377,6 +377,10 @@ a:hover {
   overflow-x: hidden;
 }
 
+.index-page {
+  font-family: "apex-new";
+}
+
 .breadcrumb-item + .breadcrumb-item::before {
   color: $primary-color-light;
 }
@@ -384,4 +388,8 @@ a:hover {
 i.fab {
   color: #f93;
   font-size: 1.5rem;
+}
+
+body {
+  background-color: #ebdbcc;
 }

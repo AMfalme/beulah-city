@@ -397,12 +397,12 @@
 }
 body {
   line-height: 1.4;
-  font-family: "apex-new";
+  font-family: "Garamond";
   -webkit-font-smoothing: antialiased;
 }
 
 p {
-  font-family: "apex-new";
+  font-family: "Garamond";
   color: white;
 }
 @media (min-width: 992px) {
@@ -692,7 +692,7 @@ a:hover {
 .header-bradcrumb .active {
   color: #cfcfcf;
   font-weight: 200;
-  font-family: "apex-new";
+  font-family: "Garamond";
 }
 .header-bradcrumb a:hover {
   color: #f2bb40;
@@ -816,6 +816,10 @@ a:hover {
   overflow-x: hidden;
 }
 
+.index-page {
+  font-family: "apex-new";
+}
+
 .breadcrumb-item + .breadcrumb-item::before {
   color: #f2bb40;
 }
@@ -823,6 +827,10 @@ a:hover {
 i.fab {
   color: #f93;
   font-size: 1.5rem;
+}
+
+body {
+  background-color: #ebdbcc;
 }
 
 /*============================================================
@@ -1670,6 +1678,30 @@ i.fab {
 .navigation .navbar-light .navbar-nav .nav-item.active .nav-link {
   color: #f2bb40;
 }
+.navigation .navbar-light .navbar-nav .nav-item--secondary {
+  background-color: #000;
+  opacity: 0.6;
+  border-right: 1px solid #fff;
+  border-left: 1px solid #fff;
+}
+.navigation .navbar-light .navbar-nav .nav-item--secondary:hover, .navigation .navbar-light .navbar-nav .nav-item--secondary:active, .navigation .navbar-light .navbar-nav .nav-item--secondary:focus, .navigation .navbar-light .navbar-nav .nav-item--secondary.active {
+  opacity: 1;
+  background-color: #ff8300;
+}
+.navigation .navbar-light .navbar-nav .nav-item--secondary .nav-link {
+  color: #fff;
+  font-size: 14px;
+  line-height: 26px;
+  padding: 20px 15px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  transition: 0.2s ease-in-out 0s;
+}
+.navigation .navbar-light .navbar-nav .nav-item--secondary .nav-link:hover, .navigation .navbar-light .navbar-nav .nav-item--secondary .nav-link:active, .navigation .navbar-light .navbar-nav .nav-item--secondary .nav-link:focus, .navigation .navbar-light .navbar-nav .nav-item--secondary .nav-link.active {
+  opacity: 1;
+  background-color: #ff8300;
+  color: #fff;
+}
 @media (max-width: 991px) {
   .navigation .nav-link {
     padding: 10px !important;
@@ -1729,8 +1761,9 @@ i.fab {
     box-shadow: 0 4px 10px 0 rgba(0, 0, 0, 0.06);
     background: #fff;
   }
-  .navigation .navbar-light .navbar-nav .nav-item .nav-link {
-    color: #000;
+  .navigation .navbar-light .navbar-nav .nav-item .nav-link:hover, .navigation .navbar-light .navbar-nav .nav-item .nav-link:active, .navigation .navbar-light .navbar-nav .nav-item .nav-link:focus {
+    background: none;
+    color: #f2bb40;
   }
   .navigation .logo-white {
     display: none;
@@ -1744,11 +1777,25 @@ i.fab {
   }
 }
 .sticky-header {
-  box-shadow: 0 4px 10px 0 rgba(0, 0, 0, 0.06);
-  background: #fff;
+  background: transparent;
+}
+.sticky-header .navbar-light {
+  padding-bottom: 0px;
+}
+.sticky-header .navbar-light .navbar-nav {
+  margin-bottom: 0px;
 }
 .sticky-header .navbar-light .navbar-nav .nav-item .nav-link {
   color: #000;
+}
+.sticky-header .navbar-light .navbar-nav .nav-item--secondary {
+  background-color: #000;
+  opacity: 1;
+  margin-bottom: 0px;
+  color: #fff;
+}
+.sticky-header .navbar-light .navbar-nav .nav-item--secondary .nav-link {
+  color: white;
 }
 .sticky-header .logo-white {
   display: none;
@@ -1861,6 +1908,10 @@ a.project-nav__link:hover {
 
 .navigation__navbar-item {
   flex-grow: 4;
+}
+
+.navbar-nav--secondary {
+  border-bottom: 3px solid #fff;
 }
 
 /*============================================================
@@ -2597,7 +2648,7 @@ a.project-nav__link:hover {
   margin-bottom: 15px;
   font-size: 16px;
   color: #777;
-  font-family: "apex-new";
+  font-family: "Garamond";
 }
 .about-2 .checklist li:before {
   position: absolute;
@@ -2628,14 +2679,19 @@ a.project-nav__link:hover {
 }
 
 .project-info__image {
-  max-height: 60vh;
-  width: 100vw;
+  height: 100%;
+  width: 100%;
   object-fit: cover;
   padding: 0;
 }
 
 .project-info__title {
-  font-family: "apex-new-ultra";
+  color: #4b3829;
+}
+.project-info__title:before {
+  content: "|";
+  color: #fe9930;
+  padding: 2px;
 }
 
 .project-info__title--center {
@@ -2655,7 +2711,30 @@ a.project-nav__link:hover {
 
 .project-floorplan__img {
   object-fit: contain;
-  height: 200px;
+  height: 100%;
+  max-width: 100%;
+}
+
+.project-floorplan__header {
+  font-size: 0.8rem;
+  color: #4b3829;
+}
+
+.project-floorplan__header--alternate {
+  color: #fe9930;
+}
+
+.project-floorplan__link {
+  background-color: #ff8300;
+  color: white;
+}
+
+.project-floorplan__expander {
+  color: black;
+}
+
+.project-floorplan__brochure-img-container {
+  min-height: 0;
 }
 
 .project-details__section--secondary-bg {
@@ -2667,21 +2746,72 @@ a.project-nav__link:hover {
 }
 
 .project-info__nav-item {
-  color: #f93;
   text-align: center;
+  color: white;
 }
-
-.project-info__nav-title {
-  color: #f93;
+.project-info__nav-item:hover {
+  font-weight: bolder;
+  color: white;
 }
 
 .project-info__nav-container {
-  opacity: 0.8;
-  min-height: 80px;
+  min-height: 50px;
+  text-align: center;
+  color: white;
+}
+@media (min-width: 768px) {
+  .project-info__nav-container {
+    font-size: 0.6rem;
+  }
+}
+@media (min-width: 992px) {
+  .project-info__nav-container {
+    font-size: 1rem;
+  }
 }
 
-.filtr-item {
+.project-info__nav {
+  background: linear-gradient(90deg, #ff8300 90%, transparent);
+}
+
+.project-details__tagline {
+  border-bottom: 1px solid #b2a293;
+  color: #fe9930;
+  font-size: 1rem;
+}
+@media (min-width: 992px) {
+  .project-details__tagline {
+    font-size: 1.5rem;
+  }
+}
+
+.card {
   padding: 0;
+}
+
+.card-body {
+  height: 260px;
+  padding: 0px;
+}
+.card-body .table {
+  line-height: 0.5;
+  padding: 0px;
+  font-size: 0.74rem;
+}
+.card-body p {
+  color: black;
+}
+
+.project-floorplan__card-body--sm-font {
+  font-size: 0.74rem;
+}
+
+.card-header {
+  height: 65px;
+}
+
+.project-page {
+  font-family: "Garamond";
 }
 
 /*=================================================================
@@ -3728,7 +3858,7 @@ a.project-nav__link:hover {
   -moz-transition: color 0.3s;
   -ms-transition: color 0.3s;
   transition: color 0.3s;
-  font-family: "apex-new";
+  font-family: "Garamond";
   display: block;
 }
 .top-footer li a:hover {

@@ -27,7 +27,7 @@
       margin-bottom: 20px;
       text-transform: uppercase;
 
-      @include for-tablet-landscape-up {
+      @include for-large-screen-up {
         font-size: 60px;
       }
     }
@@ -86,7 +86,7 @@
     font-weight: 700;
     margin-bottom: 20px;
 
-    @include for-tablet-landscape-up {
+    @include for-large-screen-up {
       font-size: 50px;
       line-height: 60px;
     }
@@ -284,25 +284,25 @@
 
 .home-page__background-image1 {
   background-image: url(../images/slider/android-1080p-1.jpg);
-  @include for-tablet-landscape-up {
+  @include for-large-screen-up {
     background-image: url(../images/slider/slide1.jpg);
   }
 }
 .home-page__background-image2 {
   background-image: url(../images/slider/android-1080p-2.jpg);
-  @include for-tablet-landscape-up {
+  @include for-large-screen-up {
     background-image: url(../images/slider/slide2.jpg);
   }
 }
 .home-page__background-image3 {
   background-image: url(../images/slider/android-1080p-3.jpg);
-  @include for-tablet-landscape-up {
+  @include for-large-screen-up {
     background-image: url(../images/slider/slide3.jpg);
   }
 }
 .home-page__background-image4 {
   background-image: url(../images/slider/android-1080p-4.jpg);
-  @include for-tablet-landscape-up {
+  @include for-large-screen-up {
     background-image: url(../images/slider/slide4.jpg);
   }
 }

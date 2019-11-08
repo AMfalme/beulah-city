@@ -74,13 +74,18 @@
   color: black;
 }
 .project-info__image {
-  max-height: 60vh;
-  width: 100vw;
+  height: 100%;
+  width: 100%;
   object-fit: cover;
   padding: 0;
 }
 .project-info__title {
-  font-family: "apex-new-ultra";
+  color: #4b3829;
+  &:before {
+    content: "|";
+    color: #fe9930;
+    padding: 2px;
+  }
 }
 .project-info__title--center {
   text-align: center;
@@ -98,9 +103,30 @@
 
 .project-floorplan__img {
   object-fit: contain;
-  height: 200px;
+  height: 100%;
+  max-width: 100%;
+}
+.project-floorplan__header {
+  font-size: 0.8rem;
+  color: #4b3829;
 }
 
+.project-floorplan__header--alternate {
+  color: #fe9930;
+}
+
+.project-floorplan__link {
+  background-color: #ff8300;
+  color: white;
+}
+
+.project-floorplan__expander {
+  color: black;
+}
+
+.project-floorplan__brochure-img-container {
+  min-height: 0;
+}
 .project-details__section--secondary-bg {
   background: #f9f9f9;
 }
@@ -110,20 +136,69 @@
 }
 
 .project-info__nav-item {
-  color: #f93;
+  // color: #f93;
   text-align: center;
-}
+  color: white;
 
-.project-info__nav-title {
-  color: #f93;
+  &:hover {
+    font-weight: bolder;
+    color: white;
+  }
 }
 
 .project-info__nav-container {
-  opacity: 0.8;
-  min-height: 80px;
+  min-height: 50px;
+  text-align: center;
+  color: white;
+
+  @include for-medium-screen-up {
+    font-size: 0.6rem;
+  }
+
+  @include for-large-screen-up {
+    font-size: 1rem;
+  }
 }
 
-// placeholder for floor-plan
-.filtr-item {
+.project-info__nav {
+  background: linear-gradient(90deg, #ff8300 90%, transparent);
+}
+
+.project-details__tagline {
+  border-bottom: 1px solid #b2a293;
+  color: #fe9930;
+  font-size: 1rem;
+
+  @include for-large-screen-up {
+    font-size: 1.5rem;
+  }
+}
+
+.card {
   padding: 0;
+}
+
+.card-body {
+  height: 260px;
+  padding: 0px;
+  .table {
+    line-height: 0.5;
+    padding: 0px;
+    font-size: 0.74rem;
+  }
+
+  p {
+    color: black;
+  }
+}
+
+.project-floorplan__card-body--sm-font {
+  font-size: 0.74rem;
+}
+.card-header {
+  height: 65px;
+}
+
+.project-page {
+  font-family: "Garamond";
 }

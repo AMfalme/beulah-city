@@ -10,7 +10,7 @@ p {
   font-family: $primary-font;
   color: white;
 
-  @include for-tablet-landscape-up {
+  @include for-large-screen-up {
     font-size: 16px;
   }
 }

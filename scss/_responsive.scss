@@ -400,25 +400,25 @@
   }
 }
 
-@mixin for-mobile-phones {
+@mixin for-small-screen-up {
   @media (min-width: 576px) {
     @content;
   }
 }
 
-@mixin for-tablet-portrait-up {
+@mixin for-medium-screen-up {
   @media (min-width: 768px) {
     @content;
   }
 }
 
-@mixin for-tablet-landscape-up {
+@mixin for-large-screen-up {
   @media (min-width: 992px) {
     @content;
   }
 }
 
-@mixin for-desktop-up {
+@mixin for-xl-screen-up {
   @media (min-width: 1200px) {
     @content;
   }

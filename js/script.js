@@ -305,4 +305,11 @@
   $(window).scroll(function() {
     counter();
   });
+
+  // nav selection
+  $(".nav-item--secondary").click(function() {
+    var currentActive = $(".nav-item--secondary.active");
+    currentActive.removeClass("active");
+    $(this).addClass("active");
+  });
 })(jQuery);
