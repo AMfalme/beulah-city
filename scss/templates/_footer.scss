@@ -3,12 +3,10 @@
 ==================================================================*/
 
 .top-footer {
-  background-color: #222222;
   border-top: 1px solid #404040;
-  padding: 100px 0 80px;
+  border-bottom: 1px solid #5b3d26;
   h3 {
-    font-size: 16px;
-    line-height: 1.5;
+    line-height: 1;
     color: $white;
     font-weight: 400;
     text-transform: uppercase;
@@ -16,7 +14,6 @@
     margin-bottom: 20px;
   }
   p {
-    font-size: 13px;
     line-height: 30px;
     color: #bdbdbd;
     font-weight: 300;
@@ -24,18 +21,13 @@
     padding-right: 20px;
   }
   li a {
-    font-size: 13px;
-    line-height: 30px;
     color: #bdbdbd;
     font-weight: 300;
-    letter-spacing: 1px;
-    text-transform: capitalize;
     -webkit-transition: color 0.3s;
     -moz-transition: color 0.3s;
     -ms-transition: color 0.3s;
     transition: color 0.3s;
     font-family: $primary-font;
-    display: block;
     &:hover {
       color: $primary-color-light;
     }
@@ -44,11 +36,9 @@
 
 .footer-bottom {
   text-align: center;
-  background-color: #1b1b1b;
   border-top: 1px solid #2c2c2c;
   padding: 30px 0;
   h5 {
-    font-size: 12px;
     line-height: 1;
     color: #888888;
     font-weight: 400;
@@ -58,7 +48,6 @@
     margin-bottom: 3px;
   }
   h6 {
-    font-size: 11px;
     line-height: 15px;
     color: #888888;
     font-weight: 400;
@@ -78,4 +67,48 @@
 .top-footer i:hover {
   font-weight: bolder;
   font-size: 1.75rem;
+}
+
+.footer {
+  background-color: #432916;
+  font-size: 0.6rem;
+
+  @include for-medium-screen-up {
+    font-size: 0.8rem;
+  }
+
+  li {
+    display: inline-block;
+    margin: 0px 4px;
+  }
+}
+
+.footer__page-list {
+  text-transform: uppercase;
+  @include for-large-screen-up {
+    &::after {
+      content: " | ";
+      text-align: center;
+      color: white;
+      font-weight: bolder;
+    }
+  }
+}
+
+.bottom-footer {
+  color: #b17340;
+  i {
+    font-size: 1rem;
+    color: black;
+    background: white;
+    border-radius: 25px;
+    padding: 0.3rem;
+
+    @include for-medium-screen-up {
+      font-size: 1.1rem;
+    }
+  }
+}
+.footer__project-list {
+  color: white;
 }

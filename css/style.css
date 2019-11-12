@@ -417,7 +417,7 @@ h3,
 h4,
 h5,
 h6 {
-  font-family: "apex";
+  font-family: "Garamond";
   font-weight: 600;
 }
 
@@ -831,6 +831,10 @@ i.fab {
 
 body {
   background-color: #ebdbcc;
+}
+
+.color--white {
+  color: white;
 }
 
 /*============================================================
@@ -3826,13 +3830,11 @@ a.project-nav__link:hover {
   Footer section
 ==================================================================*/
 .top-footer {
-  background-color: #222222;
   border-top: 1px solid #404040;
-  padding: 100px 0 80px;
+  border-bottom: 1px solid #5b3d26;
 }
 .top-footer h3 {
-  font-size: 16px;
-  line-height: 1.5;
+  line-height: 1;
   color: #fff;
   font-weight: 400;
   text-transform: uppercase;
@@ -3840,7 +3842,6 @@ a.project-nav__link:hover {
   margin-bottom: 20px;
 }
 .top-footer p {
-  font-size: 13px;
   line-height: 30px;
   color: #bdbdbd;
   font-weight: 300;
@@ -3848,18 +3849,13 @@ a.project-nav__link:hover {
   padding-right: 20px;
 }
 .top-footer li a {
-  font-size: 13px;
-  line-height: 30px;
   color: #bdbdbd;
   font-weight: 300;
-  letter-spacing: 1px;
-  text-transform: capitalize;
   -webkit-transition: color 0.3s;
   -moz-transition: color 0.3s;
   -ms-transition: color 0.3s;
   transition: color 0.3s;
   font-family: "Garamond";
-  display: block;
 }
 .top-footer li a:hover {
   color: #f2bb40;
@@ -3867,12 +3863,10 @@ a.project-nav__link:hover {
 
 .footer-bottom {
   text-align: center;
-  background-color: #1b1b1b;
   border-top: 1px solid #2c2c2c;
   padding: 30px 0;
 }
 .footer-bottom h5 {
-  font-size: 12px;
   line-height: 1;
   color: #888888;
   font-weight: 400;
@@ -3882,7 +3876,6 @@ a.project-nav__link:hover {
   margin-bottom: 3px;
 }
 .footer-bottom h6 {
-  font-size: 11px;
   line-height: 15px;
   color: #888888;
   font-weight: 400;
@@ -3901,6 +3894,52 @@ a.project-nav__link:hover {
 .top-footer i:hover {
   font-weight: bolder;
   font-size: 1.75rem;
+}
+
+.footer {
+  background-color: #432916;
+  font-size: 0.6rem;
+}
+@media (min-width: 768px) {
+  .footer {
+    font-size: 0.8rem;
+  }
+}
+.footer li {
+  display: inline-block;
+  margin: 0px 4px;
+}
+
+.footer__page-list {
+  text-transform: uppercase;
+}
+@media (min-width: 992px) {
+  .footer__page-list::after {
+    content: " | ";
+    text-align: center;
+    color: white;
+    font-weight: bolder;
+  }
+}
+
+.bottom-footer {
+  color: #b17340;
+}
+.bottom-footer i {
+  font-size: 1rem;
+  color: black;
+  background: white;
+  border-radius: 25px;
+  padding: 0.3rem;
+}
+@media (min-width: 768px) {
+  .bottom-footer i {
+    font-size: 1.1rem;
+  }
+}
+
+.footer__project-list {
+  color: white;
 }
 
 .page-404 {
