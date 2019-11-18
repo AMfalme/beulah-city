@@ -397,3 +397,19 @@ body {
 .color--white {
   color: white;
 }
+
+.text--upper {
+  text-transform: uppercase;
+}
+
+.text--capitalize {
+  text-transform: capitalize;
+}
+
+.font--bold {
+  font-weight: bold;
+}
+
+.image--cover {
+  object-fit: cover;
+}
