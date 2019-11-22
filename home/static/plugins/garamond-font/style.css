@@ -1,0 +1,16 @@
+@font-face {
+  font-family: "Garamond";
+  src: url("GaramondNo8-Reg.ttf");
+}
+
+@font-face {
+  font-family: "apex-new ";
+  src: url("GaramondNo8-Ita.ttf");
+  font-style: italic;
+}
+
+@font-face {
+  font-family: "apex-new";
+  src: url("GaramondNo8-Med.ttf");
+  font-weight: bold;
+}

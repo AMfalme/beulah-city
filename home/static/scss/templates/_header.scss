@@ -1,0 +1,30 @@
+@import "../responsive";
+
+.logo {
+  margin-top: 10px;
+  display: inline-block;
+
+  img {
+    width: 200px;
+    height: auto;
+  }
+}
+
+.project-page-header {
+  background-image: url("../images/company/projects/genesis/cover.jpeg");
+  background-size: cover;
+  padding: 140px 0 70px;
+  text-align: center;
+  color: $white;
+  position: relative;
+  background-position: 10% 18%;
+  &:before {
+    background: rgba(0, 0, 0, 0.5);
+    position: absolute;
+    content: "";
+    top: 0;
+    right: 0;
+    left: 0;
+    bottom: 0;
+  }
+}
