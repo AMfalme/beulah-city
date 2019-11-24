@@ -1,7 +1,6 @@
 @import "../responsive";
 
 .hero-area {
-  background-image: url("../images/slider/slider-bg-1.jpg");
   background-size: cover;
   height: 100vh;
   position: relative;
@@ -271,10 +270,6 @@
   object-fit: cover;
   background-size: cover;
   opacity: 0;
-}
-
-.home-page__first-background-image {
-  opacity: 1;
 }
 
 .home-page__background-image--active {

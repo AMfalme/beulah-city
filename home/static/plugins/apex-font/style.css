@@ -1,26 +1,26 @@
 @font-face {
   font-family: "apex-new";
-  src: url("fonts/Apex\ New\ Book.otf");
+  src: url("fonts/apex_new_book.otf");
 }
 
 @font-face {
   font-family: "apex-new ";
-  src: url("fonts/Apex\ New\ Medium\ Italic.otf");
+  src: url("fonts/apex_new_medium_italic.otf");
   font-style: italic;
 }
 
 @font-face {
   font-family: "apex-new";
-  src: url("fonts/Apex\ New\ Bold.otf");
+  src: url("fonts/apex_new_bold.otf");
   font-weight: bold;
 }
 
 @font-face {
   font-family: "apex-new-thin";
-  src: url("fonts/Apex\ New\ Thin.otf");
+  src: url("fonts/apex_new_thin.otf");
 }
 
 @font-face {
   font-family: "apex-new-ultra";
-  src: url("fonts/Apex\ New\ Ultra.otf");
+  src: url("fonts/apex_new_ultra.otf");
 }

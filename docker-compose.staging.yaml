@@ -1,0 +1,13 @@
+version: "3"
+
+services:
+  web:
+    image: gcr.io/mizizi/mizizi_io_web/staging:latest
+    ports:
+      - "15005:8000"
+    env_file:
+      - .env
+    deploy:
+      replicas: 1
+      restart_policy:
+        condition: on-failure
