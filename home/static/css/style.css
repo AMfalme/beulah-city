@@ -2715,6 +2715,13 @@ a.project-nav__link:hover {
 }
 
 .project-info__description {
+  color: black;
+  text-align: left;
+  color: black;
+  line-height: 1.9;
+  font-size: 17px;
+}
+.project-info__description .rich-text p {
   text-align: left;
   color: black;
   line-height: 1.9;
@@ -2723,6 +2730,15 @@ a.project-nav__link:hover {
 
 .project-details__section {
   width: 100%;
+}
+
+.project-floorplan .container-fluid {
+  padding-right: 0;
+  padding-left: 0;
+}
+.project-floorplan .container-fluid .project-ml-n {
+  padding-left: 0;
+  padding-right: 0;
 }
 
 .project-floorplan__img {
@@ -2790,13 +2806,15 @@ a.project-nav__link:hover {
   background: linear-gradient(90deg, #ff8300 90%, transparent);
 }
 
-.project-details__tagline {
+.project-details__tagline .rich-text {
   border-bottom: 1px solid #b2a293;
+}
+.project-details__tagline .rich-text p {
   color: #fe9930;
   font-size: 1rem;
 }
 @media (min-width: 992px) {
-  .project-details__tagline {
+  .project-details__tagline .rich-text p {
     font-size: 1.5rem;
   }
 }

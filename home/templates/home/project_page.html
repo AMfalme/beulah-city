@@ -1,0 +1,271 @@
+{% extends "home/base.html" %}
+{% load static %}
+{% load wagtailcore_tags %}
+{% load wagtailimages_tags %}
+
+{% block body_class %}template-homepage{% endblock %}
+
+{% block extra_css %}
+
+{% endblock extra_css %}
+{% block nav %}
+{% include "home/navigation-menu.html" %}
+{% endblock %}
+{% block body-tag %}
+
+<body id="body" class="project-page">
+  <!--
+  Start Preloader
+  ==================================== -->
+
+
+  {% endblock %}
+  {% block content %}
+
+  <section class="project-page-header"></section>
+  <section class="project-info">
+    <div class="d-none d-lg-flex project-info__nav-container">
+      <div class="d-flex col-xs-12 col-lg-10 align-content-center project-info__nav">
+        <span class="project-info__nav-title pl-1 align-self-center">
+          Projects
+        </span>
+        <nav class="nav nav-pills project-info-nav align-content-center">
+          <a class="nav-link project-info__nav-item" href="/beulah-genesis">Beulah Genesis</a>
+          <a class="nav-link project-info__nav-item" href="/beulah-garden-city">Beulah Garden City</a>
+          <a class="nav-link project-info__nav-item" href="/beulah-cerry">Beulah Cerry</a>
+          <a class="nav-link project-info__nav-item" href="/future-projects">Future Projects</a>
+        </nav>
+      </div>
+    </div>
+    <div class="d-flex flex-column mt-4 project-info__details-container">
+      <!-- start of tagline section  -->
+      <div
+        class="d-flex col-12 col-lg-8 mb-5 pb-3 align-self-center align-content-center  project-details__section project-details__tagline ">
+        <div class="d-flex flex-column col-12 pl-lg-0">
+          {{page.hero_intro|richtext}}
+        </div>
+      </div>
+      <!-- end of tagline section -->
+      <!-- start of overview section -->
+      <div class="d-flex justify-content-center mb-5 project-details__section">
+        <div class="d-flex flex-column col-12 col-lg-8 align-self-center">
+          <h4 class="project-info__title mb-4">
+            {{page.project_intro}}
+          </h4>
+          <div class="project-info__description">
+            {{page.project_body|richtext}}
+          </div>
+        </div>
+      </div>
+      <!-- end of overview section -->
+
+      <!-- start of floor plans -->
+      <div id="floor-plan" class="d-flex justify-content-center mb-5 project-details__section">
+        <div class="d-flex flex-column col-12 col-lg-8">
+          <h4 class="project-info__title mb-4 mt-4">
+            Floor Plans
+          </h4>
+          <div class="d-flex flex-wrap filtr-container card-deck project-floorplan row">
+
+            {% for portfolio in page.projects.all %}
+            {% if forloop.counter < 4 %}
+            <div class="col-md-6 col-lg-3 my-2">
+              <div class="card">
+                <div class="card-header d-flex flex-column">
+                  <span class="project-floorplan__header">{{portfolio.project_name}}</span>
+                  <span>{{portfolio.project_info}}
+                  </span>
+                </div>
+                {% if portfolio.project_paragraph %}
+                <div class="card-body d-flex flex-column">
+                  <p class="p-2 mb-0">
+                    {{portfolio.project_paragraph}}
+                  </p>
+
+                  <div class="d-flex project-floorplan__brochure-img-container">
+                    {% image portfolio.project_image fill-420x300 class="img-responsive project-floorplan__img" %}
+                  </div>
+
+
+                </div>
+                {% else %}
+                <div class="card-body">
+
+
+
+                  {% image portfolio.project_image fill-200x200 class="card-img-top img-responsive project-floorplan__img" %}
+
+                </div>
+                {% endif %}
+                <div class="caption card-footer d-flex align-content-center">
+                  <button type="button" class="project-floorplan__link">
+                    Explore
+                  </button>
+                  <a class="search-icon ml-auto my-auto project-floorplan__expander"
+                    href="images/company/projects/genesis/genesis-floorplan-studio.jpg" data-lightbox="image-1">
+                    <i class="tf-ion-ios-search-strong"></i>
+                  </a>
+                </div>
+              </div>
+            </div>
+            {% endif %}
+            {% endfor %}
+
+            <div class="col-md-6 col-lg-3 my-2">
+
+              <div class="card">
+                <div class="card-header d-flex flex-column">
+                  <span>Beulah Genesis Key Data</span>
+                </div>
+                <div class="card-body">
+                  <table class="table table-borderless">
+                    {% for detail in page.project_details.all %}
+                    <tr>
+                      <td>{{detail.detail_name}}</td>
+                      <td>{{detail.detail_info}}</td>
+                    </tr>
+                    {% endfor %}
+
+                  </table>
+                </div>
+              </div>
+
+            </div>
+
+            {% for portfolio in page.projects.all %}
+            {% if forloop.counter > 3 %}
+            <div class="col-md-6 col-lg-3 my-2">
+              <div class="card">
+                <div class="card-header d-flex flex-column">
+                  <span class="project-floorplan__header">{{portfolio.project_name}}</span>
+                  <span>{{portfolio.project_info}}
+
+                  </span>
+                </div>
+                {% if portfolio.project_paragraph %}
+                <div class="card-body d-flex flex-column">
+                  <p class="p-2 mb-0">
+                    {{portfolio.project_paragraph}}
+                  </p>
+
+                  <div class="d-flex project-floorplan__brochure-img-container">
+                    {% image portfolio.project_image fill-420x300 class="img-responsive project-floorplan__img" %}
+                  </div>
+
+
+                </div>
+                {% else %}
+                <div class="card-body">
+
+
+
+                  {% image portfolio.project_image fill-200x200 class="card-img-top img-responsive project-floorplan__img" %}
+
+                </div>
+                {% endif %}
+                <div class="caption card-footer d-flex align-content-center">
+                  <button type="button" class="project-floorplan__link">
+                    Explore
+                  </button>
+                  <a class="search-icon ml-auto my-auto project-floorplan__expander"
+                    href="images/company/projects/genesis/genesis-floorplan-studio.jpg" data-lightbox="image-1">
+                    <i class="tf-ion-ios-search-strong"></i>
+                  </a>
+                </div>
+              </div>
+            </div>
+            {% endif %}
+            {% endfor %}
+            <div class="col-md-6 col-lg-3 my-2">
+
+              <div class="card project-floorplan__card-bg-secondary">
+                <div class="card-header d-flex flex-column">
+                  <span class="project-floorplan__header">Contact a Sales Consultant</span>
+                </div>
+                <div class="card-body d-flex flex-column project-floorplan__card-body--sm-font p-3">
+                  <span>Melissa Ashleigh</span>
+                  <span>+254 0010 001</span>
+                  <h6>Email Us</h6>
+                  <form id="contactSalesForm">
+                    <div class="form-group">
+                      <label for="contactName">Name</label>
+                      <input type="text" id="contactName" />
+                    </div>
+                    <div class="form-group">
+                      <label for="contactEmail">Email</label>
+                      <input type="email" id="contactEmail" />
+                    </div>
+                    <div class="form-group">
+                      <label for="contactPhone">Phone Number</label>
+                      <input type="tel" />
+                    </div>
+                  </form>
+                </div>
+                <div class="card-footer">
+                  <input type="submit" value="Contact Us" class="project-floorplan__link" form="contactSalesForm" />
+                </div>
+              </div>
+
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- end of floor plans -->
+
+      <div class="d-flex justify-content-center project-details__section project-details__section--secondary-bg">
+        <div class="d-flex flex-column col-12 col-lg-8 mt-2">
+          <h4 class="project-info__title mb-4">
+            {{page.project_information_title}}
+          </h4>
+          <p class="project-info__description">
+            {{page.project_information}}
+          </p>
+          <div>
+            {% image page.project_image width-1000 class="project-info__image" %}
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <footer id="footer" class="d-flex footer justify-content-center">
+    <div class="d-flex flex-column col-12 col-lg-8 ">
+      <div class="d-flex flex-wrap top-footer py-2">
+        <ul class="d-flex justify-content-between col-12 col-lg-6 footer__page-list px-0 my-2 my-lg-0">
+          <li><a href="about">Home</a></li>
+          <li><a href="about#who-we-are">Who We Are</a></li>
+          <li><a href="about#what-we-do">What We Do</a></li>
+          <li><a href="about#why-us">Why Us</a></li>
+          <li><a href="about#contact-us">Contact Us</a></li>
+        </ul>
+        <ul class="d-flex justify-content-between col-12 col-lg-6 footer__project-list px-0 my-2 my-lg-0">
+          <li><a href="project"> Beulah Genesis</a></li>
+          <li><span>|</span></li>
+          <li><a href="project"> Beulah Garden City</a></li>
+          <li><span>|</span></li>
+          <li><a href="project"> Beulah Cerry</a></li>
+          <li><span>|</span></li>
+          <li><a href="project"> Future Projects</a></li>
+        </ul>
+        <!-- end container -->
+      </div>
+      <div class="d-flex flex-wrap justify-content-center m-2 bottom-footer">
+        <div class="d-flex justify-content-center col-12 col-lg-6 justify-content-xl-start">
+          <span>&copy; Beulah City
+            <script>
+              document.write(new Date().getFullYear());
+            </script>
+            All rights reserved.
+          </span>
+        </div>
+        <div class="d-flex justify-content-center col-12 col-lg-6 justify-content-xl-end">
+          <i class="far fa-envelope mx-1"></i>
+          <i class="fab fa-facebook-f mx-1"></i>
+          <i class="fab fa-instagram mx-1"></i>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+
+
+  {% endblock content %}

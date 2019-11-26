@@ -14,7 +14,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1" />
 
     <!-- Favicon -->
-    <link rel="shortcut icon" type="image/x-icon" href="images/favicon.ico" />
+    <link rel="shortcut icon" type="image/x-icon" href="{% static 'images/favicon.ico' %}" />
 
     <!-- CSS
   ================================================== -->
@@ -38,10 +38,15 @@
      
 
 </head>
+
+{% block body-tag %}
 <body id="body" class="single-page index-page">
     <!--
   Start Preloader
   ==================================== -->
+
+
+{% endblock %}
     <div id="preloader">
       <div class="preloader">
         <span></span>

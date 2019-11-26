@@ -1,0 +1,126 @@
+{% extends "home/base.html" %}
+{% load static %}
+{% load wagtailcore_tags %}
+{% load wagtailimages_tags %}
+
+{% block body_class %}template-homepage{% endblock %}
+
+{% block extra_css %}
+
+{% endblock extra_css %}
+{% block nav %}
+{% include "home/navigation-menu.html" %}
+{% endblock %}
+{% block body-tag %}
+<body id="body" class="project-page">
+    <!--
+  Start Preloader
+  ==================================== -->
+
+
+{% endblock %}
+{% block content %}
+
+<section class="project-page-header"></section>
+<section class="project-info">
+  <div class="d-none d-lg-flex project-info__nav-container">
+    <div
+      class="d-flex col-xs-12 col-lg-10 align-content-center project-info__nav"
+    >
+      <span class="project-info__nav-title pl-1 align-self-center">
+        Projects
+      </span>
+      <nav class="nav nav-pills project-info-nav align-content-center">
+        <a class="nav-link project-info__nav-item" href="#"
+          >Beulah Genesis</a
+        >
+        <a class="nav-link project-info__nav-item" href="#floor-plan"
+          >Beulah Garden City</a
+        >
+        <a class="nav-link project-info__nav-item" href="#impressions"
+          >Beulah Cerry</a
+        >
+        <a class="nav-link project-info__nav-item" href="#impressions"
+          >Future Projects</a
+        >
+      </nav>
+    </div>
+  </div>
+  <div class="d-flex flex-column mt-4 project-info__details-container">
+    <!-- start of tagline section  -->
+    <div
+      class="d-flex col-12 col-lg-8 mb-5 pb-3 align-self-center align-content-center  project-details__section project-details__tagline "
+    >
+      <div class="d-flex flex-column col-12 pl-lg-0">
+            {{page.hero_intro|richtext}}
+      </div>
+    </div>
+    <!-- end of tagline section -->
+    <!-- start of overview section -->
+    <div
+      class="d-flex justify-content-center mb-5 project-details__section"
+    >
+      <div
+        class="d-flex flex-column col-12 col-lg-8 align-self-center"
+        id="who-we-are"
+      >
+        <h4 class="project-info__title mb-4">
+                {{page.about_title}}
+        </h4>
+        <p class="project-info__description">
+                {{page.about_paragraph}}
+        </p>
+      </div>
+    </div>
+    <div
+      class="d-flex justify-content-center mb-5 project-details__section"
+    >
+      <div class="d-flex flex-column col-12 col-lg-8 align-self-center">
+        <h4 class="project-info__title mb-4">
+                {{page.projects_overview_title}}
+        </h4>
+        <p class="project-info__description">
+                {{page.projects_overview}}
+        </p>
+        <div class="d-flex flex-wrap">
+                {% for images in page.overview_images.all %}
+                {% image images.overview_image fill-420x300 class="col-12 col-lg-4 my-2 my-lg-0" %}
+          {% endfor %}
+        </div>
+      </div>
+    </div>
+    <div
+      class="d-flex justify-content-center mb-5 project-details__section"
+      id="what-we-do"
+    >
+      <div class="d-flex flex-column col-12 col-lg-8 align-self-center">
+        <h4 class="project-info__title mb-4">
+                {{page.company_overview}}
+        </h4>
+        <p class="project-info__description">
+                {{page.company_overview_paragraph}}
+        </p>
+        {% image page.company_overview_image width-1000 class="col-12" %}
+      </div>
+    </div>
+    <div
+      class="d-flex justify-content-center mb-5 project-details__section"
+      id="why-us"
+    >
+      <div class="d-flex flex-column col-12 col-lg-8 align-self-center">
+        <h4 class="project-info__title mb-4">
+                {{page.company_pride}}
+        </h4>
+        <p class="project-info__description">
+                {{page.company_pride_paragraph}}
+        </p>
+        {% image page.company_pride_image width-1000 class="col-12" %}
+      </div>
+    </div>
+    <!-- end of overview section -->
+  </div>
+</section>
+
+
+
+{% endblock content %}
