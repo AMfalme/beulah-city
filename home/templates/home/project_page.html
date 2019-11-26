@@ -3,14 +3,13 @@
 {% load wagtailcore_tags %}
 {% load wagtailimages_tags %}
 
-{% block styles %} 
-  <link rel="stylesheet" href="{% static 'plugins/fontawesome/css/all.css' %}" />
+{% block styles %}
+<link rel="stylesheet" href="{% static 'plugins/fontawesome/css/all.css' %}" />
+
+<link rel="stylesheet" href="{% static 'plugins/themefisher-font/style.css' %}" />
+<link rel="stylesheet" href="{% static 'plugins/lightbox2/dist/css/lightbox.min.css' %}" />
 {% endblock %}
 {% block body_class %}template-homepage{% endblock %}
-
-{% block extra_css %}
-
-{% endblock extra_css %}
 {% block nav %}
 {% include "home/navigation-menu.html" %}
 {% endblock %}
@@ -28,15 +27,23 @@
   <section class="project-page-header"></section>
   <section class="project-info">
     <div class="d-none d-lg-flex project-info__nav-container">
-      <div class="d-flex col-xs-12 col-lg-10 align-content-center project-info__nav">
+      <div class="d-flex col-xs-9 col-lg-8 align-content-center project-info__nav">
         <span class="project-info__nav-title pl-1 align-self-center">
           Projects
         </span>
         <nav class="nav nav-pills project-info-nav align-content-center">
-          <a class="nav-link project-info__nav-item" href="/beulah-genesis">Beulah Genesis</a>
-          <a class="nav-link project-info__nav-item" href="/beulah-garden-city">Beulah Garden City</a>
-          <a class="nav-link project-info__nav-item" href="/beulah-cerry">Beulah Cerry</a>
-          <a class="nav-link project-info__nav-item" href="/future-projects">Future Projects</a>
+            <a class="nav-link project-info__nav-item" href="/beulah-genesis"
+            >Beulah Genesis</a
+          >
+          <a class="nav-link project-info__nav-item" href="/beulah-garden-city"
+            >Beulah Garden City</a
+          >
+          <a class="nav-link project-info__nav-item" href="/beulah-cerry"
+            >Beulah Cerry</a
+          >
+          <a class="nav-link project-info__nav-item" href="/future-projects"
+            >Future Projects</a
+          >
         </nav>
       </div>
     </div>
@@ -52,9 +59,9 @@
       <!-- start of overview section -->
       <div class="d-flex justify-content-center mb-5 project-details__section">
         <div class="d-flex flex-column col-12 col-lg-8 align-self-center">
-          <h4 class="project-info__title mb-4">
+          <h5 class="project-info__title mb-4">
             {{page.project_intro}}
-          </h4>
+          </h5>
           <div class="project-info__description">
             {{page.project_body|richtext}}
           </div>
@@ -65,9 +72,9 @@
       <!-- start of floor plans -->
       <div id="floor-plan" class="d-flex justify-content-center mb-5 project-details__section">
         <div class="d-flex flex-column col-12 col-lg-8">
-          <h4 class="project-info__title mb-4 mt-4">
+          <h5 class="project-info__title mb-4 mt-4">
             Floor Plans
-          </h4>
+          </h5>
           <div class="d-flex flex-wrap filtr-container card-deck project-floorplan row">
 
             {% for portfolio in page.projects.all %}
@@ -76,8 +83,11 @@
               <div class="card">
                 <div class="card-header d-flex flex-column">
                   <span class="project-floorplan__header">{{portfolio.project_name}}</span>
-                  <span>{{portfolio.project_info}}
+                  <span>{{portfolio.project_info}} / <span class="project-floorplan__header--alternate">
+                      {{portfolio.project_info_size}}
+                    </span>
                   </span>
+
                 </div>
                 {% if portfolio.project_paragraph %}
                 <div class="card-body d-flex flex-column">
@@ -104,8 +114,9 @@
                   <button type="button" class="project-floorplan__link">
                     Explore
                   </button>
-                  <a class="search-icon ml-auto my-auto project-floorplan__expander"
-                    href="images/company/projects/genesis/genesis-floorplan-studio.jpg" data-lightbox="image-1">
+                  {% image portfolio.project_image fill-400x400 as img %}
+                  <a class="search-icon ml-auto my-auto project-floorplan__expander" href="{{img.url}}"
+                    data-lightbox="image-1">
                     <i class="tf-ion-ios-search-strong"></i>
                   </a>
                 </div>
@@ -139,13 +150,10 @@
             {% if forloop.counter > 3 %}
             <div class="col-md-6 col-lg-3 my-2">
               <div class="card">
-                <div class="card-header d-flex flex-column">
-                  <span class="project-floorplan__header">{{portfolio.project_name}}</span>
-                  <span>{{portfolio.project_info}}
-
-                  </span>
-                </div>
                 {% if portfolio.project_paragraph %}
+                <div class="card-header d-flex flex-column">
+                    <span class="project-floorplan__header">{{portfolio.project_name}}</span>
+                </div>
                 <div class="card-body d-flex flex-column">
                   <p class="p-2 mb-0">
                     {{portfolio.project_paragraph}}
@@ -158,6 +166,13 @@
 
                 </div>
                 {% else %}
+                <div class="card-header d-flex flex-column">
+                    <span class="project-floorplan__header">{{portfolio.project_name}}</span>
+                    <span>{{portfolio.project_info}} / <span class="project-floorplan__header--alternate">
+                        {{portfolio.project_info_size}}
+                      </span>
+                    </span>
+                  </div>
                 <div class="card-body">
 
 
@@ -170,8 +185,9 @@
                   <button type="button" class="project-floorplan__link">
                     Explore
                   </button>
-                  <a class="search-icon ml-auto my-auto project-floorplan__expander"
-                    href="images/company/projects/genesis/genesis-floorplan-studio.jpg" data-lightbox="image-1">
+                  {% image portfolio.project_image fill-400x400 as img %}
+                  <a class="search-icon ml-auto my-auto project-floorplan__expander" href="{{img.url}}"
+                    data-lightbox="image-1">
                     <i class="tf-ion-ios-search-strong"></i>
                   </a>
                 </div>
@@ -217,9 +233,9 @@
 
       <div class="d-flex justify-content-center project-details__section project-details__section--secondary-bg">
         <div class="d-flex flex-column col-12 col-lg-8 mt-2">
-          <h4 class="project-info__title mb-4">
+          <h5 class="project-info__title mb-4">
             {{page.project_information_title}}
-          </h4>
+          </h5>
           <p class="project-info__description">
             {{page.project_information}}
           </p>
@@ -234,20 +250,20 @@
     <div class="d-flex flex-column col-12 col-lg-8 ">
       <div class="d-flex flex-wrap top-footer py-2">
         <ul class="d-flex justify-content-between col-12 col-lg-6 footer__page-list px-0 my-2 my-lg-0">
-          <li><a href="about">Home</a></li>
+          <li><a href="/">Home</a></li>
           <li><a href="about#who-we-are">Who We Are</a></li>
           <li><a href="about#what-we-do">What We Do</a></li>
           <li><a href="about#why-us">Why Us</a></li>
           <li><a href="about#contact-us">Contact Us</a></li>
         </ul>
         <ul class="d-flex justify-content-between col-12 col-lg-6 footer__project-list px-0 my-2 my-lg-0">
-          <li><a href="project"> Beulah Genesis</a></li>
+          <li><a href="/beulah-genesis"> Beulah Genesis</a></li>
           <li><span>|</span></li>
-          <li><a href="project"> Beulah Garden City</a></li>
+          <li><a href="/beulah-garden-city"> Beulah Garden City</a></li>
           <li><span>|</span></li>
-          <li><a href="project"> Beulah Cerry</a></li>
+          <li><a href="/beulah-cerry"> Beulah Cerry</a></li>
           <li><span>|</span></li>
-          <li><a href="project"> Future Projects</a></li>
+          <li><a href="/future-projects"> Future Projects</a></li>
         </ul>
         <!-- end container -->
       </div>

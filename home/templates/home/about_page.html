@@ -25,7 +25,7 @@
 <section class="project-info">
   <div class="d-none d-lg-flex project-info__nav-container">
     <div
-      class="d-flex col-xs-12 col-lg-10 align-content-center project-info__nav"
+      class="d-flex col-xs-12 col-lg-8 align-content-center project-info__nav"
     >
       <span class="project-info__nav-title pl-1 align-self-center">
         Projects
@@ -49,7 +49,7 @@
   <div class="d-flex flex-column mt-4 project-info__details-container">
     <!-- start of tagline section  -->
     <div
-      class="d-flex col-12 col-lg-8 mb-5 pb-3 align-self-center align-content-center  project-details__section project-details__tagline "
+      class="d-flex col-12 col-lg-8 pb-3 align-self-center align-content-center  project-details__section project-details__tagline "
     >
       <div class="d-flex flex-column col-12 pl-lg-0">
             {{page.hero_intro|richtext}}
@@ -120,7 +120,44 @@
     <!-- end of overview section -->
   </div>
 </section>
-
+<footer id="footer" class="d-flex footer justify-content-center">
+        <div class="d-flex flex-column col-12 col-lg-8 ">
+          <div class="d-flex flex-wrap top-footer py-2">
+            <ul class="d-flex justify-content-between col-12 col-lg-6 footer__page-list px-0 my-2 my-lg-0">
+              <li><a href="/">Home</a></li>
+              <li><a href="about#who-we-are">Who We Are</a></li>
+              <li><a href="about#what-we-do">What We Do</a></li>
+              <li><a href="about#why-us">Why Us</a></li>
+              <li><a href="about#contact-us">Contact Us</a></li>
+            </ul>
+            <ul class="d-flex justify-content-between col-12 col-lg-6 footer__project-list px-0 my-2 my-lg-0">
+              <li><a href="/beulah-genesis"> Beulah Genesis</a></li>
+              <li><span>|</span></li>
+              <li><a href="/beulah-garden-city"> Beulah Garden City</a></li>
+              <li><span>|</span></li>
+              <li><a href="/beulah-cerry"> Beulah Cerry</a></li>
+              <li><span>|</span></li>
+              <li><a href="/future-projects"> Future Projects</a></li>
+            </ul>
+            <!-- end container -->
+          </div>
+          <div class="d-flex flex-wrap justify-content-center m-2 bottom-footer">
+            <div class="d-flex justify-content-center col-12 col-lg-6 justify-content-xl-start">
+              <span>&copy; Beulah City
+                <script>
+                  document.write(new Date().getFullYear());
+                </script>
+                All rights reserved.
+              </span>
+            </div>
+            <div class="d-flex justify-content-center col-12 col-lg-6 justify-content-xl-end">
+              <i class="far fa-envelope mx-1"></i>
+              <i class="fab fa-facebook-f mx-1"></i>
+              <i class="fab fa-instagram mx-1"></i>
+            </div>
+          </div>
+        </div>
+      </footer>
 
 
 {% endblock content %}

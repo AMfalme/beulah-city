@@ -830,7 +830,7 @@ i.fab {
 }
 
 body {
-  background-color: #ebdbcc;
+  background-color: #eadbcc;
 }
 
 .color--white {
@@ -1704,22 +1704,24 @@ body {
   border-right: 1px solid #fff;
   border-left: 1px solid #fff;
 }
-.navigation .navbar-light .navbar-nav .nav-item--secondary:hover, .navigation .navbar-light .navbar-nav .nav-item--secondary:active, .navigation .navbar-light .navbar-nav .nav-item--secondary:focus, .navigation .navbar-light .navbar-nav .nav-item--secondary.active {
+.navigation .navbar-light .navbar-nav .nav-item--secondary.active {
+  background-color: #e57708;
+}
+.navigation .navbar-light .navbar-nav .nav-item--secondary:hover, .navigation .navbar-light .navbar-nav .nav-item--secondary:focus, .navigation .navbar-light .navbar-nav .nav-item--secondary:active {
   opacity: 1;
-  background-color: #ff8300;
+  background-color: #ff9933;
 }
 .navigation .navbar-light .navbar-nav .nav-item--secondary .nav-link {
   color: #fff;
-  font-size: 14px;
+  font-size: 12px;
   line-height: 26px;
-  padding: 20px 15px;
+  padding: 10px 15px;
   text-transform: uppercase;
   letter-spacing: 1px;
   transition: 0.2s ease-in-out 0s;
+  font-family: Arial, Helvetica;
 }
 .navigation .navbar-light .navbar-nav .nav-item--secondary .nav-link:hover, .navigation .navbar-light .navbar-nav .nav-item--secondary .nav-link:active, .navigation .navbar-light .navbar-nav .nav-item--secondary .nav-link:focus, .navigation .navbar-light .navbar-nav .nav-item--secondary .nav-link.active {
-  opacity: 1;
-  background-color: #ff8300;
   color: #fff;
 }
 @media (max-width: 991px) {
@@ -2680,7 +2682,7 @@ a.project-nav__link:hover {
 
 .project-info__nav-item + .project-info__nav-item::before {
   content: "|";
-  color: #666;
+  color: #fff;
   padding: 1rem;
 }
 
@@ -2703,6 +2705,7 @@ a.project-nav__link:hover {
 
 .project-info__title {
   color: #4b3829;
+  font-family: Arial, Helvetica;
 }
 .project-info__title:before {
   content: "|";
@@ -2726,6 +2729,7 @@ a.project-nav__link:hover {
   color: black;
   line-height: 1.9;
   font-size: 17px;
+  font-family: Arial, Helvetica;
 }
 
 .project-details__section {
@@ -2780,6 +2784,7 @@ a.project-nav__link:hover {
 .project-info__nav-item {
   text-align: center;
   color: white;
+  font-family: Arial, Helvetica;
 }
 .project-info__nav-item:hover {
   font-weight: bolder;
@@ -2803,7 +2808,7 @@ a.project-nav__link:hover {
 }
 
 .project-info__nav {
-  background: linear-gradient(90deg, #ff8300 90%, transparent);
+  background: linear-gradient(90deg, #ff9933 90%, #ff9933);
 }
 
 .project-details__tagline .rich-text {
@@ -2821,6 +2826,8 @@ a.project-nav__link:hover {
 
 .card {
   padding: 0;
+  height: 100%;
+  min-width: 200px;
 }
 
 .card-body {

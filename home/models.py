@@ -15,7 +15,7 @@ class HomePage(Page):
         FieldPanel('body'),
     ]
     def get_context(self, request):
-        projectpages = self.get_children().live()
+        projectpages = self.get_children().type(ProjectPage).live()
         context = super(HomePage, self).get_context(request)
         context['projectpages'] = projectpages
         return context
@@ -110,6 +110,7 @@ class Projects(Orderable):
     page = ParentalKey(ProjectPage, on_delete=models.SET_NULL, null= True, related_name='projects')
     project_name = models.TextField(default="P")
     project_info = models.TextField(blank=True)
+    project_info_size = models.TextField(blank=True)
     project_paragraph = models.TextField(blank=True)
     project_image = models.ForeignKey(
         'wagtailimages.Image', on_delete=models.SET_NULL,null= True, related_name='+'
@@ -117,6 +118,7 @@ class Projects(Orderable):
     panels = [
         FieldPanel('project_name'),
         FieldPanel('project_info'),
+        FieldPanel('project_info_size'),
         ImageChooserPanel('project_image'),
         FieldPanel('project_paragraph')
         ]

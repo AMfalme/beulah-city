@@ -42,30 +42,29 @@
       opacity: 0.6;
       border-right: 1px solid #fff;
       border-left: 1px solid #fff;
-
+      &.active{
+        background-color: #e57708;
+      }
       &:hover,
-      &:active,
       &:focus,
-      &.active {
+      &:active {
         opacity: 1;
-        background-color: #ff8300;
+        background-color: #ff9933;
       }
 
       .nav-link {
         color: $white;
-        font-size: 14px;
+        font-size: 12px;
         line-height: 26px;
-        padding: 20px 15px;
+        padding: 10px 15px;
         text-transform: uppercase;
         letter-spacing: 1px;
         transition: 0.2s ease-in-out 0s;
-
+        font-family: Arial, Helvetica;
         &:hover,
         &:active,
         &:focus,
         &.active {
-          opacity: 1;
-          background-color: #ff8300;
           color: $white;
         }
       }
