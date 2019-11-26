@@ -3,6 +3,9 @@
 {% load wagtailcore_tags %}
 {% load wagtailimages_tags %}
 
+{% block styles %} 
+  <link rel="stylesheet" href="{% static 'plugins/fontawesome/css/all.css' %}" />
+{% endblock %}
 {% block body_class %}template-homepage{% endblock %}
 
 {% block extra_css %}
@@ -40,7 +43,7 @@
     <div class="d-flex flex-column mt-4 project-info__details-container">
       <!-- start of tagline section  -->
       <div
-        class="d-flex col-12 col-lg-8 mb-5 pb-3 align-self-center align-content-center  project-details__section project-details__tagline ">
+        class="d-flex col-12 col-lg-8 pb-3 align-self-center align-content-center  project-details__section project-details__tagline ">
         <div class="d-flex flex-column col-12 pl-lg-0">
           {{page.hero_intro|richtext}}
         </div>
