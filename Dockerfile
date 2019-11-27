@@ -5,7 +5,7 @@ FROM python:3.7
 #SECURITY_TODO: Secrets should not be exposed
 ARG WAGTAIL_DB_USER=mizizi
 ARG WAGTAIL_DB_PASS=gzlGFzYN%6a4!u7
-ARG WAGTAIL_DB_HOST=10.133.88.171
+ARG WAGTAIL_DB_HOST=mizizi-postgres.do.mizizi.io
 ARG WAGTAIL_DB_PORT=5432
 
 ARG BEULAH_WAGTAIL_DB=beulahcity_com
