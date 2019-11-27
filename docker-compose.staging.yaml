@@ -1,10 +1,10 @@
-version: "3"
+version: '3'
 
 services:
   web:
-    image: gcr.io/mizizi/mizizi_io_web/staging:latest
+    image: gcr.io/mizizi/beulahcity_com_web/staging:latest
     ports:
-      - "15005:8000"
+      - '15005:8000'
     env_file:
       - .env
     deploy:
