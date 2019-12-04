@@ -22,7 +22,7 @@
   </section>
   <section class="project-info">
     <div class="d-none d-lg-flex project-info__nav-container">
-      <div class="d-flex col-xs-12 col-lg-11 align-content-center project-info__nav">
+      <div class="d-flex col-xs-12 col-lg-8 align-content-center project-info__nav">
         <span class="project-info__nav-title pl-1 align-self-center">
           Projects
         </span>
@@ -71,56 +71,57 @@
               Floor Plans
             </h5>
             <div class="d-flex flex-wrap filtr-container card-deck project-floorplan row">
-              {% for portfolio in page.projects.all %} {% if forloop.counter < 4 %}
-                <div class="col-md-6 col-lg-3 my-2">
-                  <div class="card">
-                    <div class="card-header d-flex flex-column">
-                      <span class="project-floorplan__header">
-                        {{portfolio.project_name}}
-                      </span>
-                      {% if portfolio.project_info %}
-                        <span>
-                          {{portfolio.project_info}} 
-                          {% if portfolio.project_info_size %} 
-                            /
-                          {% endif %}
-                          <span class="project-floorplan__header--alternate">
-                            {{portfolio.project_info_size}}
-                          </span>
+              {% for portfolio in page.projects.all %}
+                {% if forloop.counter < 4 %}
+                  <div class="col-md-6 col-lg-3 my-2">
+                    <div class="card project-floorplan__card">
+                      <div class="card-header d-flex flex-column">
+                        <span class="project-floorplan__header">
+                          {{portfolio.project_name}}
                         </span>
+                        {% if portfolio.project_info %}
+                          <span>
+                            {{portfolio.project_info}} 
+                            {% if portfolio.project_info_size %} 
+                              <span>/</span>
+                              <span class="project-floorplan__header--alternate">
+                                {{portfolio.project_info_size}}
+                              </span>
+                            {% endif %}
+                          </span>
+                        {% endif %}
+                      </div>
+                      {% if portfolio.project_paragraph %}
+                      <div class="card-body d-flex flex-column">
+                        <p class="p-2 mb-0">
+                          {{portfolio.project_paragraph}}
+                        </p>
+                        <div class="d-flex project-floorplan__brochure-img-container">
+                          {% image portfolio.project_image fill-420x300 class="img-responsive project-floorplan__img" %}
+                        </div>
+                      </div>
+                      {% else %}
+                        <div class="card-body">
+                          {% image portfolio.project_image fill-200x200 class="card-img-top img-responsive project-floorplan__img" %}
+                        </div>
                       {% endif %}
-                    </div>
-                    {% if portfolio.project_paragraph %}
-                    <div class="card-body d-flex flex-column">
-                      <p class="p-2 mb-0">
-                        {{portfolio.project_paragraph}}
-                      </p>
-                      <div class="d-flex project-floorplan__brochure-img-container">
-                        {% image portfolio.project_image fill-420x300 class="img-responsive project-floorplan__img" %}
+                      <div class="caption card-footer d-flex align-content-center">
+                        <button type="button" class="project-floorplan__link">
+                          Explore
+                        </button>
+                        {% image portfolio.project_image fill-400x400 as img %}
+                        <a class="search-icon ml-auto my-auto project-floorplan__expander" href="{{img.url}}"
+                          data-lightbox="image-1">
+                          <i class="tf-ion-ios-search-strong"></i>
+                        </a>
                       </div>
-                    </div>
-                    {% else %}
-                      <div class="card-body">
-                        {% image portfolio.project_image fill-200x200 class="card-img-top img-responsive project-floorplan__img" %}
-                      </div>
-                    {% endif %}
-                    <div class="caption card-footer d-flex align-content-center">
-                      <button type="button" class="project-floorplan__link">
-                        Explore
-                      </button>
-                      {% image portfolio.project_image fill-400x400 as img %}
-                      <a class="search-icon ml-auto my-auto project-floorplan__expander" href="{{img.url}}"
-                        data-lightbox="image-1">
-                        <i class="tf-ion-ios-search-strong"></i>
-                      </a>
                     </div>
                   </div>
-                </div>
-              {% endif %}
+                {% endif %}
               {% endfor %}
 
               <div class="col-md-6 col-lg-3 my-2">
-                <div class="card">
+                <div class="card project-floorplan__card">
                   <div class="card-header d-flex flex-column">
                     <span>Beulah Genesis Key Data</span>
                   </div>
@@ -137,63 +138,64 @@
                 </div>
               </div>
 
-              {% for portfolio in page.projects.all %} {% if forloop.counter > 3 %}
-                <div class="col-md-6 col-lg-3 my-2">
-                  <div class="card">
-                    <div class="card-header d-flex flex-column">
-                      <span class="project-floorplan__header">
-                        {{portfolio.project_name}}
-                      </span>
-                      {% if portfolio.project_info %}
-                        <span>
-                          {{portfolio.project_info}}
-                          {% if portfolio.project_info and portfolio.project_info_size %} 
-                            /
-                          {% endif %}
-                          <span class="project-floorplan__header--alternate">
-                            {{portfolio.project_info_size}}
-                          </span>
+              {% for portfolio in page.projects.all %} 
+                {% if forloop.counter > 3 %}
+                  <div class="col-md-6 col-lg-3 my-2">
+                    <div class="card project-floorplan__card">
+                      <div class="card-header d-flex flex-column">
+                        <span class="project-floorplan__header">
+                          {{portfolio.project_name}}
                         </span>
+                        {% if portfolio.project_info %}
+                          <span>
+                            {{portfolio.project_info}}
+                            {% if portfolio.project_info_size %} 
+                              <span>/</span>
+                              <span class="project-floorplan__header--alternate">
+                                {{portfolio.project_info_size}}
+                              </span>
+                            {% endif %}
+                          </span>
+                        {% endif %}
+                      </div>
+                      {% if portfolio.project_paragraph %}
+                        <div class="card-body d-flex flex-column">
+                          <p class="p-2 mb-0">
+                            {{portfolio.project_paragraph}}
+                          </p>
+                          <div class="d-flex project-floorplan__brochure-img-container">
+                            {% image portfolio.project_image fill-420x300 class="img-responsive project-floorplan__img" %}
+                          </div>
+                        </div>
+                      {% else %}
+                        <div class="card-body">
+                          {% image portfolio.project_image fill-200x200 class="card-img-top img-responsive project-floorplan__img" %}
+                        </div>
+                      {% endif %}
+                      {% if portfolio.project_brochure %}
+                        <div class="caption card-footer d-flex align-content-start">
+                          <a href="{{portfolio.project_brochure.url}}" class="project-floorplan__link px-1" download="">
+                            Download Brochure
+                          </a>
+                        </div>
+                      {% else %}
+                        <div class="caption card-footer d-flex align-content-center">
+                          <button type="button" class="project-floorplan__link">
+                            Explore
+                          </button>
+                          {% image portfolio.project_image fill-400x400 as img %}
+                          <a class="search-icon ml-auto my-auto project-floorplan__expander" href="{{img.url}}"
+                            data-lightbox="image-1">
+                            <i class="tf-ion-ios-search-strong"></i>
+                          </a>
+                        </div>
                       {% endif %}
                     </div>
-                    {% if portfolio.project_paragraph %}
-                      <div class="card-body d-flex flex-column">
-                        <p class="p-2 mb-0">
-                          {{portfolio.project_paragraph}}
-                        </p>
-                        <div class="d-flex project-floorplan__brochure-img-container">
-                          {% image portfolio.project_image fill-420x300 class="img-responsive project-floorplan__img" %}
-                        </div>
-                      </div>
-                    {% else %}
-                      <div class="card-body">
-                        {% image portfolio.project_image fill-200x200 class="card-img-top img-responsive project-floorplan__img" %}
-                      </div>
-                    {% endif %}
-                    {% if portfolio.project_brochure %}
-                      <div class="caption card-footer d-flex align-content-start">
-                        <a href="{{portfolio.project_brochure.url}}" class="project-floorplan__link px-1" download="">
-                          Download Brochure
-                        </a>
-                      </div>
-                    {% else %}
-                      <div class="caption card-footer d-flex align-content-center">
-                        <button type="button" class="project-floorplan__link">
-                          Explore
-                        </button>
-                        {% image portfolio.project_image fill-400x400 as img %}
-                        <a class="search-icon ml-auto my-auto project-floorplan__expander" href="{{img.url}}"
-                          data-lightbox="image-1">
-                          <i class="tf-ion-ios-search-strong"></i>
-                        </a>
-                      </div>
-                    {% endif %}
                   </div>
-                </div>
-              {% endif %}
+                {% endif %}
               {% endfor %}
               <div class="col-md-6 col-lg-3 my-2">
-                <div class="card project-floorplan__card-bg-secondary">
+                <div class="card project-floorplan__card project-floorplan__card-bg-secondary">
                   <div class="card-header d-flex flex-column">
                     <span class="project-floorplan__header"></span>Contact a Sales Consultant</span>
                   </div>

@@ -2698,10 +2698,9 @@ a.project-nav__link:hover {
 }
 
 .project-info__image {
-  height: 100%;
+  max-height: 100%;
   width: 100%;
-  object-fit: cover;
-  padding: 0;
+  object-fit: contain;
 }
 
 .project-info__title {
@@ -2744,6 +2743,11 @@ a.project-nav__link:hover {
 .project-floorplan .container-fluid .project-ml-n {
   padding-left: 0;
   padding-right: 0;
+}
+
+.project-floorplan__card {
+  width: 280px;
+  height: 100%;
 }
 
 .project-floorplan__img {
@@ -2825,12 +2829,6 @@ a.project-nav__link:hover {
   }
 }
 
-.card {
-  padding: 0;
-  height: 100%;
-  min-width: 200px;
-}
-
 .card-body {
   height: 260px;
   padding: 0px;
@@ -2860,7 +2858,8 @@ a.project-nav__link:hover {
   background-color: #fff;
 }
 
-#contactSalesForm .form-group label, #contactSalesForm .form-group input {
+#contactSalesForm .form-group label,
+#contactSalesForm .form-group input {
   width: 100%;
   max-width: 200px;
 }

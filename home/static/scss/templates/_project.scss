@@ -47,7 +47,7 @@
         position: absolute;
         margin-right: 12px;
         margin-left: -45px;
-        content: "\f375";
+        content: '\f375';
         font-family: $icon-font;
         opacity: 1;
         border-radius: 50%;
@@ -59,13 +59,13 @@
 }
 
 .project-info__nav-item + .project-info__nav-item::before {
-  content: "|";
+  content: '|';
   color: #fff;
   padding: 1rem;
 }
 
 .project-info__nav-title::after {
-  content: ">";
+  content: '>';
   color: #666;
   padding: 1rem;
 }
@@ -74,16 +74,16 @@
   color: black;
 }
 .project-info__image {
-  height: 100%;
+  max-height: 100%;
   width: 100%;
-  object-fit: cover;
-  padding: 0;
+  object-fit: contain;
 }
+
 .project-info__title {
   color: #4b3829;
   font-family: Arial, Helvetica;
   &:before {
-    content: "|";
+    content: '|';
     color: #fe9930;
     padding: 2px;
   }
@@ -97,27 +97,31 @@
   color: black;
   line-height: 1.9;
   font-size: 17px;
-.rich-text p{
-  text-align: left;
-  color: black;
-  line-height: 1.9;
-  font-size: 17px;
-  font-family: Arial, Helvetica;
-}
+  .rich-text p {
+    text-align: left;
+    color: black;
+    line-height: 1.9;
+    font-size: 17px;
+    font-family: Arial, Helvetica;
+  }
 }
 .project-details__section {
   width: 100%;
-  
 }
-.project-floorplan{
-  .container-fluid{
+.project-floorplan {
+  .container-fluid {
     padding-right: 0;
     padding-left: 0;
-    .project-ml-n{
+    .project-ml-n {
       padding-left: 0;
       padding-right: 0;
     }
   }
+}
+
+.project-floorplan__card {
+  width: 280px;
+  height: 100%;
 }
 
 .project-floorplan__img {
@@ -155,7 +159,6 @@
 }
 
 .project-info__nav-item {
-  // color: #f93;
   text-align: center;
   color: white;
   font-family: Arial, Helvetica;
@@ -184,22 +187,16 @@
   background: linear-gradient(90deg, #ff9933 90%, #ff9933);
 }
 
-.project-details__tagline .rich-text{
+.project-details__tagline .rich-text {
   border-bottom: 1px solid #b2a293;
-   p {
-  
-  color: #fe9930;
-  font-size: 1rem;
+  p {
+    color: #fe9930;
+    font-size: 1rem;
 
-  @include for-large-screen-up {
-    font-size: 1.5rem;
+    @include for-large-screen-up {
+      font-size: 1.5rem;
+    }
   }
-}
-}
-.card {
-  padding: 0;
-  height: 100%;
-  min-width: 200px;;
 }
 
 .card-body {
@@ -224,13 +221,13 @@
 }
 
 .project-page {
-  font-family: "Garamond";
+  font-family: 'Garamond';
 }
-.bg-white{
+.bg-white {
   background-color: #fff;
 }
-#contactSalesForm .form-group label, #contactSalesForm .form-group input{
-  
+#contactSalesForm .form-group label,
+#contactSalesForm .form-group input {
   width: 100%;
   max-width: 200px;
 }
