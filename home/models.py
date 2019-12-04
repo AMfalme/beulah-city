@@ -5,9 +5,18 @@ from wagtail.admin.edit_handlers import FieldPanel, InlinePanel, MultiFieldPanel
 from wagtail.images.edit_handlers import ImageChooserPanel
 from modelcluster.fields import ParentalKey
 
+from wagtail.documents.models import Document
+from wagtail.documents.edit_handlers import DocumentChooserPanel
 
 from wagtail.core.fields import RichTextField
 
+from wagtail.contrib.forms.edit_handlers import FormSubmissionsPanel
+from wagtail.contrib.forms.models import AbstractEmailForm, AbstractFormField
+
+
+from wagtail.contrib.settings.models import BaseSetting, register_setting
+
+ 
 
 class HomePage(Page):
     body = models.CharField(max_length=250, blank=True)
@@ -90,6 +99,11 @@ class ProjectPage(Page):
     hero_intro = RichTextField(blank=True)
     project_intro = models.TextField(blank=True)
     project_body = RichTextField(blank=True)
+    project_image_bottom_section = models.ForeignKey(
+        'wagtailimages.Image', on_delete=models.SET_NULL, null=True, related_name='+'
+    )
+    project_pride = models.TextField(blank=True)
+    project_pride_paragraph = models.TextField(blank=True)
     content_panels = Page.content_panels + [
         ImageChooserPanel('hero_image'),
         FieldPanel('project_welcome_title'),
@@ -110,25 +124,36 @@ class ProjectPage(Page):
         InlinePanel('project_details', label="Project Details"),
         FieldPanel('project_information_title'),
         FieldPanel('project_information'),
+        ImageChooserPanel('project_image_bottom_section'),
+        FieldPanel('project_pride'),
+        FieldPanel('project_pride_paragraph'),
     ]
 
 
 class Projects(Orderable):
     page = ParentalKey(ProjectPage, on_delete=models.SET_NULL,
                        null=True, related_name='projects')
-    project_name = models.TextField(default="P")
+    project_name = models.TextField(blank=True)
     project_info = models.TextField(blank=True)
     project_info_size = models.TextField(blank=True)
     project_paragraph = models.TextField(blank=True)
     project_image = models.ForeignKey(
         'wagtailimages.Image', on_delete=models.SET_NULL, null=True, related_name='+'
     )
+    project_brochure = models.ForeignKey(
+        'wagtaildocs.Document',
+        null=True,
+        blank=True,
+        on_delete=models.SET_NULL,
+        related_name='+'
+    )
     panels = [
         FieldPanel('project_name'),
         FieldPanel('project_info'),
         FieldPanel('project_info_size'),
         ImageChooserPanel('project_image'),
-        FieldPanel('project_paragraph')
+        FieldPanel('project_paragraph'),
+        DocumentChooserPanel('project_brochure'),
     ]
 
 
@@ -141,3 +166,36 @@ class Details(Orderable):
         FieldPanel('detail_name', classname="col6"),
         FieldPanel('detail_info', classname="col6"),
     ]
+
+
+class EnquiryField(AbstractFormField):
+	page = ParentalKey('EnquiryPage', on_delete=models.CASCADE, related_name="custom_form_fields")
+
+
+class EnquiryPage(AbstractEmailForm):
+	body = models.CharField(blank=True, max_length=250)
+	intro = models.CharField(blank=True, max_length=250)
+	terms = RichTextField(blank=True)
+	submit = models.CharField(default = "Subscribe", max_length=100)
+	content_panels = AbstractEmailForm.content_panels + [
+		InlinePanel('custom_form_fields', label= "Enquiry Form"),
+		FieldPanel('intro', classname="full"),
+		FieldPanel('terms', classname="full"),
+		FieldPanel('submit', classname="full")
+
+	] 
+	def get_form_fields(self):
+		return self.custom_form_fields.all()
+
+
+@register_setting
+class EnquiryFormSetting(BaseSetting):
+	enquiry_form_page = models.ForeignKey(
+		'wagtailcore.Page', null=True, on_delete=models.SET_NULL, related_name='+'
+	)
+	panels = [
+		PageChooserPanel('enquiry_form_page', ['home.EnquiryPage']),
+	]
+
+	def view(request):
+		custom_form = EnquiryFormSetting.for_site(request.site)

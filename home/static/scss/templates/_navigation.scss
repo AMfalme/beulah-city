@@ -242,6 +242,7 @@
   min-width: 300px;
   height: 180px;
   z-index: 20;
+  cursor: pointer;
 
   @include for-large-screen-up {
     width: 20vw;

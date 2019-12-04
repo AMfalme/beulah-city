@@ -1,43 +1,46 @@
-{% extends "home/base.html" %}
-{% load static %}
-
-{% block body_class %}template-homepage{% endblock %}
-
-{% block extra_css %}
-
+{% extends "home/base.html" %} 
+{% load static %} 
+{% block body_class %}
+  template-homepage
+{% endblock %}
+{% block extra_css %} 
 {% endblock extra_css %}
-
 {% block content %}
 
-
-<section class="home-page">
-  {% for projects in projectpages %}
-  {% with projectcss=projects.specific.css_strings %}
-  <div class="home-page__background home-page__background-image   {{projectcss}}"></div>
-  {% endwith %}
-  {% endfor %}
+  <section class="home-page">
+    {% for projects in projectpages %}
+     {% with projectcss=projects.specific.css_strings %}
+        <div class="home-page__background home-page__background-image   {{projectcss}}"></div>
+      {% endwith %} 
+    {% endfor %}
     <section class="home-page__content">
-        {% for projects in projectpages %}
+      {% for projects in projectpages %} 
         {% with project=projects.specific %}
           <div class="home-page__content-item  {% if forloop.first %} home-page__content-item--active {% endif %} ">
-            <span class="home-page__project-welcome">{{project.project_welcome_title}} </span> <br />
-            <span class="home-page__project-title"> {{project.title}}</span> <br />
+            <span class="home-page__project-welcome">
+              {{project.project_welcome_title}}
+            </span>
+            <br />
+            <span class="home-page__project-title"> 
+              {{project.title}}
+            </span> 
+            <br />
             <span class="home-page__project-description">
               {{project.project_title}}
             </span>
-            <br/>
+            <br />
             <a class="home-page__project-link" href="{{project.url}}">Explore </a>
             <br />
           </div>
-        {% endwith %}
-        {% endfor %}
+        {% endwith %} 
+      {% endfor %}
     </section>
 
     <!-- Project selection slider -->
     <nav class="project-nav">
       <ul class="project-nav__list">
         <li class="project-nav__list-item project-nav__list-item-bg"></li>
-          {% for projects in projectpages %}
+        {% for projects in projectpages %} 
           {% with project=projects.specific %}
             <li class="project-nav__list-item">
               <div class="project-nav__item-info">
@@ -48,13 +51,12 @@
                 <a class="project-nav__link" href="{{project.url}}">Explore</a>
               </div>
             </li>
-          {% endwith %}
-          {% endfor %}
+          {% endwith %} 
+        {% endfor %}
       </ul>
     </nav>
   </section>
 
   <!-- End of project selection slider-->
-
 
 {% endblock content %}

@@ -1,120 +1,106 @@
 {% load static %}
 <!DOCTYPE html>
 <html>
+
 <head>
-	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-    <meta name="description" content="Beulah City Website" />
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <meta name="description" content="Beulah City Website" />
 
-    <meta name="author" content="mizizi.io" />
+  <meta name="author" content="mizizi.io" />
 
-    <title>Beulah City</title>
+  <title>Beulah City</title>
 
-    <!-- Mobile Specific Meta
+  <!-- Mobile Specific Meta
   ================================================== -->
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <!-- Favicon -->
-    <link rel="shortcut icon" type="image/x-icon" href="{% static 'images/favicon.ico' %}" />
+  <!-- Favicon -->
+  <link rel="shortcut icon" type="image/x-icon" href="{% static 'images/favicon.ico' %}" />
 
-    <!-- CSS
+  <!-- CSS
   ================================================== -->
-    <!-- Apex font -->
-    <link rel="stylesheet" href="{% static 'plugins/apex-font/style.css' %}" />
-     <!-- Garamond font -->
-    <link rel="stylesheet" href="{% static 'plugins/garamond-font/style.css' %}" />
-    <!-- bootstrap.min css -->
-    <link rel="stylesheet" href="{% static 'plugins/bootstrap/css/bootstrap.min.css' %}" />
-    <!-- Lightbox.min css -->
-    <link rel="stylesheet" href="{% static 'plugins/lightbox2/dist/css/lightbox.min.css' %}" />
-    <!-- animation css -->
-    <link rel="stylesheet" href="{% static 'plugins/animate/animate.css' %}" />
-    <!-- Slick Carousel -->
-    <link rel="stylesheet" href="{% static 'plugins/slick/slick.css' %}" />
-    <!-- Main Stylesheet -->
-    <link rel="stylesheet" href="{% static 'css/style.css' %}" />
-  
-	{% block styles %}
-  {% endblock %}
-  {% block extrahead %}
-  {% endblock %}
+  <!-- Apex font -->
+  <link rel="stylesheet" href="{% static 'plugins/apex-font/style.css' %}" />
+  <!-- Garamond font -->
+  <link rel="stylesheet" href="{% static 'plugins/garamond-font/style.css' %}" />
+  <!-- bootstrap.min css -->
+  <link rel="stylesheet" href="{% static 'plugins/bootstrap/css/bootstrap.min.css' %}" />
+  <!-- Lightbox.min css -->
+  <link rel="stylesheet" href="{% static 'plugins/lightbox2/dist/css/lightbox.min.css' %}" />
+  <!-- animation css -->
+  <link rel="stylesheet" href="{% static 'plugins/animate/animate.css' %}" />
+  <!-- Slick Carousel -->
+  <link rel="stylesheet" href="{% static 'plugins/slick/slick.css' %}" />
+  <!-- Main Stylesheet -->
+  <link rel="stylesheet" href="{% static 'css/style.css' %}" />
 
-     
-
+  {% block styles %}
+  {% endblock %} 
+  {% block extrahead %} 
+  {% endblock %}
 </head>
 
 {% block body-tag %}
-<body id="body" class="single-page index-page">
-    <!--
-  Start Preloader
-  ==================================== -->
 
+  <body id="body" class="single-page index-page">
+<!-- Start Preloader ==================================== -->
 
 {% endblock %}
-    <div id="preloader">
-      <div class="preloader">
-        <span></span>
-        <span></span>
-        <span></span>
-        <span></span>
-        <span></span>
-        <span></span>
-      </div>
-    </div>
-    <!--
-  End Preloader
-  ==================================== -->
+<div id="preloader">
+  <div class="preloader">
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+</div>
+<!-- End Preloader ==================================== -->
 
-			{% block nav %}
-			{% include "home/nav.html" %}
-			{% endblock %}
-			{% block header %}
-
-
-			{% endblock %}
-    <div class="main-container">
-	{% block content %}
-
-
-    {% endblock %}
-    {% block footer %}
-				{% include "home/footer.html" %}
-			{% endblock %}
-
-	</div>
+{% block nav %} 
+  {% include "home/nav.html" %} 
+{% endblock %} 
+{% block header %} 
+{% endblock %}
+<div class="main-container">
+  {% block content %} 
+  {% endblock %} 
+  {% block footer %} 
+    {% include "home/footer.html" %} 
+  {% endblock %}
+</div>
 
 {% block scripts %}
-	 <!-- End of project selection slider-->
+  <!-- End of project selection slider-->
 
-    <!-- 
+  <!-- 
     Essential Scripts
     =====================================-->
-    <!-- Main jQuery -->
-    <script src="{% static 'plugins/jquery/jquery.min.js' %}"></script>
-    <!-- Google Map -->
-    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBu5nZKbeK-WHQ70oqOWo-_4VmwOwKP9YQ"></script>
-    <script src="{% static 'plugins/google-map/gmap.js' %}"></script>
+  <!-- Main jQuery -->
+  <script src="{% static 'plugins/jquery/jquery.min.js' %}"></script>
+  <!-- Form Validation -->
+  <script src="{% static 'plugins/form-validation/jquery.form.js' %}"></script>
+  <script src="{% static 'plugins/form-validation/jquery.validate.min.js' %}"></script>
 
-    <!-- Form Validation -->
-    <script src="{% static 'plugins/form-validation/jquery.form.js' %}"></script>
-    <script src="{% static 'plugins/form-validation/jquery.validate.min.js' %}"></script>
+  <!-- Bootstrap4 -->
+  <script src="{% static 'plugins/bootstrap/js/bootstrap.min.js' %}"></script>
+  <!-- Parallax -->
+  <script src="{% static 'plugins/parallax/jquery.parallax-1.1.3.js' %}"></script>
+  <!-- lightbox -->
+  <script src="{% static 'plugins/lightbox2/dist/js/lightbox.min.js' %}"></script>
+  <!-- Owl Carousel -->
+  <script src="{% static 'plugins/slick/slick.min.js' %}"></script>
+  <!-- filter -->
+  <script src="{% static 'plugins/filterizr/jquery.filterizr.min.js' %}"></script>
+  <!-- Smooth Scroll js -->
+  <script src="{% static 'plugins/smooth-scroll/smooth-scroll.min.js' %}"></script>
+  <!-- TweenMax -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/2.1.3/TweenMax.min.js"></script>
 
-    <!-- Bootstrap4 -->
-    <script src="{% static 'plugins/bootstrap/js/bootstrap.min.js' %}"></script>
-    <!-- Parallax -->
-    <script src="{% static 'plugins/parallax/jquery.parallax-1.1.3.js' %}"></script>
-    <!-- lightbox -->
-    <script src="{% static 'plugins/lightbox2/dist/js/lightbox.min.js' %}"></script>
-    <!-- Owl Carousel -->
-    <script src="{% static 'plugins/slick/slick.min.js' %}"></script>
-    <!-- filter -->
-    <script src="{% static 'plugins/filterizr/jquery.filterizr.min.js' %}"></script>
-    <!-- Smooth Scroll js -->
-    <script src="{% static 'plugins/smooth-scroll/smooth-scroll.min.js' %}"></script>
-    <!-- TweenMax -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/2.1.3/TweenMax.min.js"></script>
-
-    <!-- Custom js -->
-    <script src="{% static 'js/script.js' %}"></script>
-{% endblock %}
+  <!-- Custom js -->
+  <script src="{% static 'js/script.js' %}"></script>
+  {% endblock %}
 </body>
+
 </html>

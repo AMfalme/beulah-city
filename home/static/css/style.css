@@ -1865,6 +1865,7 @@ body {
   min-width: 300px;
   height: 180px;
   z-index: 20;
+  cursor: pointer;
 }
 @media (min-width: 992px) {
   .project-nav__list-item {
@@ -2853,6 +2854,14 @@ a.project-nav__link:hover {
 
 .project-page {
   font-family: "Garamond";
+}
+
+.bg-white {
+  background-color: #fff;
+}
+
+#contactSalesForm .form-group label, #contactSalesForm .form-group input {
+  margin-right: 5%;
 }
 
 /*=================================================================
