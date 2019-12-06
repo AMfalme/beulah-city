@@ -27,8 +27,10 @@ class HomePage(Page):
 
     def get_context(self, request):
         projectpages = self.get_children().type(ProjectPage).live()
+        futureprojectpage = self.get_children().type(FuturePage).live()
         context = super(HomePage, self).get_context(request)
         context['projectpages'] = projectpages
+        context['futureprojectpage'] = futureprojectpage
         return context
 
 
@@ -94,6 +96,8 @@ class ProjectPage(Page):
     project_image = models.ForeignKey(
         'wagtailimages.Image', on_delete=models.SET_NULL, null=True, related_name='+'
     )
+    coming_soon_title = models.TextField(blank=True)
+    coming_soon = models.TextField(default="Coming Soon")
     project_information_title = models.TextField(blank=True)
     project_information = models.TextField(blank=True)
     hero_intro = RichTextField(blank=True)
@@ -105,18 +109,24 @@ class ProjectPage(Page):
     project_pride = models.TextField(blank=True)
     project_pride_paragraph = models.TextField(blank=True)
     content_panels = Page.content_panels + [
-        ImageChooserPanel('hero_image'),
-        FieldPanel('project_welcome_title'),
-        FieldPanel('project_title'),
-        FieldPanel('project_description'),
-        FieldPanel('css_strings'),
-        ImageChooserPanel('project_image'),
+        MultiFieldPanel(
+            [
+            ImageChooserPanel('hero_image'),
+            FieldPanel('project_welcome_title'),
+            FieldPanel('project_title'),
+            FieldPanel('project_description'),
+            FieldPanel('css_strings'),
+            ImageChooserPanel('project_image'),
+            ]
+        ),
+        FieldPanel('coming_soon_title'),
+        FieldPanel('coming_soon'),
         MultiFieldPanel(
             [
                 FieldPanel('hero_intro'),
                 FieldPanel('project_intro'),
                 FieldPanel('project_body'),
-                InlinePanel('projects', label="Project map"),
+                InlinePanel('project_floor_plans', label="Project plans"),
 
             ]
         ),
@@ -132,7 +142,7 @@ class ProjectPage(Page):
 
 class Projects(Orderable):
     page = ParentalKey(ProjectPage, on_delete=models.SET_NULL,
-                       null=True, related_name='projects')
+                       null=True, related_name='project_floor_plans')
     project_name = models.TextField(blank=True)
     project_info = models.TextField(blank=True)
     project_info_size = models.TextField(blank=True)
@@ -168,6 +178,57 @@ class Details(Orderable):
     ]
 
 
+class FuturePage(Page):
+    project_welcome_title = models.TextField(default="Welcome to")
+    project_title = models.TextField(default="2020-2030")
+    project_description = models.TextField(default="")
+    css_strings = models.TextField(blank=True)
+    hero_image = models.ForeignKey(
+        'wagtailimages.Image', on_delete=models.SET_NULL, null=True, related_name='+'
+    )
+    project_image = models.ForeignKey(
+        'wagtailimages.Image', on_delete=models.SET_NULL, null=True, related_name='+'
+    )
+    project_information_title = models.TextField(blank=True)
+    project_information = models.TextField(blank=True)
+    hero_intro = RichTextField(blank=True)
+    project_intro = models.TextField(blank=True)
+    project_body = RichTextField(blank=True)
+    project_image_bottom_section = models.ForeignKey(
+        'wagtailimages.Image', on_delete=models.SET_NULL, null=True, related_name='+'
+    )
+    project_pride = models.TextField(blank=True)
+    project_pride_paragraph = models.TextField(blank=True)
+    content_panels = Page.content_panels + [
+        ImageChooserPanel('hero_image'),
+        FieldPanel('project_welcome_title'),
+        FieldPanel('project_title'),
+        FieldPanel('project_description'),
+        FieldPanel('css_strings'),
+        ImageChooserPanel('project_image'),
+        MultiFieldPanel(
+            [
+                FieldPanel('hero_intro'),
+                FieldPanel('project_intro'),
+                FieldPanel('project_body'),
+            ]
+        ),
+
+        InlinePanel('future_project_details', label="Project Details"),
+        FieldPanel('project_information_title'),
+        FieldPanel('project_information'),
+        ImageChooserPanel('project_image_bottom_section'),
+    ]
+
+class FuturePageDetails(Orderable):
+    page = ParentalKey(FuturePage, on_delete=models.SET_NULL,
+                       null=True, related_name='future_project_details')
+    detail_name = models.TextField(default="P")
+    detail_info = models.TextField(blank=True)
+    panels = [
+        FieldPanel('detail_name', classname="col6"),
+        FieldPanel('detail_info', classname="col6"),
+    ]
 class EnquiryField(AbstractFormField):
 	page = ParentalKey('EnquiryPage', on_delete=models.CASCADE, related_name="custom_form_fields")
 

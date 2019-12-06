@@ -9,30 +9,63 @@
 
   <section class="home-page">
     {% for projects in projectpages %}
-     {% with projectcss=projects.specific.css_strings %}
-        <div class="home-page__background home-page__background-image   {{projectcss}}"></div>
-      {% endwith %} 
+      {% if forloop.counter < 4 %}
+        {% with projectcss=projects.specific.css_strings %}
+          <div class="home-page__background home-page__background-image   {{projectcss}}"></div>
+        {% endwith %}
+      {% endif %} 
+    {% endfor %}
+    {% for projects in futureprojectpage %}
+      {% if forloop.counter < 2 %}
+        {% with projectcss=projects.specific.css_strings %}
+          <div class="home-page__background home-page__background-image   {{projectcss}}"></div>
+        {% endwith %}
+      {% endif %} 
     {% endfor %}
     <section class="home-page__content">
       {% for projects in projectpages %} 
-        {% with project=projects.specific %}
-          <div class="home-page__content-item  {% if forloop.first %} home-page__content-item--active {% endif %} ">
-            <span class="home-page__project-welcome">
-              {{project.project_welcome_title}}
-            </span>
-            <br />
-            <span class="home-page__project-title"> 
-              {{project.title}}
-            </span> 
-            <br />
-            <span class="home-page__project-description">
-              {{project.project_title}}
-            </span>
-            <br />
-            <a class="home-page__project-link" href="{{project.url}}">Explore </a>
-            <br />
-          </div>
-        {% endwith %} 
+        {% if forloop.counter < 4 %}
+          {% with project=projects.specific %}
+            <div class="home-page__content-item  {% if forloop.first %} home-page__content-item--active {% endif %} ">
+              <span class="home-page__project-welcome">
+                {{project.project_welcome_title}}
+              </span>
+              <br />
+              <span class="home-page__project-title"> 
+                {{project.title}}
+              </span> 
+              <br />
+              <span class="home-page__project-description">
+                {{project.project_title}}
+              </span>
+              <br />
+              <a class="home-page__project-link" href="{{project.url}}">Explore </a>
+              <br />
+            </div>
+          {% endwith %} 
+        {% endif %}
+      {% endfor %}
+      {% for projects in futureprojectpage %} 
+        {% if forloop.counter < 2 %}
+          {% with project=projects.specific %}
+            <div class="home-page__content-item">
+              <span class="home-page__project-welcome">
+                {{project.project_welcome_title}}
+              </span>
+              <br />
+              <span class="home-page__project-title"> 
+                {{project.title}}
+              </span> 
+              <br />
+              <span class="home-page__project-description">
+                {{project.project_title}}
+              </span>
+              <br />
+              <a class="home-page__project-link" href="{{project.url}}">Explore </a>
+              <br />
+            </div>
+          {% endwith %} 
+        {% endif %}
       {% endfor %}
     </section>
 
@@ -40,18 +73,35 @@
     <nav class="project-nav">
       <ul class="project-nav__list">
         <li class="project-nav__list-item project-nav__list-item-bg"></li>
-        {% for projects in projectpages %} 
-          {% with project=projects.specific %}
-            <li class="project-nav__list-item">
-              <div class="project-nav__item-info">
-                <h3 class="project-nav__item-header">{{project.title}}</h3>
-                <p class="project-nav__item-desc">
-                  {{project.project_description}}
-                </p>
-                <a class="project-nav__link" href="{{project.url}}">Explore</a>
-              </div>
-            </li>
-          {% endwith %} 
+        {% for projects in projectpages %}
+          {% if forloop.counter < 4 %} 
+            {% with project=projects.specific %}
+              <li class="project-nav__list-item">
+                <div class="project-nav__item-info">
+                  <h3 class="project-nav__item-header">{{project.title}}</h3>
+                  <p class="project-nav__item-desc">
+                    {{project.project_description}}
+                  </p>
+                  <a class="project-nav__link" href="{{project.url}}">Explore</a>
+                </div>
+              </li>
+            {% endwith %} 
+          {% endif %}
+        {% endfor %}
+        {% for projects in futureprojectpage %}
+          {% if forloop.counter < 2 %} 
+            {% with project=projects.specific %}
+              <li class="project-nav__list-item">
+                <div class="project-nav__item-info">
+                  <h3 class="project-nav__item-header">{{project.title}}</h3>
+                  <p class="project-nav__item-desc">
+                    {{project.project_description}}
+                  </p>
+                  <a class="project-nav__link" href="{{project.url}}">Explore</a>
+                </div>
+              </li>
+            {% endwith %} 
+          {% endif %}
         {% endfor %}
       </ul>
     </nav>

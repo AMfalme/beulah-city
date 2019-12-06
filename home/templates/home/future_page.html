@@ -1,0 +1,157 @@
+{% extends "home/base.html" %}
+{% load static %}
+{% load wagtailcore_tags %}
+{% load wagtailimages_tags %}
+{% block styles %}
+  <link rel="stylesheet" href="{% static 'plugins/fontawesome/css/all.css' %}" />
+  <link rel="stylesheet" href="{% static 'plugins/themefisher-font/style.css' %}" />
+  <link rel="stylesheet" href="{% static 'plugins/lightbox2/dist/css/lightbox.min.css' %}" />
+{% endblock %}
+{% block body_class %}
+  template-homepage
+{% endblock %}
+{% block nav %}
+  {% include "home/navigation_menu.html" %}
+{% endblock %}
+{% block body-tag %}
+  <body id="body" class="project-page">
+  <!-- Start Preloader ==================================== -->
+{% endblock %}
+{% block content %}
+  <section class="project-page-header">
+  </section>
+  <section class="project-info">
+    <div class="d-none d-lg-flex project-info__nav-container">
+      <div class="d-flex col-xs-12 col-lg-8 align-content-center project-info__nav">
+        <span class="project-info__nav-title pl-1 align-self-center">
+          Projects
+        </span>
+        <nav class="nav nav-pills project-info-nav align-content-center">
+          <a class="nav-link project-info__nav-item" href="/beulah-genesis">
+            Beulah Genesis
+          </a>
+          <a class="nav-link project-info__nav-item" href="/beulah-garden-city">
+            Beulah Garden City
+          </a>
+          <a class="nav-link project-info__nav-item" href="/beulah-cerry">
+            Beulah Cerry
+          </a>
+          <a class="nav-link project-info__nav-item" href="/future-projects">
+            Future Projects
+          </a>
+        </nav>
+      </div>
+    </div>
+    <div class="d-flex flex-column mt-4 project-info__details-container">
+      <!-- start of tagline section  -->
+      <div
+        class="d-flex col-12 col-lg-11 pb-3 align-self-center align-content-center  project-details__section project-details__tagline ">
+        <div class="d-flex flex-column col-12 pl-lg-0">
+          {{page.hero_intro|richtext}}
+        </div>
+      </div>
+      <!-- end of tagline section -->
+      <!-- start of overview section -->
+      <div class="d-flex justify-content-center mb-5 project-details__section">
+        <div class="d-flex flex-column col-12 col-lg-11 d-flex justify-content-around">
+          <h5 class="project-info__title mb-4">
+            {{page.project_intro}}
+          </h5>
+          <div class="project-info__description">
+            {{page.project_body|richtext}}
+          </div>
+        </div>
+      </div>
+      <!-- end of overview section -->
+      <div class="d-flex justify-content-center project-details__section {% if page.projects.all %}project-details__section--secondary-bg {% else %}{% endif %}">
+        <div class="d-flex flex-column col-12 col-lg-11 mt-2">
+          <h5 class="project-info__title mb-4">
+            {{page.project_information_title}}
+          </h5>
+          <p class="project-info__description">
+            {{page.project_information}}
+          </p>
+          <div class="align-self-start">
+            {% image page.project_image width-1200 class="project-info__image" %}
+          </div>
+        </div>
+      </div>
+    </div>
+
+      <div class="d-flex justify-content-center mt-5 mb-5 project-details__section">
+        <div class="d-flex flex-column col-12 col-lg-5 align-self-center">
+          <h4 class="project-info__title mb-4">
+            Future Statistics
+          </h4>
+          <table class="table table-borderless">
+            {% for detail in page.future_project_details.all %}
+              <tr>
+                <td>{{detail.detail_name}}</td>
+                <td>{{detail.detail_info}}</td>
+              </tr>
+            {% endfor %}
+          </table>
+        </div>
+        <div class="d-flex col-12 col-lg-6">
+          <div>
+            {% image page.project_image_bottom_section width-500 class="image--cover col-12" %}
+          </div>
+        </div>
+      </div>
+
+    <div class="d-flex justify-content-center pb-5 project-details__section bg-white" id="why-us">
+      <div class="d-flex flex-column col-12 col-lg-11 align-self-center">
+        {% if page.project_pride %}
+          <h4 class="project-info__title mb-4">
+            {{page.project_pride}}
+          </h4>
+        {% endif %} 
+        {% if page.project_pride_paragraph %}
+          <p class="project-info__description pt-5">
+            {{page.project_pride_paragraph}}
+          </p>
+        {% endif %}
+      </div>
+    </div>
+  </section>
+  <footer id="footer" class="d-flex footer justify-content-center">
+    <div class="d-flex flex-column col-12 col-lg-11 ">
+      <div class="d-flex flex-wrap top-footer py-2">
+        <ul class="d-flex justify-content-between col-12 col-lg-6 footer__page-list px-0 my-2 my-lg-0">
+          <li><a href="/">Home</a></li>
+          <li><a href="about#who-we-are">Who We Are</a></li>
+          <li><a href="about#what-we-do">What We Do</a></li>
+          <li><a href="about#why-us">Why Us</a></li>
+          <li><a href="about#contact-us">Contact Us</a></li>
+        </ul>
+        <ul class="d-flex justify-content-between col-12 col-lg-6 footer__project-list px-0 my-2 my-lg-0">
+          <li><a href="/beulah-genesis"> Beulah Genesis</a></li>
+          <li><span>|</span></li>
+          <li><a href="/beulah-garden-city"> Beulah Garden City</a></li>
+          <li><span>|</span></li>
+          <li><a href="/beulah-cerry"> Beulah Cerry</a></li>
+          <li><span>|</span></li>
+          <li><a href="/future-projects"> Future Projects</a></li>
+        </ul>
+        <!-- end container -->
+      </div>
+      <div class="d-flex flex-wrap justify-content-center m-2 bottom-footer">
+        <div class="d-flex justify-content-center col-12 col-lg-6 justify-content-xl-start">
+          <span>&copy; Beulah City
+            <script>
+              document.write(new Date().getFullYear())
+            </script>
+            All rights reserved.
+          </span>
+        </div>
+        <div class="d-flex justify-content-center col-12 col-lg-6 justify-content-xl-end">
+          <i class="far fa-envelope mx-1"></i>
+          <i class="fab fa-facebook-f mx-1"></i>
+          <i class="fab fa-instagram mx-1"></i>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+{% endblock content %}
+</body>

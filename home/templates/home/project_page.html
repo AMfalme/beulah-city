@@ -18,7 +18,8 @@
   <!-- Start Preloader ==================================== -->
 {% endblock %}
 {% block content %}
-  <section class="project-page-header">
+  {% image page.hero_image width-1000 as project_hero_img %}
+  <section class="project-page-header" style="background-image: url({{project_hero_img.url}});">
   </section>
   <section class="project-info">
     <div class="d-none d-lg-flex project-info__nav-container">
@@ -44,34 +45,53 @@
     </div>
     <div class="d-flex flex-column mt-4 project-info__details-container">
       <!-- start of tagline section  -->
-      <div
-        class="d-flex col-12 col-lg-11 pb-3 align-self-center align-content-center  project-details__section project-details__tagline ">
-        <div class="d-flex flex-column col-12 pl-lg-0">
-          {{page.hero_intro|richtext}}
+      {% if page.hero_intro %} 
+        <div class="d-flex col-12 col-lg-11 pb-3 align-self-center align-content-center  project-details__section project-details__tagline ">
+          <div class="d-flex flex-column col-12 pl-lg-0">
+            {{page.hero_intro|richtext}}
+          </div>
         </div>
-      </div>
+      {% endif %}
       <!-- end of tagline section -->
       <!-- start of overview section -->
+      
+      
+    {% if page.coming_soon_title and page.coming_soon %}
       <div class="d-flex justify-content-center mb-5 project-details__section">
         <div class="d-flex flex-column col-12 col-lg-11 d-flex justify-content-around">
           <h5 class="project-info__title mb-4">
-            {{page.project_intro}}
+            {{page.coming_soon_title}}
           </h5>
           <div class="project-info__description">
-            {{page.project_body|richtext}}
+            {{page.coming_soon|richtext}}
           </div>
         </div>
       </div>
+    {% else %}
+      <div class="d-flex justify-content-center mb-5 project-details__section">
+        <div class="d-flex flex-column col-12 col-lg-11 d-flex justify-content-around">
+          {% if page.project_intro %}  
+            <h5 class="project-info__title mb-4">
+              {{page.project_intro}}
+            </h5>
+          {% endif %}
+          {% if page.project_body %}
+            <div class="project-info__description">
+              {{page.project_body|richtext}}
+            </div>
+          {% endif %}
+        </div>
+      </div>
       <!-- end of overview section -->
-      {% if page.projects.all %}
         <!-- start of floor plans -->
+      {% if page.projects.all %}
         <div id="floor-plan" class="d-flex justify-content-center mb-5 project-details__section">
           <div class="d-flex flex-column col-12 col-lg-11">
             <h5 class="project-info__title mb-4 mt-4">
               Floor Plans
             </h5>
             <div class="d-flex flex-wrap filtr-container card-deck project-floorplan row">
-              {% for portfolio in page.projects.all %}
+              {% for portfolio in page.project_floor_plans.all %}
                 {% if forloop.counter < 4 %}
                   <div class="col-md-6 col-lg-3 my-2">
                     <div class="card project-floorplan__card">
@@ -97,19 +117,16 @@
                           {{portfolio.project_paragraph}}
                         </p>
                         <div class="d-flex project-floorplan__brochure-img-container">
-                          {% image portfolio.project_image fill-420x300 class="img-responsive project-floorplan__img" %}
+                          {% image portfolio.project_image width-1000 class="img-responsive project-floorplan__img" %}
                         </div>
                       </div>
                       {% else %}
                         <div class="card-body">
-                          {% image portfolio.project_image fill-200x200 class="card-img-top img-responsive project-floorplan__img" %}
+                          {% image portfolio.project_image width-1000 class="card-img-top img-responsive project-floorplan__img" %}
                         </div>
                       {% endif %}
                       <div class="caption card-footer d-flex align-content-center">
-                        <button type="button" class="project-floorplan__link">
-                          Explore
-                        </button>
-                        {% image portfolio.project_image fill-400x400 as img %}
+                        {% image portfolio.project_image width-1000 as img %}
                         <a class="search-icon ml-auto my-auto project-floorplan__expander" href="{{img.url}}"
                           data-lightbox="image-1">
                           <i class="tf-ion-ios-search-strong"></i>
@@ -138,7 +155,7 @@
                 </div>
               </div>
 
-              {% for portfolio in page.projects.all %} 
+              {% for portfolio in page.project_floor_plans.all %} 
                 {% if forloop.counter > 3 %}
                   <div class="col-md-6 col-lg-3 my-2">
                     <div class="card project-floorplan__card">
@@ -164,12 +181,12 @@
                             {{portfolio.project_paragraph}}
                           </p>
                           <div class="d-flex project-floorplan__brochure-img-container">
-                            {% image portfolio.project_image fill-420x300 class="img-responsive project-floorplan__img" %}
+                            {% image portfolio.project_image width-1000 class="img-responsive project-floorplan__img" %}
                           </div>
                         </div>
                       {% else %}
                         <div class="card-body">
-                          {% image portfolio.project_image fill-200x200 class="card-img-top img-responsive project-floorplan__img" %}
+                          {% image portfolio.project_image width-1000 class="card-img-top img-responsive project-floorplan__img" %}
                         </div>
                       {% endif %}
                       {% if portfolio.project_brochure %}
@@ -180,10 +197,7 @@
                         </div>
                       {% else %}
                         <div class="caption card-footer d-flex align-content-center">
-                          <button type="button" class="project-floorplan__link">
-                            Explore
-                          </button>
-                          {% image portfolio.project_image fill-400x400 as img %}
+                          {% image portfolio.project_image width-1000 as img %}
                           <a class="search-icon ml-auto my-auto project-floorplan__expander" href="{{img.url}}"
                             data-lightbox="image-1">
                             <i class="tf-ion-ios-search-strong"></i>
@@ -217,7 +231,7 @@
 
       <!-- end of floor plans -->
 
-      <div class="d-flex justify-content-center project-details__section {% if page.projects.all %}project-details__section--secondary-bg {% else %}{% endif %}">
+      <div class="d-flex justify-content-center project-details__section {% if page.project_floor_plans.all %}project-details__section--secondary-bg {% else %}{% endif %}">
         <div class="d-flex flex-column col-12 col-lg-11 mt-2">
           <h5 class="project-info__title mb-4">
             {{page.project_information_title}}
@@ -225,50 +239,28 @@
           <p class="project-info__description">
             {{page.project_information}}
           </p>
-          <div>
-            {% image page.project_image width-1000 class="project-info__image" %}
+          <div class="align-self-start">
+            {% image page.project_image width-1200 class="project-info__image" %}
           </div>
         </div>
       </div>
-    </div>
-    {% if page.projects.all %} {% else %}
-      <div class="d-flex justify-content-center mt-5 mb-5 project-details__section">
-        <div class="d-flex flex-column col-12 col-lg-3 align-self-center">
-          <h4 class="project-info__title mb-4">
-            Future Project Statistics
-          </h4>
-          <table class="table table-borderless">
-            {% for detail in page.project_details.all %}
-              <tr>
-                <td>{{detail.detail_name}}</td>
-                <td>{{detail.detail_info}}</td>
-              </tr>
-            {% endfor %}
-          </table>
-        </div>
-        <div class="d-flex col-12 col-lg-5">
-          <div>
-            {% image page.project_image_bottom_section width-1000 class="image--cover col-12" %}
+      <div class="d-flex justify-content-center pb-5 project-details__section bg-white" id="why-us">
+          <div class="d-flex flex-column col-12 col-lg-11 align-self-center">
+            {% if page.project_pride %}
+              <h4 class="project-info__title mb-4">
+                {{page.project_pride}}
+              </h4>
+            {% endif %} 
+            {% if page.project_pride_paragraph %}
+              <p class="project-info__description pt-5">
+                {{page.project_pride_paragraph}}
+              </p>
+            {% endif %}
           </div>
-        </div>
       </div>
-    {% endif %}
-    <div class="d-flex justify-content-center pb-5 project-details__section bg-white" id="why-us">
-      <div class="d-flex flex-column col-12 col-lg-11 align-self-center">
-        {% if page.project_pride %}
-          <h4 class="project-info__title mb-4">
-            {{page.project_pride}}
-          </h4>
-        {% endif %} 
-        {% if page.project_pride_paragraph %}
-          <p class="project-info__description pt-5">
-            {{page.project_pride_paragraph}}
-          </p>
-        {% endif %}
-      </div>
-    </div>
-  </section>
-  <footer id="footer" class="d-flex footer justify-content-center">
+    </section>
+  {% endif %}
+  <footer id="footer" class="d-flex footer justify-content-center" {% if page.coming_soon_title and page.coming_soon %} style="bottom: 0; position: absolute; width: 100%;" {% endif %} >
     <div class="d-flex flex-column col-12 col-lg-11 ">
       <div class="d-flex flex-wrap top-footer py-2">
         <ul class="d-flex justify-content-between col-12 col-lg-6 footer__page-list px-0 my-2 my-lg-0">
@@ -285,7 +277,7 @@
           <li><span>|</span></li>
           <li><a href="/beulah-cerry"> Beulah Cerry</a></li>
           <li><span>|</span></li>
-          <li><a href="/future-projects"> Future Projects</a></li>
+          <li><a href="/future"> Future Projects</a></li>
         </ul>
         <!-- end container -->
       </div>
