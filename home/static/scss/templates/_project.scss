@@ -64,10 +64,16 @@
   padding: 1rem;
 }
 
+.project-info__nav-title {
+  background-color: #f1992e;
+  font-family: Arial, Helvetica;
+  font-weight: bold;
+}
 .project-info__nav-title::after {
   content: '>';
   color: #666;
   padding: 1rem;
+  align-self: center !important;
 }
 
 .project-info {
@@ -183,8 +189,8 @@
   }
 }
 
-.project-info__nav {
-  background: linear-gradient(90deg, #ff9933 90%, #ff9933);
+.project-info-nav {
+  background: #e57608;
 }
 
 .project-details__tagline .rich-text {
