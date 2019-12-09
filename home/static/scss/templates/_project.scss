@@ -113,6 +113,7 @@
 }
 .project-details__section {
   width: 100%;
+  border: none;
 }
 .project-floorplan {
   .container-fluid {
@@ -193,8 +194,14 @@
   background: #e57608;
 }
 
-.project-details__tagline .rich-text {
-  border-bottom: 1px solid #b2a293;
+.project-details__tagline {
+  .tagline_section{
+    color: #fe9930;
+      
+  font-size: 1.4rem;
+  }
+  
+  font-size: 1.2rem;
   p {
     color: #fe9930;
     font-size: 1rem;

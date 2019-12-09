@@ -18,7 +18,8 @@
   <!-- Start Preloader ==================================== -->
 {% endblock %}
 {% block content %}
-  <section class="project-page-header">
+{% image page.hero_image width-1000 as project_hero_img %}
+  <section class="project-page-header" style="background-image: url({{project_hero_img.url}});">
   </section>
   <section class="project-info">
     <div class="d-none d-lg-flex project-info__nav-container">
@@ -46,12 +47,27 @@
     </div>
     <div class="d-flex flex-column mt-4 project-info__details-container">
       <!-- start of tagline section  -->
-      <div
-        class="d-flex col-12 col-lg-11 pb-3 align-self-center align-content-center  project-details__section project-details__tagline ">
-        <div class="d-flex flex-column col-12 pl-lg-0">
-          {{page.hero_intro|richtext}}
+      {% if page.hero_intro_one %} 
+        <div class="d-flex col-12 col-lg-11 pb-3 align-self-center align-content-center  project-details__section project-details__tagline ">
+          <div class="d-flex flex-column col-12 pl-lg-0">
+            {{page.hero_intro_one}}
+          </div>
         </div>
-      </div>
+      {% endif %}
+      {% if page.hero_intro_two %} 
+        <div class="d-flex col-12 col-lg-11 pb-3 align-self-center align-content-center  project-details__section project-details__tagline ">
+          <div class="d-flex flex-column col-12 pl-lg-0">
+            {{page.hero_intro_two}}
+          </div>
+        </div>
+      {% endif %}
+      {% if page.hero_intro_three %} 
+        <div class="d-flex col-12 col-lg-11 pb-3 align-self-center align-content-center  project-details__section project-details__tagline ">
+          <div class="d-flex flex-column col-12 pl-lg-0">
+            {{page.hero_intro_three}}
+          </div>
+        </div>
+      {% endif %}
       <!-- end of tagline section -->
       <!-- start of overview section -->
       <div class="d-flex justify-content-center mb-5 project-details__section">
