@@ -191,7 +191,9 @@ class FuturePage(Page):
     )
     project_information_title = models.TextField(blank=True)
     project_information = models.TextField(blank=True)
-    hero_intro = RichTextField(blank=True)
+    hero_intro_one = models.TextField(blank=True)
+    hero_intro_two = models.TextField(blank=True)
+    hero_intro_three = models.TextField(blank=True)
     project_intro = models.TextField(blank=True)
     project_body = RichTextField(blank=True)
     project_image_bottom_section = models.ForeignKey(
@@ -208,7 +210,9 @@ class FuturePage(Page):
         ImageChooserPanel('project_image'),
         MultiFieldPanel(
             [
-                FieldPanel('hero_intro'),
+                FieldPanel('hero_intro_one'),
+                FieldPanel('hero_intro_two'),
+                FieldPanel('hero_intro_three'),
                 FieldPanel('project_intro'),
                 FieldPanel('project_body'),
             ]
