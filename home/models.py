@@ -37,7 +37,9 @@ class HomePage(Page):
 class AboutPage(Page):
     body = models.CharField(max_length=250, blank=True)
     intro = models.CharField(max_length=250, blank=True)
-    hero_intro = RichTextField(blank=True)
+    hero_intro_one = models.TextField(blank=True)
+    hero_intro_two = models.TextField(blank=True)
+    hero_intro_three = models.TextField(blank=True)
     about_title = models.TextField(default="Who we are")
     about_paragraph = models.TextField(blank=True)
     projects_overview_title = models.TextField(blank=True)
@@ -54,7 +56,9 @@ class AboutPage(Page):
     )
     content_panels = Page.content_panels + [
         FieldPanel('body'),
-        FieldPanel('hero_intro'),
+        FieldPanel('hero_intro_one'),
+        FieldPanel('hero_intro_two'),
+        FieldPanel('hero_intro_three'),
         FieldPanel('about_title'),
         FieldPanel('about_paragraph'),
         FieldPanel('projects_overview_title'),
