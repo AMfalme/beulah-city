@@ -101,7 +101,7 @@ class ProjectPage(Page):
         'wagtailimages.Image', on_delete=models.SET_NULL, null=True, related_name='+'
     )
     coming_soon_title = models.TextField(blank=True)
-    coming_soon = models.TextField(default="Coming Soon")
+    coming_soon = models.TextField(blank=True)
     project_information_title = models.TextField(blank=True)
     project_information = models.TextField(blank=True)
     hero_intro_one = models.TextField(blank=True)

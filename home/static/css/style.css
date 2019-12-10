@@ -1259,12 +1259,11 @@ body {
 
 .project-page-header {
   background-image: url("../images/company/projects/genesis/cover.jpeg");
-  background-size: cover;
-  padding: 140px 0 70px;
+  background-size: 100%;
+  height: 300px;
   text-align: center;
   color: #fff;
   position: relative;
-  background-position: 10% 18%;
 }
 .project-page-header:before {
   background: rgba(0, 0, 0, 0.5);
@@ -2879,6 +2878,13 @@ a.project-nav__link:hover {
 #contactSalesForm .form-group input {
   width: 100%;
   max-width: 200px;
+}
+
+.logo-img img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 165px;
 }
 
 /*=================================================================

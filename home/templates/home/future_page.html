@@ -20,6 +20,9 @@
 {% block content %}
 {% image page.hero_image width-1000 as project_hero_img %}
   <section class="project-page-header" style="background-image: url({{project_hero_img.url}});">
+    <div class="logo-img">
+      <img src="{% static 'images/company/beulah_logo_02.png' %}" />
+    </div>
   </section>
   <section class="project-info">
     <div class="d-none d-lg-flex project-info__nav-container">
