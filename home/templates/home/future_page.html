@@ -124,13 +124,15 @@
           <li><a href="about#contact-us">Contact Us</a></li>
         </ul>
         <ul class="d-flex justify-content-between col-12 col-lg-6 footer__project-list px-0 my-2 my-lg-0">
-          <li><a href="/beulah-genesis"> Beulah Genesis</a></li>
-          <li><span>|</span></li>
-          <li><a href="/beulah-garden-city"> Beulah Garden City</a></li>
-          <li><span>|</span></li>
-          <li><a href="/beulah-cerry"> Beulah Cerry</a></li>
-          <li><span>|</span></li>
-          <li><a href="/future-projects"> Future Projects</a></li>
+          {% for projects in projectpages %}
+            <li><a href="{{projects.url}}"> {{projects.title}}</a></li>
+            <li><span>|</span></li>
+          {% endfor %}
+          
+          {% for futurepage in futureprojectpage %}
+            <li><a href="{{futurepage.url}}"> {{futurepage.title}}</a></li>
+            <li><span>|</span></li>
+          {% endfor %}
         </ul>
         <!-- end container -->
       </div>
