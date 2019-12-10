@@ -2798,9 +2798,10 @@ a.project-nav__link:hover {
   color: white;
   font-family: Arial, Helvetica;
 }
-.project-info__nav-item:hover {
+.project-info__nav-item:hover, .project-info__nav-item.active {
   font-weight: bolder;
   color: white;
+  background-color: transparent !important;
 }
 
 .project-info__nav-container {

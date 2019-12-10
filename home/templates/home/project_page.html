@@ -29,20 +29,7 @@
            Projects
           </span>
         </div>
-        <nav class="nav nav-pills project-info-nav align-content-center">
-          <a class="nav-link project-info__nav-item" href="/beulah-genesis">
-            Beulah Genesis
-          </a>
-          <a class="nav-link project-info__nav-item" href="/beulah-garden-city">
-            Beulah Garden City
-          </a>
-          <a class="nav-link project-info__nav-item" href="/beulah-cerry">
-            Beulah Cerry
-          </a>
-          <a class="nav-link project-info__nav-item" href="/future-projects">
-            Future Projects
-          </a>
-        </nav>
+        {% include 'home/project_nav.html' %}
       </div>
     </div>
     <div class="d-flex flex-column mt-4 project-info__details-container">
@@ -287,13 +274,11 @@
           <li><a href="about#contact-us">Contact Us</a></li>
         </ul>
         <ul class="d-flex justify-content-between col-12 col-lg-6 footer__project-list px-0 my-2 my-lg-0">
-          <li><a href="/beulah-genesis"> Beulah Genesis</a></li>
-          <li><span>|</span></li>
-          <li><a href="/beulah-garden-city"> Beulah Garden City</a></li>
-          <li><span>|</span></li>
-          <li><a href="/beulah-cerry"> Beulah Cerry</a></li>
-          <li><span>|</span></li>
-          <li><a href="/future"> Future Projects</a></li>
+           {% for menu in menuitems %}
+            <li>
+              <a href="{{menu.url}}">{{menu.title}}</a>
+            </li>
+          {% endfor %}
         </ul>
         <!-- end container -->
       </div>

@@ -1,0 +1,12 @@
+<nav class="nav nav-pills project-info-nav align-content-center">
+    {% for projects in projectpages %}
+    <a class="nav-link project-info__nav-item {% if active_page.title == projects.title %}active{% endif %} " href="{{projects.url}}">
+      {{projects.title}}
+    </a>
+    {% endfor %}
+    {% for futurepage in futureprojectpage %}
+      <a class="nav-link project-info__nav-item {% if active_page.title == futurepage.title %}active{% endif %} " href="{{futurepage.url}}">
+        {{futurepage.title}}
+      </a>
+    {% endfor %}
+  </nav>

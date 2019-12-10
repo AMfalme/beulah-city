@@ -146,7 +146,17 @@ class ProjectPage(Page):
         FieldPanel('project_pride'),
         FieldPanel('project_pride_paragraph'),
     ]
+    def get_context(self, request, *args, **kwargs):
 
+        
+        projectpages = self.get_siblings().type(ProjectPage).live()
+        futureprojectpage = FuturePage.objects.all()
+        context = super(ProjectPage, self).get_context(request)
+        context['projectpages'] = projectpages
+        active_page = self
+        context['active_page'] = active_page
+        context['futureprojectpage'] = futureprojectpage
+        return context
 
 class Projects(Orderable):
     page = ParentalKey(ProjectPage, on_delete=models.SET_NULL,
@@ -220,7 +230,6 @@ class FuturePage(Page):
             [
                 FieldPanel('hero_intro_one'),
                 FieldPanel('hero_intro_two'),
-                FieldPanel('hero_intro_three'),
                 FieldPanel('project_intro'),
                 FieldPanel('project_body'),
             ]
@@ -231,6 +240,17 @@ class FuturePage(Page):
         FieldPanel('project_information'),
         ImageChooserPanel('project_image_bottom_section'),
     ]
+    def get_context(self, request, *args, **kwargs):
+
+        
+        projectpages = self.get_siblings().type(ProjectPage).live()
+        futureprojectpage = FuturePage.objects.all()
+        active_page = self
+        context = super(FuturePage, self).get_context(request)
+        context['projectpages'] = projectpages
+        context['futureprojectpage'] = futureprojectpage
+        context['active_page'] = active_page
+        return context
 
 class FuturePageDetails(Orderable):
     page = ParentalKey(FuturePage, on_delete=models.SET_NULL,

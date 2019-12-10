@@ -169,9 +169,10 @@
   color: white;
   font-family: Arial, Helvetica;
 
-  &:hover {
+  &:hover, &.active {
     font-weight: bolder;
     color: white;
+    background-color: transparent !important;
   }
 }
 
