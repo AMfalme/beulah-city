@@ -1259,7 +1259,7 @@ body {
 
 .project-page-header {
   background-image: url("../images/company/projects/genesis/cover.jpeg");
-  background-size: 100%;
+  background-size: cover;
   height: 300px;
   text-align: center;
   color: #fff;
