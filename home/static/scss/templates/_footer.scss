@@ -3,8 +3,7 @@
 ==================================================================*/
 
 .top-footer {
-  border-top: 1px solid #404040;
-  border-bottom: 1px solid #5b3d26;
+  border-bottom: 5px solid #8a5a31;
   h3 {
     line-height: 1;
     color: $white;
@@ -27,7 +26,6 @@
     -moz-transition: color 0.3s;
     -ms-transition: color 0.3s;
     transition: color 0.3s;
-    font-family: $primary-font;
     &:hover {
       color: $primary-color-light;
     }
@@ -87,7 +85,7 @@
   text-transform: uppercase;
   @include for-large-screen-up {
     &::after {
-      content: " | ";
+      content: ' | ';
       text-align: center;
       color: white;
       font-weight: bolder;

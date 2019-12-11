@@ -80,8 +80,10 @@
   color: black;
 }
 .project-info__image {
-  max-height: 100%;
-  width: 100%;
+  //image needs to be tight so no space between image and content above and below
+  //hence 100% height
+  height: 100%;
+  max-width: 100%;
   object-fit: contain;
 }
 
@@ -157,7 +159,7 @@
   min-height: 0;
 }
 .project-details__section--secondary-bg {
-  background: #f9f9f9;
+  background: #e5e5e5;
 }
 
 .project-item__brochure-link {
@@ -169,7 +171,8 @@
   color: white;
   font-family: Arial, Helvetica;
 
-  &:hover, &.active {
+  &:hover,
+  &.active {
     font-weight: bolder;
     color: white;
     background-color: transparent !important;
@@ -195,13 +198,14 @@
 }
 
 .project-details__tagline {
-  .tagline_section{
+  font-family: Garamond;
+  .tagline_section {
     color: #fe9930;
     line-height: 1;
-      
-  font-size: 1.4rem;
+
+    font-size: 1.4rem;
   }
-  
+
   font-size: 1.2rem;
   p {
     color: #fe9930;
@@ -212,7 +216,7 @@
     }
   }
 }
-.border-b{
+.border-b {
   border-bottom: 1px solid #b2a293;
 }
 .card-body {
@@ -237,8 +241,9 @@
 }
 
 .project-page {
-  font-family: 'Garamond';
+  font-family: Arial, Helvetica, sans-serif;
 }
+
 .bg-white {
   background-color: #fff;
 }
@@ -247,7 +252,7 @@
   width: 100%;
   max-width: 200px;
 }
-.logo-img img{
+.logo-img img {
   position: absolute;
   top: 70px;
   left: 0;

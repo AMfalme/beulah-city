@@ -1,5 +1,5 @@
-@import url("https://fonts.googleapis.com/css?family=Catamaran:400,500,600,700,700|Source+Sans+Pro:400,600");
-@import "responsive";
+@import url('https://fonts.googleapis.com/css?family=Catamaran:400,500,600,700,700|Source+Sans+Pro:400,600');
+@import 'responsive';
 
 body {
   line-height: 1.4;
@@ -7,9 +7,6 @@ body {
   -webkit-font-smoothing: antialiased;
 }
 p {
-  font-family: $primary-font;
-  color: white;
-
   @include for-large-screen-up {
     font-size: 16px;
   }
