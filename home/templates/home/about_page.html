@@ -23,10 +23,12 @@
 
 {% endblock %}
 {% block content %}
-
-  <section class="project-page-header">
+  {% image page.hero_image original as project_hero_img %}
+  <section class="project-page-header" style="background-image: url({{project_hero_img.url}});">
     <div class="logo-img">
-      <img src="{% static 'images/company/beulah_logo_02.png' %}" />
+      <a class="home-link" href='/'>
+        <img src="{% static 'images/company/beulah_logo_02.png' %}" />
+      </a>
     </div>
   </section>
   <section class="project-info">
@@ -105,7 +107,9 @@
           <p class="project-info__description">
             {{page.company_overview_paragraph}}
           </p>
-          {% image page.company_overview_image width-1000 class="col-12" %}
+          <div class="align-self-start">
+            {% image page.company_overview_image width-1000 class="project-info__image" %}
+          </div>
         </div>
       </div>
       <div class="d-flex justify-content-center mb-5 project-details__section" id="why-us">

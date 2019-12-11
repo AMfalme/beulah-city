@@ -1,5 +1,7 @@
 {% extends "home/base.html" %} 
 {% load static %} 
+{% load wagtailcore_tags %}
+{% load wagtailimages_tags %}
 {% block body_class %}
   template-homepage
 {% endblock %}
@@ -10,15 +12,32 @@
   <section class="home-page">
     {% for projects in projectpages %}
       {% if forloop.counter < 4 %}
-        {% with projectcss=projects.specific.css_strings %}
-          <div class="home-page__background home-page__background-image   {{projectcss}}"></div>
+        {% with project_data=projects.specific %}
+          {% image project_data.project_image original as project_hero_img %}
+          {% image project_data.project_image_small original as project_hero_img_small %}
+          {% if forloop.first %}
+            <div class=" home-page__background-image home-page__background-image--active">
+              <img src="{{ project_hero_img.url }}" alt="{{ project_hero_img.alt }}" class="hero_img d-none d-lg-block" />
+              <img src="{{ project_hero_img_small.url }}" alt="{{ project_hero_img_small.alt }}" class="hero_img d-block d-lg-none" />
+            </div>
+          {% else %}
+            <div class=" home-page__background-image">
+              <img src="{{ project_hero_img.url }}" alt="{{ project_hero_img.alt }}" class="hero_img d-none d-lg-block" />
+              <img src="{{ project_hero_img_small.url }}" alt="{{ project_hero_img_small.alt }}" class="hero_img d-block d-lg-none" />
+            </div>
+          {% endif %}
         {% endwith %}
       {% endif %} 
     {% endfor %}
     {% for projects in futureprojectpage %}
       {% if forloop.counter < 2 %}
-        {% with projectcss=projects.specific.css_strings %}
-          <div class="home-page__background home-page__background-image   {{projectcss}}"></div>
+        {% with project_data=projects.specific %}
+          {% image project_data.project_image width-1000 as project_hero_img %}
+          {% image project_data.project_image_small width-1000 as project_hero_img_small %}
+          <div class=" home-page__background-image">
+            <img src="{{ project_hero_img.url }}" alt="{{ project_hero_img.alt }}" class="hero_img d-none d-lg-block" />
+            <img src="{{ project_hero_img_small.url }}" alt="{{ project_hero_img_small.alt }}" class="hero_img d-block d-lg-none" />
+          </div>
         {% endwith %}
       {% endif %} 
     {% endfor %}
@@ -26,22 +45,42 @@
       {% for projects in projectpages %} 
         {% if forloop.counter < 4 %}
           {% with project=projects.specific %}
-            <div class="home-page__content-item  {% if forloop.first %} home-page__content-item--active {% endif %} ">
-              <span class="home-page__project-welcome">
-                {{project.project_welcome_title}}
-              </span>
-              <br />
-              <span class="home-page__project-title"> 
-                {{project.title}}
-              </span> 
-              <br />
-              <span class="home-page__project-description">
-                {{project.project_title}}
-              </span>
-              <br />
-              <a class="home-page__project-link" href="{{project.url}}">Explore </a>
-              <br />
-            </div>
+            {% if forloop.first %}
+              <div class="home-page__content-item   home-page__content-item--active ">
+                <span class="home-page__project-welcome">
+                  {{project.project_welcome_title}}
+                </span>
+                <br/>
+                <span class="home-page__project-title">
+                  {{project.title}}
+                </span>
+                <br/>
+                <span class="home-page__project-description">
+                  {{project.project_title}}
+                </span>
+                <br/>
+                <a class="home-page__project-link" href="{{project.url}}">Explore </a>
+                <br/>
+                </div>
+            {% else %}  
+              <div class="home-page__content-item">
+                <span class="home-page__project-welcome">
+                  {{project.project_welcome_title}}
+                </span>
+                <br/>
+                <span class="home-page__project-title">
+                  {{project.title}}
+                </span>
+                <br/>
+                <span class="home-page__project-description">
+                  {{project.project_title}}
+                </span>
+                <br/>
+                <a class="home-page__project-link" href="{{project.url}}">Explore </a>
+                <br/>
+                </div>
+            {% endif %}
+              
           {% endwith %} 
         {% endif %}
       {% endfor %}

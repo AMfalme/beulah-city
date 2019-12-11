@@ -18,10 +18,12 @@
   <!-- Start Preloader ==================================== -->
 {% endblock %}
 {% block content %}
-  {% image page.hero_image fill-1300x300 as project_hero_img %}
+  {% image page.hero_image fill-1900x300 as project_hero_img %}
   <section class="project-page-header" style="background-image: url({{project_hero_img.url}});">
     <div class="logo-img">
-      <img src="{% static 'images/company/beulah_logo_02.png' %}" />
+      <a class="home-link" href='/'>
+        <img src="{% static 'images/company/beulah_logo_02.png' %}" />
+      </a>
     </div>
   </section>
   <section class="project-info">

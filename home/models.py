@@ -42,6 +42,9 @@ class AboutPage(Page):
     hero_intro_three = models.TextField(blank=True)
     about_title = models.TextField(default="Who we are")
     about_paragraph = models.TextField(blank=True)
+    hero_image = models.ForeignKey(
+        'wagtailimages.Image', on_delete=models.SET_NULL, null=True, related_name='+'
+    )
     projects_overview_title = models.TextField(blank=True)
     projects_overview = models.TextField(blank=True)
     company_overview = models.TextField(blank=True)
@@ -56,6 +59,7 @@ class AboutPage(Page):
     )
     content_panels = Page.content_panels + [
         FieldPanel('body'),
+        ImageChooserPanel('hero_image'),
         FieldPanel('hero_intro_one'),
         FieldPanel('hero_intro_two'),
         FieldPanel('hero_intro_three'),
@@ -100,6 +104,9 @@ class ProjectPage(Page):
     project_image = models.ForeignKey(
         'wagtailimages.Image', on_delete=models.SET_NULL, null=True, related_name='+'
     )
+    project_image_small = models.ForeignKey(
+        'wagtailimages.Image', on_delete=models.SET_NULL, null=True, related_name='+'
+    )
     coming_soon_title = models.TextField(blank=True)
     coming_soon = models.TextField(blank=True)
     project_information_title = models.TextField(blank=True)
@@ -123,7 +130,9 @@ class ProjectPage(Page):
             FieldPanel('project_description'),
             FieldPanel('css_strings'),
             ImageChooserPanel('project_image'),
-            ]
+            ImageChooserPanel('project_image_small'),
+            ],
+            
         ),
         FieldPanel('coming_soon_title'),
         FieldPanel('coming_soon'),
@@ -207,6 +216,9 @@ class FuturePage(Page):
     project_image = models.ForeignKey(
         'wagtailimages.Image', on_delete=models.SET_NULL, null=True, related_name='+'
     )
+    project_image_small = models.ForeignKey(
+        'wagtailimages.Image', on_delete=models.SET_NULL, null=True, related_name='+'
+    )
     project_information_title = models.TextField(blank=True)
     project_information = models.TextField(blank=True)
     hero_intro_one = models.TextField(blank=True)
@@ -226,6 +238,7 @@ class FuturePage(Page):
         FieldPanel('project_description'),
         FieldPanel('css_strings'),
         ImageChooserPanel('project_image'),
+        ImageChooserPanel('project_image_small'),
         MultiFieldPanel(
             [
                 FieldPanel('hero_intro_one'),

@@ -1902,6 +1902,8 @@ body {
 
 a.project-nav__link {
   color: #f93;
+  position: absolute;
+  bottom: 40px;
 }
 
 a.project-nav__link:active,
@@ -2510,15 +2512,6 @@ a.project-nav__link:hover {
   background-color: #3d3332;
 }
 
-.home-page__background {
-  height: inherit;
-  width: inherit;
-  position: absolute;
-  z-index: 10;
-  top: 0;
-  left: 0;
-}
-
 .home-page__content-item {
   z-index: 30;
   position: absolute;
@@ -2566,8 +2559,13 @@ a.project-nav__link:hover {
 
 .home-page__background-image {
   object-fit: cover;
-  background-size: cover;
   opacity: 0;
+  height: inherit;
+  width: inherit;
+  position: absolute;
+  z-index: 10;
+  top: 0;
+  left: 0;
 }
 
 .home-page__background-image--active {
@@ -2576,40 +2574,8 @@ a.project-nav__link:hover {
   opacity: 1;
 }
 
-.home-page__background-image1 {
-  background-image: url(../images/slider/android-1080p-1.jpg);
-}
-@media (min-width: 992px) {
-  .home-page__background-image1 {
-    background-image: url(../images/slider/slide1.jpg);
-  }
-}
-
-.home-page__background-image2 {
-  background-image: url(../images/slider/android-1080p-2.jpg);
-}
-@media (min-width: 992px) {
-  .home-page__background-image2 {
-    background-image: url(../images/slider/slide2.jpg);
-  }
-}
-
-.home-page__background-image3 {
-  background-image: url(../images/slider/android-1080p-3.jpg);
-}
-@media (min-width: 992px) {
-  .home-page__background-image3 {
-    background-image: url(../images/slider/slide3.jpg);
-  }
-}
-
-.home-page__background-image4 {
-  background-image: url(../images/slider/android-1080p-4.jpg);
-}
-@media (min-width: 992px) {
-  .home-page__background-image4 {
-    background-image: url(../images/slider/slide4.jpg);
-  }
+.hero_img {
+  width: 100%;
 }
 
 /*=================================================================
@@ -2872,7 +2838,7 @@ a.project-nav__link:hover {
 
 .logo-img img {
   position: absolute;
-  top: 0;
+  top: 70px;
   left: 0;
   height: 165px;
 }
