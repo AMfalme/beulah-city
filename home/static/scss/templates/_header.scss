@@ -11,19 +11,9 @@
 }
 
 .project-page-header {
-  background-image: url('../images/company/projects/genesis/cover.jpeg');
   background-size: cover;
-  height: 300px;
+  height: 400px;
   text-align: center;
   color: $white;
   position: relative;
-  &:before {
-    background: rgba(0, 0, 0, 0.5);
-    position: absolute;
-    content: '';
-    top: 0;
-    right: 0;
-    left: 0;
-    bottom: 0;
-  }
 }
