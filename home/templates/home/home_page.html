@@ -17,13 +17,13 @@
           {% image project_data.project_image_small original as project_hero_img_small %}
           {% if forloop.first %}
             <div class=" home-page__background-image home-page__background-image--active">
-              <img src="{{ project_hero_img.url }}" alt="{{ project_hero_img.alt }}" class="hero_img d-none d-lg-block" />
-              <img src="{{ project_hero_img_small.url }}" alt="{{ project_hero_img_small.alt }}" class="hero_img d-block d-lg-none" />
+              <img src="{{ project_hero_img.url }}" alt="{{ project_hero_img.alt }}" class="hero-img d-none d-md-block" />
+              <img src="{{ project_hero_img_small.url }}" alt="{{ project_hero_img_small.alt }}" class="hero-img d-block d-md-none" />
             </div>
           {% else %}
             <div class=" home-page__background-image">
-              <img src="{{ project_hero_img.url }}" alt="{{ project_hero_img.alt }}" class="hero_img d-none d-lg-block" />
-              <img src="{{ project_hero_img_small.url }}" alt="{{ project_hero_img_small.alt }}" class="hero_img d-block d-lg-none" />
+              <img src="{{ project_hero_img.url }}" alt="{{ project_hero_img.alt }}" class="hero-img d-none d-md-block" />
+              <img src="{{ project_hero_img_small.url }}" alt="{{ project_hero_img_small.alt }}" class="hero-img d-block d-md-none" />
             </div>
           {% endif %}
         {% endwith %}
@@ -35,8 +35,8 @@
           {% image project_data.project_image width-1000 as project_hero_img %}
           {% image project_data.project_image_small width-1000 as project_hero_img_small %}
           <div class=" home-page__background-image">
-            <img src="{{ project_hero_img.url }}" alt="{{ project_hero_img.alt }}" class="hero_img d-none d-lg-block" />
-            <img src="{{ project_hero_img_small.url }}" alt="{{ project_hero_img_small.alt }}" class="hero_img d-block d-lg-none" />
+            <img src="{{ project_hero_img.url }}" alt="{{ project_hero_img.alt }}" class="hero-img d-none d-md-block" />
+            <img src="{{ project_hero_img_small.url }}" alt="{{ project_hero_img_small.alt }}" class="hero-img d-block d-md-none" />
           </div>
         {% endwith %}
       {% endif %} 

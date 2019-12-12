@@ -2570,8 +2570,10 @@ a.project-nav__link:hover {
   opacity: 1;
 }
 
-.hero_img {
+.hero-img {
+  height: 100%;
   width: 100%;
+  object-fit: cover;
 }
 
 /*=================================================================
