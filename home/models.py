@@ -16,7 +16,6 @@ from wagtail.contrib.forms.models import AbstractEmailForm, AbstractFormField
 
 from wagtail.contrib.settings.models import BaseSetting, register_setting
 
- 
 
 class HomePage(Page):
     body = models.CharField(max_length=250, blank=True)
@@ -45,6 +44,15 @@ class AboutPage(Page):
     hero_image = models.ForeignKey(
         'wagtailimages.Image', on_delete=models.SET_NULL, null=True, related_name='+'
     )
+    hero_image_1200_and_under = models.ForeignKey(
+        'wagtailimages.Image', on_delete=models.SET_NULL, null=True, related_name='+'
+    )
+    hero_image_768_and_under = models.ForeignKey(
+        'wagtailimages.Image', on_delete=models.SET_NULL, null=True, related_name='+'
+    )
+    hero_image_576_and_under = models.ForeignKey(
+        'wagtailimages.Image', on_delete=models.SET_NULL, null=True, related_name='+'
+    )
     projects_overview_title = models.TextField(blank=True)
     projects_overview = models.TextField(blank=True)
     company_overview = models.TextField(blank=True)
@@ -59,7 +67,15 @@ class AboutPage(Page):
     )
     content_panels = Page.content_panels + [
         FieldPanel('body'),
-        ImageChooserPanel('hero_image'),
+        MultiFieldPanel(
+            [
+                ImageChooserPanel('hero_image'),
+                ImageChooserPanel('hero_image_1200_and_under'),
+                ImageChooserPanel('hero_image_768_and_under'),
+                ImageChooserPanel('hero_image_576_and_under')
+            ],
+            heading="Masthead Images"
+        ),
         FieldPanel('hero_intro_one'),
         FieldPanel('hero_intro_two'),
         FieldPanel('hero_intro_three'),
@@ -74,7 +90,6 @@ class AboutPage(Page):
         FieldPanel('company_pride'),
         FieldPanel('company_pride_paragraph'),
         ImageChooserPanel('company_pride_image')
-
     ]
 
 
@@ -97,8 +112,16 @@ class ProjectPage(Page):
     project_welcome_title = models.TextField(default="Welcome to")
     project_title = models.TextField(default="Inclusionary space design")
     project_description = models.TextField(default="")
-    css_strings = models.TextField(blank=True)
     hero_image = models.ForeignKey(
+        'wagtailimages.Image', on_delete=models.SET_NULL, null=True, related_name='+'
+    )
+    hero_image_1200_and_under = models.ForeignKey(
+        'wagtailimages.Image', on_delete=models.SET_NULL, null=True, related_name='+'
+    )
+    hero_image_768_and_under = models.ForeignKey(
+        'wagtailimages.Image', on_delete=models.SET_NULL, null=True, related_name='+'
+    )
+    hero_image_576_and_under = models.ForeignKey(
         'wagtailimages.Image', on_delete=models.SET_NULL, null=True, related_name='+'
     )
     project_image = models.ForeignKey(
@@ -121,18 +144,26 @@ class ProjectPage(Page):
     )
     project_pride = models.TextField(blank=True)
     project_pride_paragraph = models.TextField(blank=True)
+
     content_panels = Page.content_panels + [
         MultiFieldPanel(
             [
-            ImageChooserPanel('hero_image'),
-            FieldPanel('project_welcome_title'),
-            FieldPanel('project_title'),
-            FieldPanel('project_description'),
-            FieldPanel('css_strings'),
-            ImageChooserPanel('project_image'),
-            ImageChooserPanel('project_image_small'),
+                FieldPanel('project_welcome_title'),
+                FieldPanel('project_title'),
+                FieldPanel('project_description'),
+                ImageChooserPanel('project_image'),
+                ImageChooserPanel('project_image_small'),
             ],
-            
+            heading="Project Homepage Details"
+        ),
+        MultiFieldPanel(
+            [
+                ImageChooserPanel('hero_image'),
+                ImageChooserPanel('hero_image_1200_and_under'),
+                ImageChooserPanel('hero_image_768_and_under'),
+                ImageChooserPanel('hero_image_576_and_under')
+            ],
+            heading="Masthead Images"
         ),
         FieldPanel('coming_soon_title'),
         FieldPanel('coming_soon'),
@@ -143,11 +174,10 @@ class ProjectPage(Page):
                 FieldPanel('hero_intro_three'),
                 FieldPanel('project_intro'),
                 FieldPanel('project_body'),
-                InlinePanel('project_floor_plans', label="Project plans"),
-
-            ]
+            ],
+            heading="Project Page Text"
         ),
-
+        InlinePanel('project_floor_plans', label="Project Plans"),
         InlinePanel('project_details', label="Project Details"),
         FieldPanel('project_information_title'),
         FieldPanel('project_information'),
@@ -155,17 +185,18 @@ class ProjectPage(Page):
         FieldPanel('project_pride'),
         FieldPanel('project_pride_paragraph'),
     ]
-    def get_context(self, request, *args, **kwargs):
 
-        
+    def get_context(self, request, *args, **kwargs):
+        context = super(ProjectPage, self).get_context(request)
         projectpages = self.get_siblings().type(ProjectPage).live()
         futureprojectpage = FuturePage.objects.all()
-        context = super(ProjectPage, self).get_context(request)
-        context['projectpages'] = projectpages
         active_page = self
+
+        context['projectpages'] = projectpages
         context['active_page'] = active_page
         context['futureprojectpage'] = futureprojectpage
         return context
+
 
 class Projects(Orderable):
     page = ParentalKey(ProjectPage, on_delete=models.SET_NULL,
@@ -213,6 +244,15 @@ class FuturePage(Page):
     hero_image = models.ForeignKey(
         'wagtailimages.Image', on_delete=models.SET_NULL, null=True, related_name='+'
     )
+    hero_image_1200_and_under = models.ForeignKey(
+        'wagtailimages.Image', on_delete=models.SET_NULL, null=True, related_name='+'
+    )
+    hero_image_768_and_under = models.ForeignKey(
+        'wagtailimages.Image', on_delete=models.SET_NULL, null=True, related_name='+'
+    )
+    hero_image_576_and_under = models.ForeignKey(
+        'wagtailimages.Image', on_delete=models.SET_NULL, null=True, related_name='+'
+    )
     project_image = models.ForeignKey(
         'wagtailimages.Image', on_delete=models.SET_NULL, null=True, related_name='+'
     )
@@ -232,7 +272,15 @@ class FuturePage(Page):
     project_pride = models.TextField(blank=True)
     project_pride_paragraph = models.TextField(blank=True)
     content_panels = Page.content_panels + [
-        ImageChooserPanel('hero_image'),
+        MultiFieldPanel(
+            [
+                ImageChooserPanel('hero_image'),
+                ImageChooserPanel('hero_image_1200_and_under'),
+                ImageChooserPanel('hero_image_768_and_under'),
+                ImageChooserPanel('hero_image_576_and_under')
+            ],
+            heading="Masthead Images"
+        ),
         FieldPanel('project_welcome_title'),
         FieldPanel('project_title'),
         FieldPanel('project_description'),
@@ -253,17 +301,18 @@ class FuturePage(Page):
         FieldPanel('project_information'),
         ImageChooserPanel('project_image_bottom_section'),
     ]
-    def get_context(self, request, *args, **kwargs):
 
-        
+    def get_context(self, request, *args, **kwargs):
+        context = super(FuturePage, self).get_context(request)
         projectpages = self.get_siblings().type(ProjectPage).live()
         futureprojectpage = FuturePage.objects.all()
         active_page = self
-        context = super(FuturePage, self).get_context(request)
+
         context['projectpages'] = projectpages
         context['futureprojectpage'] = futureprojectpage
         context['active_page'] = active_page
         return context
+
 
 class FuturePageDetails(Orderable):
     page = ParentalKey(FuturePage, on_delete=models.SET_NULL,
@@ -274,34 +323,38 @@ class FuturePageDetails(Orderable):
         FieldPanel('detail_name', classname="col6"),
         FieldPanel('detail_info', classname="col6"),
     ]
+
+
 class EnquiryField(AbstractFormField):
-	page = ParentalKey('EnquiryPage', on_delete=models.CASCADE, related_name="custom_form_fields")
+    page = ParentalKey('EnquiryPage', on_delete=models.CASCADE,
+                       related_name="custom_form_fields")
 
 
 class EnquiryPage(AbstractEmailForm):
-	body = models.CharField(blank=True, max_length=250)
-	intro = models.CharField(blank=True, max_length=250)
-	terms = RichTextField(blank=True)
-	submit = models.CharField(default = "Subscribe", max_length=100)
-	content_panels = AbstractEmailForm.content_panels + [
-		InlinePanel('custom_form_fields', label= "Enquiry Form"),
-		FieldPanel('intro', classname="full"),
-		FieldPanel('terms', classname="full"),
-		FieldPanel('submit', classname="full")
+    body = models.CharField(blank=True, max_length=250)
+    intro = models.CharField(blank=True, max_length=250)
+    terms = RichTextField(blank=True)
+    submit = models.CharField(default="Subscribe", max_length=100)
+    content_panels = AbstractEmailForm.content_panels + [
+        InlinePanel('custom_form_fields', label="Enquiry Form"),
+        FieldPanel('intro', classname="full"),
+        FieldPanel('terms', classname="full"),
+        FieldPanel('submit', classname="full")
 
-	] 
-	def get_form_fields(self):
-		return self.custom_form_fields.all()
+    ]
+
+    def get_form_fields(self):
+        return self.custom_form_fields.all()
 
 
 @register_setting
 class EnquiryFormSetting(BaseSetting):
-	enquiry_form_page = models.ForeignKey(
-		'wagtailcore.Page', null=True, on_delete=models.SET_NULL, related_name='+'
-	)
-	panels = [
-		PageChooserPanel('enquiry_form_page', ['home.EnquiryPage']),
-	]
+    enquiry_form_page = models.ForeignKey(
+        'wagtailcore.Page', null=True, on_delete=models.SET_NULL, related_name='+'
+    )
+    panels = [
+        PageChooserPanel('enquiry_form_page', ['home.EnquiryPage']),
+    ]
 
-	def view(request):
-		custom_form = EnquiryFormSetting.for_site(request.site)
+    def view(self, request):
+        custom_form = EnquiryFormSetting.for_site(request.site)

@@ -23,8 +23,15 @@
 
 {% endblock %}
 {% block content %}
-  {% image page.hero_image original as project_hero_img %}
-  <section class="project-page-header" style="background-image: url({{project_hero_img.url}});">
+  {% image page.hero_image original as hero_img %}
+  {% image page.hero_image_1200_and_under original as hero_img_1200 %}
+  {% image page.hero_image_768_and_under original as hero_img_768 %}
+  {% image page.hero_image_576_and_under original as hero_img_576 %}
+  <section class="project-page-header">
+    <img src="{{ hero_img_576.url }}" alt=" {{ hero_img_576.alt }}" class="hero-img d-sm-none"/>
+    <img src="{{ hero_img_768.url }}" alt=" {{ hero_img_768.alt }}" class="hero-img d-none d-sm-block d-md-none"/>
+    <img src="{{ hero_img_1200.url }}" alt=" {{ hero_img_1200.alt }}" class="hero-img d-none d-md-block d-lg-none"/>
+    <img src="{{ hero_img.url }}" alt=" {{ hero_img.alt }}" class="hero-img d-none d-lg-block"/>
     <div class="logo-img">
       <a class="home-link" href='/'>
         <img src="{% static 'images/company/beulah_logo_02.png' %}" />
