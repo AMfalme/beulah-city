@@ -230,30 +230,31 @@
 }
 
 .home-page__project-welcome {
-  font-family: 'apex-new-thin';
-  font-size: calc(54px + 10 * (100vw - 320px) / 1120);
-  font-weight: 300;
+  font-family: 'Garamond';
+  font-size: calc(60px + 10 * (100vw - 320px) / 1120);
+  font-weight: 100;
 }
 
 .home-page__project-title {
-  font-family: 'apex-new-ultra';
-  font-size: calc(54px + 10 * (100vw - 320px) / 1120);
+  font-family: 'Garamond';
+  font-size: calc(80px + 10 * (100vw - 320px) / 1120);
+  font-weight: bold;
 }
 
 .home-page__project-description {
-  font-family: 'apex-new';
+  font-family: 'Garamond';
   font-weight: bold;
   text-transform: lowercase;
-  font-size: calc(11px + 10 * (100vw - 320px) / 1120);
+  font-size: calc(20px + 10 * (100vw - 320px) / 1120);
 }
 
 .home-page__project-link {
-  font-family: 'apex-new-thin';
+  font-family: 'Garamond';
   color: #f93;
   text-transform: uppercase;
-  font-weight: bolder;
-  font-size: calc(10px + 10 * (100vw - 320px) / 1120);
-  line-height: 1.5;
+  font-weight: 500;
+  font-size: calc(12px + 10 * (100vw - 320px) / 1120);
+  line-height: 2;
 }
 
 .home-page__background-image {

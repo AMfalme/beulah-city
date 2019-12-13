@@ -1,4 +1,4 @@
-@import "../responsive";
+@import '../responsive';
 /*=================================================================
   Navigation
 ==================================================================*/
@@ -42,7 +42,7 @@
       opacity: 0.6;
       border-right: 1px solid #fff;
       border-left: 1px solid #fff;
-      &.active{
+      &.active {
         background-color: #e57708;
       }
       &:hover,
@@ -263,7 +263,6 @@
 }
 
 .project-nav__item-header {
-  font-family: "apex-new";
   font-weight: bold;
 }
 
@@ -274,12 +273,12 @@
 
 .project-nav__item-desc {
   padding: 10% 0%;
-  font-family: "apex-new";
   padding-top: 0px;
 }
 
 .project-nav__link {
   display: block;
+  text-transform: uppercase;
 }
 
 .project-nav__link--inactive {
@@ -288,8 +287,8 @@
 
 a.project-nav__link {
   color: #f93;
-  position: absolute;
-  bottom: 40px;
+  position: relative;
+  bottom: 30px;
 }
 
 a.project-nav__link:active,
