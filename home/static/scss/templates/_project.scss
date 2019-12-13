@@ -258,3 +258,7 @@
   left: 0;
   height: 165px;
 }
+
+.not-clickable {
+  pointer-events: none;
+}

@@ -1895,6 +1895,7 @@ a.project-nav__link {
   color: #f93;
   position: relative;
   bottom: 30px;
+  cursor: pointer;
 }
 
 a.project-nav__link:active,
@@ -2836,6 +2837,10 @@ a.project-nav__link:hover {
   top: 70px;
   left: 0;
   height: 165px;
+}
+
+.not-clickable {
+  pointer-events: none;
 }
 
 /*=================================================================
