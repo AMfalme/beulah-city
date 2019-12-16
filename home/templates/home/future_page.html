@@ -34,16 +34,7 @@
     </div>
   </section>
   <section class="project-info">
-    <div class="d-none d-lg-flex project-info__nav-container">
-      <div class="d-flex col-xs-12 col-lg-8 align-content-center project-info__nav pl-0">
-        <div class="d-flex project-info__nav-title pl-1 align-content-center">
-          <span class="align-self-center">
-           Projects
-          </span>
-        </div>
-        {% include 'home/project_nav.html' %}
-      </div>
-    </div>
+    {% include 'home/project_nav.html' %}
     <div class="d-flex flex-column mt-4 project-info__details-container">
       <!-- start of tagline section  -->
       {% if page.hero_intro_one %} 
@@ -105,7 +96,7 @@
         </div>
         <div class="d-flex col-12 col-lg-6">
           <div>
-            {% image page.project_image_bottom_section width-500 class="image--cover col-12" %}
+            {% image page.project_image_bottom_section width-500 class="image--contain col-12" %}
           </div>
         </div>
       </div>

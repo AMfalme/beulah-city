@@ -170,7 +170,7 @@
   text-align: center;
   color: white;
   font-family: Arial, Helvetica;
-
+  padding: 15px 10px;
   &:hover,
   &.active {
     font-weight: bolder;
@@ -195,6 +195,7 @@
 
 .project-info-nav {
   background: #e57608;
+  flex-wrap: nowrap;
 }
 
 .project-details__tagline {
@@ -262,4 +263,21 @@
 
 .not-clickable {
   pointer-events: none;
+}
+.project-info__nav--mobile {
+  margin-top: 10px;
+  justify-content: space-evenly;
+  .project-info__nav--mobile-disc {
+    background-color: #e57608;
+    width: 80px;
+    border-radius: 50%;
+    height: 80px;
+    font-size: 14px;
+    padding: 16px;
+    text-align: center;
+    color: #fff;
+    &.active{
+      background-color: #f2bb3f;
+    }
+  }
 }

@@ -1,12 +1,33 @@
-<nav class="nav nav-pills project-info-nav align-content-center">
-    {% for projects in projectpages %}
-    <a class="nav-link project-info__nav-item {% if active_page.title == projects.title %}active{% endif %} " href="{{projects.url}}">
-      {{projects.title}}
-    </a>
-    {% endfor %}
-    {% for futurepage in futureprojectpage %}
-      <a class="nav-link project-info__nav-item {% if active_page.title == futurepage.title %}active{% endif %} " href="{{futurepage.url}}">
-        {{futurepage.title}}
+<div class="d-none d-lg-flex project-info__nav-container">
+  <div class="d-flex col-xs-12 col-lg-12 align-content-center project-info__nav pl-0">
+    <div class="d-flex project-info__nav-title pl-1 align-content-center">
+      <span class="align-self-center">
+       Projects
+      </span>
+    </div>
+    <nav class="nav nav-pills project-info-nav align-content-center">
+      {% for projects in projectpages %}
+      <a class="nav-link project-info__nav-item {% if active_page.title == projects.title %}active{% endif %} " href="{{projects.url}}">
+        {{projects.title}}
       </a>
-    {% endfor %}
+      {% endfor %}
+      {% for futurepage in futureprojectpage %}
+        <a class="nav-link project-info__nav-item {% if active_page.title == futurepage.title %}active{% endif %} " href="{{futurepage.url}}">
+          {{futurepage.title}}
+        </a>
+      {% endfor %}
+    </nav>
+  </div>
+</div>
+<nav class="d-flex d-lg-none nav nav-pills project-info__nav--mobile align-content-center">
+  {% for projects in projectpages %}
+  <a class="nav-link project-info__nav--mobile-disc {% if active_page.title == projects.title %}active{% endif %} " href="{{projects.url}}">
+    {{projects.title}}
+  </a>
+  {% endfor %}
+  {% for futurepage in futureprojectpage %}
+    <a class="nav-link project-info__nav--mobile-disc {% if active_page.title == futurepage.title %}active{% endif %} " href="{{futurepage.url}}">
+      {{futurepage.title}}
+    </a>
+  {% endfor %}
   </nav>

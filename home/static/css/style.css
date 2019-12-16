@@ -847,8 +847,8 @@ body {
   font-weight: bold;
 }
 
-.image--cover {
-  object-fit: cover;
+.image--contain {
+  object-fit: contain;
 }
 
 /*============================================================
@@ -2828,6 +2828,7 @@ a.project-nav__link:hover {
   text-align: center;
   color: white;
   font-family: Arial, Helvetica;
+  padding: 15px 10px;
 }
 .project-info__nav-item:hover, .project-info__nav-item.active {
   font-weight: bolder;
@@ -2853,6 +2854,7 @@ a.project-nav__link:hover {
 
 .project-info-nav {
   background: #e57608;
+  flex-wrap: nowrap;
 }
 
 .project-details__tagline {
@@ -2926,6 +2928,24 @@ a.project-nav__link:hover {
 
 .not-clickable {
   pointer-events: none;
+}
+
+.project-info__nav--mobile {
+  margin-top: 10px;
+  justify-content: space-evenly;
+}
+.project-info__nav--mobile .project-info__nav--mobile-disc {
+  background-color: #e57608;
+  width: 80px;
+  border-radius: 50%;
+  height: 80px;
+  font-size: 14px;
+  padding: 16px;
+  text-align: center;
+  color: #fff;
+}
+.project-info__nav--mobile .project-info__nav--mobile-disc.active {
+  background-color: #f2bb3f;
 }
 
 /*=================================================================
