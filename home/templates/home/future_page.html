@@ -80,23 +80,25 @@
       </div>
     </div>
 
-      <div class="d-flex flex-wrap justify-content-center mt-5 mb-5 project-details__section">
-        <div class="d-flex flex-column col-12 col-lg-5 align-self-center">
-          <h4 class="project-info__title mb-4">
-            Future Statistics
-          </h4>
-          <table class="table table-borderless">
-            {% for detail in page.future_project_details.all %}
-              <tr>
-                <td>{{detail.detail_name}}</td>
-                <td>{{detail.detail_info}}</td>
-              </tr>
-            {% endfor %}
-          </table>
-        </div>
-        <div class="d-flex col-12 col-lg-6">
-          <div>
-            {% image page.project_image_bottom_section width-500 class="image--contain col-12" %}
+      <div class="d-flex flex-column align-items-center mt-5 mb-5 project-details__section">
+        <h4 class="col-12 col-lg-11 project-info__title mb-4">
+          Future Statistics
+        </h4>
+        <div class="d-flex flex-wrap col-12 col-lg-11 pl-0">
+          <div class="d-flex col-12 col-lg-6">
+            <table class="table table-borderless">
+              {% for detail in page.future_project_details.all %}
+                <tr>
+                  <td>{{detail.detail_name}}</td>
+                  <td>{{detail.detail_info}}</td>
+                </tr>
+              {% endfor %}
+            </table>
+          </div>
+          <div class="d-flex col-12 col-lg-6">
+            <div>
+              {% image page.project_image_bottom_section width-500 class="image--contain col-12" %}
+            </div>
           </div>
         </div>
       </div>
