@@ -11,7 +11,7 @@
     display: none;
   }
 
-  .navbar-light .navbar-nav {
+  .navbar-dark .navbar-nav {
     .nav-item {
       .nav-link {
         color: $white;
@@ -21,7 +21,7 @@
         text-transform: uppercase;
         letter-spacing: 1px;
         transition: 0.2s ease-in-out 0s;
-
+        cursor: pointer;
         &:hover,
         &:active,
         &:focus {
@@ -302,14 +302,51 @@ a.project-nav__link:hover {
 }
 
 .navigation__spacer-item {
+  display:none;
   flex-grow: 3;
   border-top: 8px solid $primary-color-light;
+  @include for-large-screen-up {
+    flex-grow: 3;
+    border-top: 8px solid $primary-color-light;
+  }
 }
 
 .navigation__navbar-item {
   flex-grow: 4;
+  &.navbar{
+    padding: 0;
+  }
 }
 
 .navbar-nav--secondary {
   border-bottom: 3px solid #fff;
+}
+
+
+
+
+
+.header__nav-sm{
+  @include for-small-screen-nav{
+    .navigation__item-sm{
+      background-color: rgb(68, 41, 23);
+      min-height: 50px;
+      text-align: center;
+      .navbar-collapse.collapse, .navbar-collapse.collapse.show, .navbar-collapse.collapse.collapsing{
+        margin-top: 50px;
+        transition-duration: .5s;
+      }
+      .nav-item--secondary{
+        background-color: transparent !important;
+        border: none !important;
+      }
+      .navbar-nav--secondary{
+        border: none !important;
+      }
+    }
+  }
+}
+
+.navigation__item-sm-logo{
+  width: 65px;
 }

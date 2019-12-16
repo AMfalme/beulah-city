@@ -202,11 +202,12 @@
   .tagline_section {
     color: #fe9930;
     line-height: 1;
-
-    font-size: 1.4rem;
+    @include for-small-screen-up{
+      font-size: 1.4rem;
+    }
   }
 
-  font-size: 1.2rem;
+  font-size: 1.02rem;
   p {
     color: #fe9930;
     font-size: 1rem;

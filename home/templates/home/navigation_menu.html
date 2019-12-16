@@ -1,14 +1,17 @@
+{% load static %}
 <!--
 Fixed Navigation
 ==================================== -->
-<header class="navigation fixed-top col-12">
+<header class="navigation fixed-top header__nav-sm">
   <!-- main nav -->
-  <nav class="navbar navbar-expand-lg navbar-light col-12 pt-0">
-    <button class="navbar-toggler m-2" type="button" data-toggle="collapse" data-target="#navigation"
+  <nav class="navbar navbar-expand-lg navbar-dark navigation__item navigation__item-sm navigation__navbar-item">
+    <button class="navbar-toggler navbar-toggler-sm" type="button" data-toggle="collapse" data-target="#navigation"
       aria-controls="navigation" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
-
+    <a href="/">
+      <img src="{% static 'images/company/beulah_logo_02.png' %}" class="navigation__item-sm-logo d-md-block d-lg-none d-sm-block"/>
+    </a>
     <div class="collapse navbar-collapse" id="navigation">
       <ul class="navbar-nav navbar-nav--secondary mx-auto">
         <li class="nav-item nav-item--secondary">

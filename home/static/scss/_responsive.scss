@@ -7,7 +7,11 @@
     display: none;
   }
 }
-
+.navbar-toggler-sm{
+  position: absolute;
+  right: 8px;
+  top: 8px;
+}
 @media (min-width: 980px) and (max-width: 1150px) {
   /* parallax section */
   .parallax-section {
@@ -420,6 +424,12 @@
 
 @mixin for-xl-screen-up {
   @media (min-width: 1200px) {
+    @content;
+  }
+}
+
+@mixin for-small-screen-nav {
+  @media (max-width: 992px) {
     @content;
   }
 }
