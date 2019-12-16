@@ -321,4 +321,8 @@
     currentActive.removeClass('active')
     $(this).addClass('active')
   })
+
+  lightbox.option({
+    alwaysShowNavOnTouchDevices: true,
+  })
 })(jQuery)
