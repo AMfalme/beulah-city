@@ -59,7 +59,7 @@
 <!-- End Preloader ==================================== -->
 
 {% block nav %} 
-  {% include "home/nav.html" %} 
+  {% include "home/home_nav.html" %} 
 {% endblock %} 
 {% block header %} 
 {% endblock %}
@@ -68,6 +68,7 @@
   {% endblock %} 
   {% block footer %} 
     {% include "home/footer.html" %} 
+    {% include 'includes/contact_modal_form.html' %}
   {% endblock %}
 </div>
 
@@ -100,7 +101,7 @@
 
   <!-- Custom js -->
   <script src="{% static 'js/script.js' %}"></script>
-  {% endblock %}
+{% endblock %}
 </body>
 
 </html>

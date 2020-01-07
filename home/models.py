@@ -16,7 +16,7 @@ from wagtail.contrib.forms.models import AbstractEmailForm, AbstractFormField
 
 from wagtail.contrib.settings.models import BaseSetting, register_setting
 
-
+from django.forms import widgets
 class HomePage(Page):
     body = models.CharField(max_length=250, blank=True)
     intro = models.CharField(max_length=250, blank=True)
@@ -358,3 +358,46 @@ class EnquiryFormSetting(BaseSetting):
 
     def view(self, request):
         custom_form = EnquiryFormSetting.for_site(request.site)
+
+
+
+
+class ContactField(AbstractFormField):
+    page = ParentalKey('ContactPage', on_delete=models.CASCADE,
+                       related_name="form_fields")
+
+
+class ContactPage(AbstractEmailForm):
+    body = models.CharField(blank=True, max_length=250)
+    intro = models.CharField(blank=True, max_length=250)
+    submit = models.CharField(default="Contact us", max_length=100)
+    content_panels = AbstractEmailForm.content_panels + [
+        InlinePanel('form_fields', label="Contact Form"),
+        FieldPanel('intro', classname="full"),
+        FieldPanel('submit', classname="full")
+
+    ]
+
+    def get_form(self, *args, **kwargs):
+        form = super().get_form(*args, **kwargs)
+        for name, field in form.fields.items():
+            if not isinstance(field.widget, widgets.Textarea):
+                css_classes = field.widget.attrs.get('class', '').split()
+                css_classes.append('contact-field-input col-6 col-lg-12 col-sm-12')
+                field.widget.attrs.update({'class': ' '.join(css_classes)})
+            place_holder = field.widget.attrs.get('placeholder', '').split()
+            place_holder.append(field.label)
+            field.widget.attrs.update({'placeholder': ' '.join(place_holder)})
+        return form
+
+@register_setting
+class ContactFormSetting(BaseSetting):
+    contact_form_page = models.ForeignKey(
+        'wagtailcore.Page', null=True, on_delete=models.SET_NULL, related_name='+'
+    )
+    panels = [
+        PageChooserPanel('contact_form_page', ['home.ContactPage']),
+    ]
+
+    def view(self, request):
+        custom_form = ContactFormSetting.for_site(request.site)

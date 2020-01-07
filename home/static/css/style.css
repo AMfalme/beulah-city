@@ -2900,10 +2900,9 @@ a.project-nav__link:hover {
   background-color: #fff;
 }
 
-#contactSalesForm .form-group label,
-#contactSalesForm .form-group input {
-  width: 100%;
-  max-width: 200px;
+#enquirySalesForm .form-group label,
+#enquirySalesForm .form-group input {
+  width: 80%;
 }
 
 .logo-img img {
@@ -2974,6 +2973,23 @@ a.project-nav__link:hover {
   padding: 10px;
   height: 120px !important;
   outline: none;
+}
+
+.no-labels label {
+  display: none;
+}
+.no-labels input, .no-labels textarea {
+  background-color: #eee;
+  border: none !important;
+  padding: 10px;
+  margin: 5px;
+}
+.no-labels input {
+  width: 46.5% !important;
+  max-width: none !important;
+}
+.no-labels textarea {
+  width: 95%;
 }
 
 .contact-details .contact-short-info {

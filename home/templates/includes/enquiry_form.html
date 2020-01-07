@@ -2,7 +2,7 @@
 {% load wagtailsettings_tags %}
 {% get_settings %}
 {% get_enquiry_form as enquiry_form %}
-<form id="contactSalesForm" class="subscribe-form form--active" action="{% pageurl enquiry_form.page %}" method="POST">
+<form id="enquirySalesForm" class="subscribe-form form--active" action="{% pageurl enquiry_form.page %}" method="POST">
     {% csrf_token %}
     <div class="form-group">
         {{ enquiry_form.form }}
