@@ -302,7 +302,7 @@ a.project-nav__link:hover {
 }
 
 .navigation__spacer-item {
-  display:none;
+  display: none;
   flex-grow: 3;
   border-top: 8px solid $primary-color-light;
   @include for-large-screen-up {
@@ -313,7 +313,7 @@ a.project-nav__link:hover {
 
 .navigation__navbar-item {
   flex-grow: 4;
-  &.navbar{
+  &.navbar {
     padding: 0;
   }
 }
@@ -322,30 +322,28 @@ a.project-nav__link:hover {
   border-bottom: 3px solid #fff;
 }
 
-
-
-
-
-.header__nav-sm{
-  @include for-small-screen-nav{
-    .navigation__item-sm{
+.header__nav-sm {
+  @include for-small-screen-nav {
+    .navigation__item-sm {
       background-color: rgb(68, 41, 23);
       min-height: 50px;
       text-align: center;
-      .navbar-collapse.collapse, .navbar-collapse.collapse.show, .navbar-collapse.collapse.collapsing{
-        transition-duration: .5s;
+      .navbar-collapse.collapse,
+      .navbar-collapse.collapse.show,
+      .navbar-collapse.collapse.collapsing {
+        transition-duration: 0.5s;
       }
-      .nav-item--secondary{
+      .nav-item--secondary {
         background-color: transparent !important;
         border: none !important;
       }
-      .navbar-nav--secondary{
+      .navbar-nav--secondary {
         border: none !important;
       }
     }
   }
 }
 
-.navigation__item-sm-logo{
+.navigation__item-sm-logo {
   width: 65px;
 }

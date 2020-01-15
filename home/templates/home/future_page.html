@@ -3,33 +3,34 @@
 {% load wagtailcore_tags %}
 {% load wagtailimages_tags %}
 {% block styles %}
-  <link rel="stylesheet" href="{% static 'plugins/fontawesome/css/all.css' %}" />
-  <link rel="stylesheet" href="{% static 'plugins/themefisher-font/style.css' %}" />
-  <link rel="stylesheet" href="{% static 'plugins/lightbox2/dist/css/lightbox.min.css' %}" />
+<link rel="stylesheet" href="{% static 'plugins/fontawesome/css/all.css' %}" />
+<link rel="stylesheet" href="{% static 'plugins/themefisher-font/style.css' %}" />
+<link rel="stylesheet" href="{% static 'plugins/lightbox2/dist/css/lightbox.min.css' %}" />
 {% endblock %}
 {% block body_class %}
-  template-homepage
+template-homepage
 {% endblock %}
 {% block nav %}
-  {% include "home/global_nav.html" %}
+{% include "home/global_nav.html" %}
 {% endblock %}
 {% block body-tag %}
-  <body id="body" class="project-page">
+
+<body id="body" class="project-page">
   <!-- Start Preloader ==================================== -->
-{% endblock %}
-{% block content %}
+  {% endblock %}
+  {% block content %}
   {% image page.hero_image original as hero_img %}
   {% image page.hero_image_1200_and_under original as hero_img_1200 %}
   {% image page.hero_image_768_and_under original as hero_img_768 %}
   {% image page.hero_image_576_and_under original as hero_img_576 %}
   <section class="project-page-header">
-    <img src="{{ hero_img_576.url }}" alt=" {{ hero_img_576.alt }}" class="hero-img d-sm-none"/>
-    <img src="{{ hero_img_768.url }}" alt=" {{ hero_img_768.alt }}" class="hero-img d-none d-sm-block d-md-none"/>
-    <img src="{{ hero_img_1200.url }}" alt=" {{ hero_img_1200.alt }}" class="hero-img d-none d-md-block d-lg-none"/>
-    <img src="{{ hero_img.url }}" alt=" {{ hero_img.alt }}" class="hero-img d-none d-lg-block"/>
+    <img src="{{ hero_img_576.url }}" alt=" {{ hero_img_576.alt }}" class="hero-img d-sm-none" />
+    <img src="{{ hero_img_768.url }}" alt=" {{ hero_img_768.alt }}" class="hero-img d-none d-sm-block d-md-none" />
+    <img src="{{ hero_img_1200.url }}" alt=" {{ hero_img_1200.alt }}" class="hero-img d-none d-md-block d-lg-none" />
+    <img src="{{ hero_img.url }}" alt=" {{ hero_img.alt }}" class="hero-img d-none d-lg-block" />
     <div class="logo-img">
       <a class="home-link" href='/'>
-        <img src="{% static 'images/company/beulah_logo_02.png' %}" class="d-none d-lg-block"/>
+        <img src="{% static 'images/company/beulah_logo_02.png' %}" class="d-none d-lg-block" />
       </a>
     </div>
   </section>
@@ -37,21 +38,23 @@
     {% include 'home/project_nav.html' %}
     <div class="d-flex flex-column mt-4 project-info__details-container">
       <!-- start of tagline section  -->
-      {% if page.hero_intro_one %} 
-        <div class="d-flex col-12 col-lg-11 align-self-center align-content-center  project-details__section project-details__tagline ">
-          <div class="d-flex flex-column col-12 pl-lg-0 tagline_section">
-            {{page.hero_intro_one}}
-          </div>
+      {% if page.hero_intro_one %}
+      <div
+        class="d-flex col-12 col-lg-11 align-self-center align-content-center  project-details__section project-details__tagline ">
+        <div class="d-flex flex-column col-12 pl-lg-0 tagline_section">
+          {{page.hero_intro_one}}
         </div>
+      </div>
       {% endif %}
-      {% if page.hero_intro_two %} 
-        <div class="d-flex col-12 col-lg-11 align-self-center align-content-center pb-4 mb-4 border-b project-details__section project-details__tagline ">
-          <div class="d-flex flex-column col-12 pl-lg-0 tagline_section">
-            {{page.hero_intro_two}}
-          </div>
+      {% if page.hero_intro_two %}
+      <div
+        class="d-flex col-12 col-lg-11 align-self-center align-content-center pb-4 mb-4 border-b project-details__section project-details__tagline ">
+        <div class="d-flex flex-column col-12 pl-lg-0 tagline_section">
+          {{page.hero_intro_two}}
         </div>
+      </div>
       {% endif %}
-     
+
       <!-- end of tagline section -->
       <!-- start of overview section -->
       <div class="d-flex justify-content-center mb-5 project-details__section">
@@ -65,7 +68,8 @@
         </div>
       </div>
       <!-- end of overview section -->
-      <div class="d-flex justify-content-center project-details__section {% if page.projects.all %}project-details__section--secondary-bg {% else %}{% endif %}">
+      <div
+        class="d-flex justify-content-center project-details__section {% if page.projects.all %}project-details__section--secondary-bg {% else %}{% endif %}">
         <div class="d-flex flex-column col-12 col-lg-11 mt-2">
           <h5 class="project-info__title mb-4">
             {{page.project_information_title}}
@@ -80,70 +84,32 @@
       </div>
     </div>
 
-      <div class="d-flex flex-column align-items-center mt-5 mb-5 project-details__section">
-        <h4 class="col-12 col-lg-11 project-info__title mb-4">
-          Future Statistics
-        </h4>
-        <div class="d-flex flex-wrap col-12 col-lg-11 pl-0">
-          <div class="d-flex col-12 col-lg-6">
-            <table class="table table-borderless">
-              {% for detail in page.future_project_details.all %}
-                <tr>
-                  <td>{{detail.detail_name}}</td>
-                  <td>{{detail.detail_info}}</td>
-                </tr>
-              {% endfor %}
-            </table>
-          </div>
-          <div class="d-flex col-12 col-lg-6">
-            <div>
-              {% image page.project_image_bottom_section width-500 class="image--contain col-12" %}
-            </div>
-          </div>
+    <div class="d-flex flex-column align-items-center mt-5 mb-5 project-details__section">
+      <h4 class="col-12 col-lg-11 project-info__title mb-4">
+        Future Statistics
+      </h4>
+      <div class="d-flex flex-wrap col-12 col-lg-11 pl-0">
+        <div class="d-flex col-12 col-lg-6">
+          <table class="table table-borderless">
+            {% for detail in page.future_project_details.all %}
+            <tr>
+              <td>{{detail.detail_name}}</td>
+              <td>{{detail.detail_info}}</td>
+            </tr>
+            {% endfor %}
+          </table>
         </div>
-      </div>
-
-  </section>
-  <footer id="footer" class="d-flex footer justify-content-center">
-    <div class="d-flex flex-column col-12 col-lg-11 ">
-      <div class="d-flex flex-wrap top-footer py-5 ">
-        <ul class="d-flex justify-content-between col-12 col-lg-6 footer__page-list px-0 my-2 my-lg-0">
-          <li><a href="/">Home</a></li>
-          <li><a href="about#who-we-are">Who We Are</a></li>
-          <li><a href="about#what-we-do">What We Do</a></li>
-          <li><a href="about#why-us">Why Us</a></li>
-          <li><a href="about#contact-us">Contact Us</a></li>
-        </ul>
-        <ul class="d-flex justify-content-between col-12 col-lg-6 footer__project-list px-0 my-2 my-lg-0">
-          {% for projects in projectpages %}
-            <li><a href="{{projects.url}}"> {{projects.title}}</a></li>
-            <li><span>|</span></li>
-          {% endfor %}
-          
-          {% for futurepage in futureprojectpage %}
-            <li><a href="{{futurepage.url}}"> {{futurepage.title}}</a></li>
-            <li><span>|</span></li>
-          {% endfor %}
-        </ul>
-        <!-- end container -->
-      </div>
-      <div class="d-flex flex-wrap justify-content-center py-5 bottom-footer">
-        <div class="d-flex justify-content-center col-12 col-lg-6 my-2 my-lg-0 justify-content-xl-start">
-          <span>&copy; Beulah City
-            <script>
-              document.write(new Date().getFullYear())
-            </script>
-            All rights reserved.
-          </span>
-        </div>
-        <div class="d-flex justify-content-center col-12 col-lg-6 justify-content-xl-end">
-          <i class="far fa-envelope mx-1"></i>
-          <i class="fab fa-facebook-f mx-1"></i>
-          <i class="fab fa-instagram mx-1"></i>
+        <div class="d-flex col-12 col-lg-6">
+          <div>
+            {% image page.project_image_bottom_section width-500 class="image--contain col-12" %}
+          </div>
         </div>
       </div>
     </div>
-  </footer>
 
-{% endblock content %}
+  </section>
+
+  {% include "home/footer.html" %}
+
+  {% endblock content %}
 </body>

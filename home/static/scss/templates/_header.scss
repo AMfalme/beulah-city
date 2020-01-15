@@ -17,3 +17,8 @@
   color: #fff;
   position: relative;
 }
+.main-container {
+  @include for-small-screen-nav {
+    padding-top: 60px;
+  }
+}

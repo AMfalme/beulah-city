@@ -4,37 +4,37 @@
 {% load wagtailimages_tags %}
 
 {% block body_class %}
-  template-homepage
+template-homepage
 {% endblock %}
 
 {% block extra_css %}
 
 {% endblock extra_css %}
 {% block nav %}
-  {% include "home/global_nav.html" %}
+{% include "home/global_nav.html" %}
 {% endblock %}
 {% block body-tag %}
 
-  <body id="body" class="project-page">
-    <!--
+<body id="body" class="project-page">
+  <!--
     Start Preloader
   ==================================== -->
 
 
-{% endblock %}
-{% block content %}
+  {% endblock %}
+  {% block content %}
   {% image page.hero_image original as hero_img %}
   {% image page.hero_image_1200_and_under original as hero_img_1200 %}
   {% image page.hero_image_768_and_under original as hero_img_768 %}
   {% image page.hero_image_576_and_under original as hero_img_576 %}
   <section class="project-page-header">
-    <img src="{{ hero_img_576.url }}" alt=" {{ hero_img_576.alt }}" class="hero-img d-sm-none"/>
-    <img src="{{ hero_img_768.url }}" alt=" {{ hero_img_768.alt }}" class="hero-img d-none d-sm-block d-md-none"/>
-    <img src="{{ hero_img_1200.url }}" alt=" {{ hero_img_1200.alt }}" class="hero-img d-none d-md-block d-lg-none"/>
-    <img src="{{ hero_img.url }}" alt=" {{ hero_img.alt }}" class="hero-img d-none d-lg-block"/>
+    <img src="{{ hero_img_576.url }}" alt=" {{ hero_img_576.alt }}" class="hero-img d-sm-none" />
+    <img src="{{ hero_img_768.url }}" alt=" {{ hero_img_768.alt }}" class="hero-img d-none d-sm-block d-md-none" />
+    <img src="{{ hero_img_1200.url }}" alt=" {{ hero_img_1200.alt }}" class="hero-img d-none d-md-block d-lg-none" />
+    <img src="{{ hero_img.url }}" alt=" {{ hero_img.alt }}" class="hero-img d-none d-lg-block" />
     <div class="logo-img">
       <a class="home-link" href='/'>
-        <img src="{% static 'images/company/beulah_logo_02.png' %}" class="d-none d-lg-block"/>
+        <img src="{% static 'images/company/beulah_logo_02.png' %}" class="d-none d-lg-block" />
       </a>
     </div>
   </section>
@@ -43,7 +43,7 @@
       <div class="d-flex col-xs-9 col-lg-8 align-content-center project-info__nav pl-0">
         <div class="d-flex project-info__nav-title pl-1 align-content-center">
           <span class="align-self-center">
-           Projects
+            Projects
           </span>
         </div>
         <nav class="nav nav-pills project-info-nav align-content-center">
@@ -62,26 +62,29 @@
     </nav>
     <div class="d-flex flex-column mt-4 project-info__details-container">
       <!-- start of tagline section  -->
-      {% if page.hero_intro_one %} 
-        <div class="d-flex col-12 col-lg-11 align-self-center align-content-center  project-details__section project-details__tagline ">
-          <div class="d-flex flex-column col-12 pl-lg-0 tagline_section">
-            {{page.hero_intro_one}}
-          </div>
+      {% if page.hero_intro_one %}
+      <div
+        class="d-flex col-12 col-lg-11 align-self-center align-content-center  project-details__section project-details__tagline ">
+        <div class="d-flex flex-column col-12 pl-lg-0 tagline_section">
+          {{page.hero_intro_one}}
         </div>
+      </div>
       {% endif %}
-      {% if page.hero_intro_two %} 
-        <div class="d-flex col-12 col-lg-11 align-self-center align-content-center  project-details__section project-details__tagline ">
-          <div class="d-flex flex-column col-12 pl-lg-0 tagline_section">
-            {{page.hero_intro_two}}
-          </div>
+      {% if page.hero_intro_two %}
+      <div
+        class="d-flex col-12 col-lg-11 align-self-center align-content-center  project-details__section project-details__tagline ">
+        <div class="d-flex flex-column col-12 pl-lg-0 tagline_section">
+          {{page.hero_intro_two}}
         </div>
+      </div>
       {% endif %}
-      {% if page.hero_intro_three %} 
-        <div class="d-flex col-12 col-lg-11 align-self-center align-content-center pb-4 mb-4 project-details__section border-b project-details__tagline ">
-          <div class="d-flex flex-column col-12 pl-lg-0 tagline_section">
-            {{page.hero_intro_three}}
-          </div>
+      {% if page.hero_intro_three %}
+      <div
+        class="d-flex col-12 col-lg-11 align-self-center align-content-center pb-4 mb-4 project-details__section border-b project-details__tagline ">
+        <div class="d-flex flex-column col-12 pl-lg-0 tagline_section">
+          {{page.hero_intro_three}}
         </div>
+      </div>
       {% endif %}
       <!-- end of tagline section -->
       <!-- start of overview section -->
@@ -104,10 +107,10 @@
             {{page.projects_overview}}
           </p>
           <div class="d-flex flex-wrap">
-            {% for images in page.overview_images.all %} 
-              {% if forloop.counter < 4 %}
-                {% image images.overview_image fill-420x300 class="col-12 col-lg-4 my-2 my-lg-0" %}
-              {% endif %}
+            {% for images in page.overview_images.all %}
+            {% if forloop.counter < 4 %}
+            {% image images.overview_image fill-420x300 class="col-12 col-lg-4 my-2 my-lg-0" %}
+            {% endif %}
             {% endfor %}
           </div>
         </div>
@@ -139,44 +142,7 @@
       <!-- end of overview section -->
     </div>
   </section>
-  <footer id="footer" class="d-flex footer justify-content-center">
-    <div class="d-flex flex-column col-12 col-lg-11 ">
-      <div class="d-flex flex-wrap top-footer py-5 ">
-        <ul class="d-flex justify-content-between col-12 col-lg-6 footer__page-list px-0 my-2 my-lg-0">
-          <li><a href="/">Home</a></li>
-          <li><a href="about#who-we-are">Who We Are</a></li>
-          <li><a href="about#what-we-do">What We Do</a></li>
-          <li><a href="about#why-us">Why Us</a></li>
-          <li><a href="about#contact-us">Contact Us</a></li>
-        </ul>
-        <ul class="d-flex justify-content-between col-12 col-lg-6 footer__project-list px-0 my-2 my-lg-0">
-          <li><a href="/beulah-genesis"> Beulah Genesis</a></li>
-          <li><span>|</span></li>
-          <li><a href="/beulah-garden-city"> Beulah Garden City</a></li>
-          <li><span>|</span></li>
-          <li><a href="/beulah-cerry"> Beulah Cerry</a></li>
-          <li><span>|</span></li>
-          <li><a href="/future-projects"> Future Projects</a></li>
-        </ul>
-        <!-- end container -->
-      </div>
-      <div class="d-flex flex-wrap justify-content-center py-5 bottom-footer">
-        <div class="d-flex justify-content-center col-12 col-lg-6 my-2 my-lg-0 justify-content-xl-start">
-          <span>&copy; Beulah City
-            <script>
-              document.write(new Date().getFullYear())
-            </script>
-            All rights reserved.
-          </span>
-        </div>
-        <div class="d-flex justify-content-center col-12 col-lg-6 justify-content-xl-end">
-          <i class="far fa-envelope mx-1"></i>
-          <i class="fab fa-facebook-f mx-1"></i>
-          <i class="fab fa-instagram mx-1"></i>
-        </div>
-      </div>
-    </div>
-  </footer>
 
 
+  {% include "home/footer.html" %}
   {% endblock content %}

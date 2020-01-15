@@ -3,33 +3,34 @@
 {% load wagtailcore_tags %}
 {% load wagtailimages_tags %}
 {% block styles %}
-  <link rel="stylesheet" href="{% static 'plugins/fontawesome/css/all.css' %}" />
-  <link rel="stylesheet" href="{% static 'plugins/themefisher-font/style.css' %}" />
-  <link rel="stylesheet" href="{% static 'plugins/lightbox2/dist/css/lightbox.min.css' %}" />
+<link rel="stylesheet" href="{% static 'plugins/fontawesome/css/all.css' %}" />
+<link rel="stylesheet" href="{% static 'plugins/themefisher-font/style.css' %}" />
+<link rel="stylesheet" href="{% static 'plugins/lightbox2/dist/css/lightbox.min.css' %}" />
 {% endblock %}
 {% block body_class %}
-  template-homepage
+template-homepage
 {% endblock %}
 {% block nav %}
-  {% include "home/global_nav.html" %}
+{% include "home/global_nav.html" %}
 {% endblock %}
 {% block body-tag %}
-  <body id="body" class="project-page">
+
+<body id="body" class="project-page">
   <!-- Start Preloader ==================================== -->
-{% endblock %}
-{% block content %}
+  {% endblock %}
+  {% block content %}
   {% image page.hero_image original as hero_img %}
   {% image page.hero_image_1200_and_under original as hero_img_1200 %}
   {% image page.hero_image_768_and_under original as hero_img_768 %}
   {% image page.hero_image_576_and_under original as hero_img_576 %}
   <section class="project-page-header">
-    <img src="{{ hero_img_576.url }}" alt=" {{ hero_img_576.alt }}" class="hero-img d-sm-none"/>
-    <img src="{{ hero_img_768.url }}" alt=" {{ hero_img_768.alt }}" class="hero-img d-none d-sm-block d-md-none"/>
-    <img src="{{ hero_img_1200.url }}" alt=" {{ hero_img_1200.alt }}" class="hero-img d-none d-md-block d-lg-none"/>
-    <img src="{{ hero_img.url }}" alt=" {{ hero_img.alt }}" class="hero-img d-none d-lg-block"/>
+    <img src="{{ hero_img_576.url }}" alt=" {{ hero_img_576.alt }}" class="hero-img d-sm-none" />
+    <img src="{{ hero_img_768.url }}" alt=" {{ hero_img_768.alt }}" class="hero-img d-none d-sm-block d-md-none" />
+    <img src="{{ hero_img_1200.url }}" alt=" {{ hero_img_1200.alt }}" class="hero-img d-none d-md-block d-lg-none" />
+    <img src="{{ hero_img.url }}" alt=" {{ hero_img.alt }}" class="hero-img d-none d-lg-block" />
     <div class="logo-img">
       <a class="home-link" href='/'>
-        <img src="{% static 'images/company/beulah_logo_02.png' %}" class="d-none d-lg-block"/>
+        <img src="{% static 'images/company/beulah_logo_02.png' %}" class="d-none d-lg-block" />
       </a>
     </div>
   </section>
@@ -37,32 +38,35 @@
     {% include 'home/project_nav.html' %}
     <div class="d-flex flex-column mt-4 project-info__details-container">
       <!-- start of tagline section  -->
-      {% if page.hero_intro_one %} 
-        <div class="d-flex col-12 col-lg-11 align-self-center align-content-center  project-details__section project-details__tagline ">
-          <div class="d-flex flex-column col-12 pl-lg-0 tagline_section">
-            {{page.hero_intro_one}}
-          </div>
+      {% if page.hero_intro_one %}
+      <div
+        class="d-flex col-12 col-lg-11 align-self-center align-content-center  project-details__section project-details__tagline ">
+        <div class="d-flex flex-column col-12 pl-lg-0 tagline_section">
+          {{page.hero_intro_one}}
         </div>
+      </div>
       {% endif %}
-      {% if page.hero_intro_two %} 
-        <div class="d-flex col-12 col-lg-11 align-self-center align-content-center  project-details__section project-details__tagline ">
-          <div class="d-flex flex-column col-12 pl-lg-0 tagline_section">
-            {{page.hero_intro_two}}
-          </div>
+      {% if page.hero_intro_two %}
+      <div
+        class="d-flex col-12 col-lg-11 align-self-center align-content-center  project-details__section project-details__tagline ">
+        <div class="d-flex flex-column col-12 pl-lg-0 tagline_section">
+          {{page.hero_intro_two}}
         </div>
+      </div>
       {% endif %}
-      {% if page.hero_intro_three %} 
-        <div class="d-flex col-12 col-lg-11 align-self-center align-content-center pb-4 mb-4 project-details__section border-b project-details__tagline ">
-          <div class="d-flex flex-column col-12 pl-lg-0 tagline_section">
-            {{page.hero_intro_three}}
-          </div>
+      {% if page.hero_intro_three %}
+      <div
+        class="d-flex col-12 col-lg-11 align-self-center align-content-center pb-4 mb-4 project-details__section border-b project-details__tagline ">
+        <div class="d-flex flex-column col-12 pl-lg-0 tagline_section">
+          {{page.hero_intro_three}}
         </div>
+      </div>
       {% endif %}
       <!-- end of tagline section -->
       <!-- start of overview section -->
-      
-      
-    {% if page.coming_soon_title and page.coming_soon %}
+
+
+      {% if page.coming_soon_title and page.coming_soon %}
       <div class="d-flex justify-content-center mb-5 project-details__section">
         <div class="d-flex flex-column col-12 col-lg-11 d-flex justify-content-around">
           <h5 class="project-info__title mb-4">
@@ -73,171 +77,172 @@
           </div>
         </div>
       </div>
-    {% else %}
+      {% else %}
       <div class="d-flex justify-content-center mb-5 project-details__section">
         <div class="d-flex flex-column col-12 col-lg-11 d-flex justify-content-around">
-          {% if page.project_intro %}  
-            <h5 class="project-info__title mb-4">
-              {{page.project_intro}}
-            </h5>
+          {% if page.project_intro %}
+          <h5 class="project-info__title mb-4">
+            {{page.project_intro}}
+          </h5>
           {% endif %}
           {% if page.project_body %}
-            <div class="project-info__description">
-              {{page.project_body|richtext}}
-            </div>
+          <div class="project-info__description">
+            {{page.project_body|richtext}}
+          </div>
           {% endif %}
         </div>
       </div>
       <!-- end of overview section -->
-        <!-- start of floor plans -->
+      <!-- start of floor plans -->
       {% if page.project_floor_plans.all %}
-        <div id="floor-plan" class="d-flex justify-content-center mb-5 project-details__section">
-          <div class="d-flex flex-column col-12 col-lg-11">
-            <h5 class="project-info__title mb-4 mt-4">
-              Floor Plans
-            </h5>
-            <div class="d-flex flex-wrap filtr-container card-deck project-floorplan row">
-              {% for portfolio in page.project_floor_plans.all %}
-                {% if forloop.counter < 4 %}
-                  <div class="col-md-6 col-lg-3 my-2">
-                    <div class="card project-floorplan__card">
-                      <div class="card-header d-flex flex-column">
-                        <span class="project-floorplan__header">
-                          {{portfolio.project_name}}
-                        </span>
-                        {% if portfolio.project_info %}
-                          <span>
-                            {{portfolio.project_info}} 
-                            {% if portfolio.project_info_size %} 
-                              <span>/</span>
-                              <span class="project-floorplan__header--alternate">
-                                {{portfolio.project_info_size}}
-                              </span>
-                            {% endif %}
-                          </span>
-                        {% endif %}
-                      </div>
-                      {% if portfolio.project_paragraph %}
-                      <div class="card-body d-flex flex-column">
-                        <p class="p-2 mb-0">
-                          {{portfolio.project_paragraph}}
-                        </p>
-                        <div class="d-flex project-floorplan__brochure-img-container">
-                          {% image portfolio.project_image width-1000 class="img-responsive project-floorplan__img" %}
-                        </div>
-                      </div>
-                      {% else %}
-                        <div class="card-body">
-                          {% image portfolio.project_image width-1000 class="card-img-top img-responsive project-floorplan__img" %}
-                        </div>
-                      {% endif %}
-                      <div class="caption card-footer d-flex align-content-center">
-                        {% image portfolio.project_image width-1000 as img %}
-                        <a class="search-icon ml-auto my-auto project-floorplan__expander" href="{{img.url}}"
-                          data-lightbox="image-1">
-                          <i class="tf-ion-ios-search-strong"></i>
-                        </a>
-                      </div>
-                    </div>
-                  </div>
-                {% endif %}
-              {% endfor %}
-
-              <div class="col-md-6 col-lg-3 my-2">
-                <div class="card project-floorplan__card">
-                  <div class="card-header d-flex flex-column">
-                    <span>Beulah Genesis Key Data</span>
-                  </div>
-                  <div class="card-body">
-                    <table class="table table-borderless">
-                      {% for detail in page.project_details.all %}
-                        <tr>
-                          <td>{{detail.detail_name}}</td>
-                          <td>{{detail.detail_info}}</td>
-                        </tr>
-                      {% endfor %}
-                    </table>
+      <div id="floor-plan" class="d-flex justify-content-center mb-5 project-details__section">
+        <div class="d-flex flex-column col-12 col-lg-11">
+          <h5 class="project-info__title mb-4 mt-4">
+            Floor Plans
+          </h5>
+          <div class="d-flex flex-wrap filtr-container card-deck project-floorplan row">
+            {% for portfolio in page.project_floor_plans.all %}
+            {% if forloop.counter < 4 %}
+            <div class="col-md-6 col-lg-3 my-2">
+              <div class="card project-floorplan__card">
+                <div class="card-header d-flex flex-column">
+                  <span class="project-floorplan__header">
+                    {{portfolio.project_name}}
+                  </span>
+                  {% if portfolio.project_info %}
+                  <span>
+                    {{portfolio.project_info}}
+                    {% if portfolio.project_info_size %}
+                    <span>/</span>
+                    <span class="project-floorplan__header--alternate">
+                      {{portfolio.project_info_size}}
+                    </span>
+                    {% endif %}
+                  </span>
+                  {% endif %}
+                </div>
+                {% if portfolio.project_paragraph %}
+                <div class="card-body d-flex flex-column">
+                  <p class="p-2 mb-0">
+                    {{portfolio.project_paragraph}}
+                  </p>
+                  <div class="d-flex project-floorplan__brochure-img-container">
+                    {% image portfolio.project_image width-1000 class="img-responsive project-floorplan__img" %}
                   </div>
                 </div>
-              </div>
-
-              {% for portfolio in page.project_floor_plans.all %} 
-                {% if forloop.counter > 3 %}
-                  <div class="col-md-6 col-lg-3 my-2">
-                    <div class="card project-floorplan__card">
-                      <div class="card-header d-flex flex-column">
-                        <span class="project-floorplan__header">
-                          {{portfolio.project_name}}
-                        </span>
-                        {% if portfolio.project_info %}
-                          <span>
-                            {{portfolio.project_info}}
-                            {% if portfolio.project_info_size %} 
-                              <span>/</span>
-                              <span class="project-floorplan__header--alternate">
-                                {{portfolio.project_info_size}}
-                              </span>
-                            {% endif %}
-                          </span>
-                        {% endif %}
-                      </div>
-                      {% if portfolio.project_paragraph %}
-                        <div class="card-body d-flex flex-column">
-                          <p class="p-2 mb-0">
-                            {{portfolio.project_paragraph}}
-                          </p>
-                          <div class="d-flex project-floorplan__brochure-img-container">
-                            {% image portfolio.project_image width-1000 class="img-responsive project-floorplan__img" %}
-                          </div>
-                        </div>
-                      {% else %}
-                        <div class="card-body">
-                          {% image portfolio.project_image width-1000 class="card-img-top img-responsive project-floorplan__img" %}
-                        </div>
-                      {% endif %}
-                      {% if portfolio.project_brochure %}
-                        <div class="caption card-footer d-flex align-content-start">
-                          <a href="{{portfolio.project_brochure.url}}" class="project-floorplan__link px-1" download="">
-                            Download Brochure
-                          </a>
-                        </div>
-                      {% else %}
-                        <div class="caption card-footer d-flex align-content-center">
-                          {% image portfolio.project_image width-1000 as img %}
-                          <a class="search-icon ml-auto my-auto project-floorplan__expander" href="{{img.url}}"
-                            data-lightbox="image-1">
-                            <i class="tf-ion-ios-search-strong"></i>
-                          </a>
-                        </div>
-                      {% endif %}
-                    </div>
-                  </div>
+                {% else %}
+                <div class="card-body">
+                  {% image portfolio.project_image width-1000 class="card-img-top img-responsive project-floorplan__img" %}
+                </div>
                 {% endif %}
-              {% endfor %}
-              <div class="col-md-6 col-lg-3 my-2">
-                <div class="card project-floorplan__card project-floorplan__card-bg-secondary">
-                  <div class="card-header d-flex flex-column">
-                    <span class="project-floorplan__header"></span>Contact a Sales Consultant</span>
+                <div class="caption card-footer d-flex align-content-center">
+                  {% image portfolio.project_image width-1000 as img %}
+                  <a class="search-icon ml-auto my-auto project-floorplan__expander" href="{{img.url}}"
+                    data-lightbox="image-1">
+                    <i class="tf-ion-ios-search-strong"></i>
+                  </a>
+                </div>
+              </div>
+            </div>
+            {% endif %}
+            {% endfor %}
+
+            <div class="col-md-6 col-lg-3 my-2">
+              <div class="card project-floorplan__card">
+                <div class="card-header d-flex flex-column">
+                  <span>Beulah Genesis Key Data</span>
+                </div>
+                <div class="card-body">
+                  <table class="table table-borderless">
+                    {% for detail in page.project_details.all %}
+                    <tr>
+                      <td>{{detail.detail_name}}</td>
+                      <td>{{detail.detail_info}}</td>
+                    </tr>
+                    {% endfor %}
+                  </table>
+                </div>
+              </div>
+            </div>
+
+            {% for portfolio in page.project_floor_plans.all %}
+            {% if forloop.counter > 3 %}
+            <div class="col-md-6 col-lg-3 my-2">
+              <div class="card project-floorplan__card">
+                <div class="card-header d-flex flex-column">
+                  <span class="project-floorplan__header">
+                    {{portfolio.project_name}}
+                  </span>
+                  {% if portfolio.project_info %}
+                  <span>
+                    {{portfolio.project_info}}
+                    {% if portfolio.project_info_size %}
+                    <span>/</span>
+                    <span class="project-floorplan__header--alternate">
+                      {{portfolio.project_info_size}}
+                    </span>
+                    {% endif %}
+                  </span>
+                  {% endif %}
+                </div>
+                {% if portfolio.project_paragraph %}
+                <div class="card-body d-flex flex-column">
+                  <p class="p-2 mb-0">
+                    {{portfolio.project_paragraph}}
+                  </p>
+                  <div class="d-flex project-floorplan__brochure-img-container">
+                    {% image portfolio.project_image width-1000 class="img-responsive project-floorplan__img" %}
                   </div>
-                  <div class="card-body d-flex flex-column project-floorplan__card-body--sm-font p-3">
-                    <span>Melissa Ashleigh</span>
-                    <span>+254 0010 001</span>
-                    <h6>Email Us</h6>
-                    {% include 'includes/enquiry_form.html' %}
-                  </div>
-                  <div class="card-footer">
-                    <input type="submit" value="Contact Us" class="project-floorplan__link" form="contactSalesForm" />
-                  </div>
+                </div>
+                {% else %}
+                <div class="card-body">
+                  {% image portfolio.project_image width-1000 class="card-img-top img-responsive project-floorplan__img" %}
+                </div>
+                {% endif %}
+                {% if portfolio.project_brochure %}
+                <div class="caption card-footer d-flex align-content-start">
+                  <a href="{{portfolio.project_brochure.url}}" class="project-floorplan__link px-1" download="">
+                    Download Brochure
+                  </a>
+                </div>
+                {% else %}
+                <div class="caption card-footer d-flex align-content-center">
+                  {% image portfolio.project_image width-1000 as img %}
+                  <a class="search-icon ml-auto my-auto project-floorplan__expander" href="{{img.url}}"
+                    data-lightbox="image-1">
+                    <i class="tf-ion-ios-search-strong"></i>
+                  </a>
+                </div>
+                {% endif %}
+              </div>
+            </div>
+            {% endif %}
+            {% endfor %}
+            <div class="col-md-6 col-lg-3 my-2">
+              <div class="card project-floorplan__card project-floorplan__card-bg-secondary">
+                <div class="card-header d-flex flex-column">
+                  <span class="project-floorplan__header"></span>Contact a Sales Consultant</span>
+                </div>
+                <div class="card-body d-flex flex-column project-floorplan__card-body--sm-font p-3">
+                  <span>Melissa Ashleigh</span>
+                  <span>+254 0010 001</span>
+                  <h6>Email Us</h6>
+                  {% include 'includes/enquiry_form.html' %}
+                </div>
+                <div class="card-footer">
+                  <input type="submit" value="Contact Us" class="project-floorplan__link" form="contactSalesForm" />
                 </div>
               </div>
             </div>
           </div>
         </div>
+      </div>
       {% endif %}
 
       <!-- end of floor plans -->
 
-      <div class="d-flex justify-content-center project-details__section {% if page.project_floor_plans.all %}project-details__section--secondary-bg {% else %}{% endif %}">
+      <div
+        class="d-flex justify-content-center project-details__section {% if page.project_floor_plans.all %}project-details__section--secondary-bg {% else %}{% endif %}">
         <div class="d-flex flex-column col-12 col-lg-11 mt-2">
           <h5 class="project-info__title">
             {{page.project_information_title}}
@@ -250,63 +255,27 @@
           </div>
         </div>
       </div>
-      <div class="d-flex justify-content-center project-details__section project-details__section--secondary-bg" id="why-us">
-          <div class="d-flex flex-column col-12 col-lg-11 align-self-center">
-            {% if page.project_pride %}
-              <h4 class="project-info__title mb-4">
-                {{page.project_pride}}
-              </h4>
-            {% endif %} 
-            {% if page.project_pride_paragraph %}
-              <p class="project-info__description pt-5">
-                {{page.project_pride_paragraph}}
-              </p>
-            {% endif %}
-          </div>
+      <div class="d-flex justify-content-center project-details__section project-details__section--secondary-bg"
+        id="why-us">
+        <div class="d-flex flex-column col-12 col-lg-11 align-self-center">
+          {% if page.project_pride %}
+          <h4 class="project-info__title mb-4">
+            {{page.project_pride}}
+          </h4>
+          {% endif %}
+          {% if page.project_pride_paragraph %}
+          <p class="project-info__description pt-5">
+            {{page.project_pride_paragraph}}
+          </p>
+          {% endif %}
+        </div>
       </div>
-    {% endif %}
+      {% endif %}
     </div>
   </section>
-  <footer id="footer" class="d-flex footer justify-content-center">
-    <div class="d-flex flex-column col-12 col-lg-11 ">
-      <div class="d-flex flex-wrap top-footer py-5 ">
-        <ul class="d-flex justify-content-between col-12 col-lg-6 footer__page-list px-0 my-2 my-lg-0">
-          <li><a href="/">Home</a></li>
-          <li><a href="about#who-we-are">Who We Are</a></li>
-          <li><a href="about#what-we-do">What We Do</a></li>
-          <li><a href="about#why-us">Why Us</a></li>
-          <li><a href="about#contact-us">Contact Us</a></li>
-        </ul>
-        <ul class="d-flex justify-content-between col-12 col-lg-6 footer__project-list px-0 my-2 my-lg-0">
-          {% for projects in projectpages %}
-            <li><a href="{{projects.url}}"> {{projects.title}}</a></li>
-            <li><span>|</span></li>
-          {% endfor %}
-          
-          {% for futurepage in futureprojectpage %}
-            <li><a href="{{futurepage.url}}"> {{futurepage.title}}</a></li>
-            <li><span>|</span></li>
-          {% endfor %}
-        </ul>
-        <!-- end container -->
-      </div>
-      <div class="d-flex flex-wrap justify-content-center py-5 bottom-footer">
-        <div class="d-flex justify-content-center col-12 col-lg-6 my-2 my-lg-0 justify-content-xl-start">
-          <span>&copy; Beulah City
-            <script>
-              document.write(new Date().getFullYear())
-            </script>
-            All rights reserved.
-          </span>
-        </div>
-        <div class="d-flex justify-content-center col-12 col-lg-6 justify-content-xl-end">
-          <i class="far fa-envelope mx-1"></i>
-          <i class="fab fa-facebook-f mx-1"></i>
-          <i class="fab fa-instagram mx-1"></i>
-        </div>
-      </div>
-    </div>
-  </footer>
 
-{% endblock content %}
+
+  {% include "home/footer.html" %}
+
+  {% endblock content %}
 </body>

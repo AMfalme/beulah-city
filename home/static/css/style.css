@@ -1269,6 +1269,12 @@ body {
   position: relative;
 }
 
+@media (max-width: 992px) {
+  .main-container {
+    padding-top: 60px;
+  }
+}
+
 /*============================================================
 	For Small Desktop
 ==============================================================*/
@@ -1955,7 +1961,9 @@ a.project-nav__link:hover {
     min-height: 50px;
     text-align: center;
   }
-  .header__nav-sm .navigation__item-sm .navbar-collapse.collapse, .header__nav-sm .navigation__item-sm .navbar-collapse.collapse.show, .header__nav-sm .navigation__item-sm .navbar-collapse.collapse.collapsing {
+  .header__nav-sm .navigation__item-sm .navbar-collapse.collapse,
+.header__nav-sm .navigation__item-sm .navbar-collapse.collapse.show,
+.header__nav-sm .navigation__item-sm .navbar-collapse.collapse.collapsing {
     transition-duration: 0.5s;
   }
   .header__nav-sm .navigation__item-sm .nav-item--secondary {

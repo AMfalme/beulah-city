@@ -35,44 +35,44 @@
   <link rel="stylesheet" href="{% static 'css/style.css' %}" />
 
   {% block styles %}
-  {% endblock %} 
-  {% block extrahead %} 
+  {% endblock %}
+  {% block extrahead %}
   {% endblock %}
 </head>
 
 {% block body-tag %}
 
-  <body id="body" class="single-page">
-<!-- Start Preloader ==================================== -->
+<body id="body" class="single-page">
+  <!-- Start Preloader ==================================== -->
 
-{% endblock %}
-<div id="preloader">
-  <div class="preloader">
-    <span></span>
-    <span></span>
-    <span></span>
-    <span></span>
-    <span></span>
-    <span></span>
-  </div>
-</div>
-<!-- End Preloader ==================================== -->
-
-{% block nav %} 
-  {% include "home/home_nav.html" %} 
-{% endblock %} 
-{% block header %} 
-{% endblock %}
-<div class="main-container">
-  {% block content %} 
-  {% endblock %} 
-  {% block footer %} 
-    {% include "home/footer.html" %} 
-    {% include 'includes/contact_modal_form.html' %}
   {% endblock %}
-</div>
+  <div id="preloader">
+    <div class="preloader">
+      <span></span>
+      <span></span>
+      <span></span>
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
+  </div>
+  <!-- End Preloader ==================================== -->
 
-{% block scripts %}
+  {% block nav %}
+  {% include "home/home_nav.html" %}
+  {% endblock %}
+  {% block header %}
+  {% endblock %}
+  <div class="main-container">
+    {% block content %}
+    {% endblock %}
+    {% block footer %}
+
+    {% include 'includes/contact_modal_form.html' %}
+    {% endblock %}
+  </div>
+
+  {% block scripts %}
   <!-- End of project selection slider-->
 
   <!-- 
@@ -101,7 +101,7 @@
 
   <!-- Custom js -->
   <script src="{% static 'js/script.js' %}"></script>
-{% endblock %}
+  {% endblock %}
 </body>
 
 </html>
