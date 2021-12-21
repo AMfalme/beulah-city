@@ -68,7 +68,7 @@ MIDDLEWARE = [
     'wagtail.contrib.redirects.middleware.RedirectMiddleware',
 ]
 
-ROOT_URLCONF = 'beulahcity.urls'
+ROOT_URLCONF = 'huytr'
 
 TEMPLATES = [
     {
